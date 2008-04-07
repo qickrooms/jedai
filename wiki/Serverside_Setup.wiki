@@ -1,0 +1,12 @@
+#summary One-sentence summary of this page.
+
+= Checking out and installing the serverside code =
+
+Prerequisites
+SVN
+Red5
+
+
+= Details =
+
+svn co https://jedai.googlecode.com/svn/trunk/server/jedai 
