@@ -9,4 +9,9 @@ Red5
 
 = Details =
 
+
+open a command prompt
+cd into your Red5 working directory
+cd into the webapps folder
+issue the following command:
 svn co https://jedai.googlecode.com/svn/trunk/server/jedai 
