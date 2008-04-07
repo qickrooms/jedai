@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#explains how to checkout serverside code.
 
 = Checking out and installing the serverside code =
 
