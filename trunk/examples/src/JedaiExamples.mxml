@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net:Red5Application xmlns:net="com.infrared5.asmf.net.rpc.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	layout="absolute" xmlns:ns1="com.infrared5.asmf.controls.flex.data.*" xmlns:ns2="com.infrared5.asmf.controls.flex.framework.*" xmlns:ns3="com.infrared5.asmf.controls.flex.net.*" xmlns:ns4="com.infrared5.asmf.controls.flex.video.*" xmlns:ns5="*">
+	<ns1:Login x="80" y="29" width="472" height="91">
+	</ns1:Login>
+	<ns3:ConnectionLight x="80" y="164"/>
+	<ns4:VideoPublisher x="80" y="293"/>
+	<ns1:UserList x="390" y="186"/>
+	<ns5:UserListRenderer x="114" y="499">
+	</ns5:UserListRenderer>
+	
+	
+
+</net:Red5Application>

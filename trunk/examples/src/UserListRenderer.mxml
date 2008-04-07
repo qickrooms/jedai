@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="400" height="25"
+	creationComplete="init(event)">
+	
+	
+	<mx:Script>
+		<![CDATA[
+		
+			public function init(event:Event) : void {
+				trace("event: " + event);
+			}
+		]]>
+	</mx:Script>
+	<mx:Label x="4" y="5" text="{this.data.username}"/>
+	<mx:Button x="138" y="3" label="Button"/>
+</mx:Canvas>
