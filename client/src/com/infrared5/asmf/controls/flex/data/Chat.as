@@ -46,7 +46,7 @@ package com.infrared5.asmf.controls.flex.data
 	//  Other metadata
 	//--------------------------------------
 	
-	//[IconFile("Chat.png")]
+	[IconFile("../../../../../../../resources/icons/build/chatpng.png")]
 	
 	/**
 	 *  A Chat component allows the user to chat with others in room.  

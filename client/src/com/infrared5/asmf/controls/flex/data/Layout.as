@@ -51,7 +51,7 @@ package com.infrared5.asmf.controls.flex.data
 	 * 
 	 *  @author Dominick Accattato (dominick@infrared5.com)
 	 */
-	public class Layout extends TextArea
+	public class Layout
 	{
 		public function Layout()
 		{

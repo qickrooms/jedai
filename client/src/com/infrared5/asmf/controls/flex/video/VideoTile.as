@@ -41,7 +41,7 @@ package com.infrared5.asmf.controls.flex.video
 	//  Other metadata
 	//--------------------------------------
 	
-	/* [IconFile("6.png")] */
+	[IconFile("../../../../../../../resources/icons/build/VideoTile.png")]
 	
 	/**
 	 *  A Login component allows the user to input a username
