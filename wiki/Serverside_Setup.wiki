@@ -1,4 +1,4 @@
-#explains how to checkout serverside code.
+explains how to checkout serverside code.
 
 = Checking out and installing the serverside code =
 
@@ -6,8 +6,7 @@ Prerequisites
 SVN
 Red5
 
-
-= Details =
+== Directions ==
 
 
 open a command prompt
