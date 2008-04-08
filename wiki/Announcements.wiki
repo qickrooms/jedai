@@ -1,4 +1,4 @@
-#Announcements and News about Jedai.
+Announcements and News about Jedai.
 
 = Announcements =
 
