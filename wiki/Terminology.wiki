@@ -1,6 +1,4 @@
-#Page explaining common terms used throughout the framework.
-
-= Terminology =
+Page explaining common terms used throughout the framework.
 
 JNF - Jedai Networking Framework
 
