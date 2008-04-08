@@ -1,0 +1,9 @@
+workflow for starting up Jedai.
+
+Workflow ( wrapped )
+
+ # create a NetConnection ( by config.xml )
+ # create a NetStream → Camera / Microphone & Video / Sound ( by app-context.xml via AMF with the “context” Red5Connection )
+ # attach everything together ( automated by app-context.xml via AMF )
+ # put everything on stage ( by Red5ConfigurationComplete Event or by Red5FlexApplication )
+ # Verify device connection, if connection cannot be verified ( to camera ) then we display a camera not found. If the Cookie is empty, display a device selector. Attributed to VideoOutputDevice ( ext. DisplayAdapter )
