@@ -6,7 +6,7 @@
 	<mx:Panel layout="absolute" left="10" top="10" title="Login" height="128" width="225">
 		<ns1:Login right="0" top="0" left="0" bottom="0"/>
 	</mx:Panel>
-	<mx:Panel layout="absolute" left="10" right="268" top="146" bottom="10" title="Chat">
+	<mx:Panel layout="absolute" left="10" right="268" top="254" bottom="10" title="Chat">
 		<ns1:Chat right="0" left="0" top="0" bottom="0"/>
 	</mx:Panel>
 	<ns2:ConnectionLight x="243" y="10"/>
