@@ -1,4 +1,4 @@
-#Represents the application stack for Jedai.
+Represents the application stack for Jedai.
 
 = Framework Stack =
 
