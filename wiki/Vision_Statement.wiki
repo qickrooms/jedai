@@ -1,3 +1,4 @@
+#labels Featured,Phase-Requirements
 Summarizes the use and benefits of the Jedai Framework
 
 The community surrounding Red5 has been building some really amazing applications over the past few years.  I've been proud to be a developer on the Red5 project since the beginning.  However, until now applications had been developed in black boxes.  Our breakthroughs, trials and tribulations have gone un-noticed by large.  The main reason for this lack of knowledge transfer is due to the iterative development that many of us have become accustomed to.  In other words, with each new project we have often duplicated effort throughout the community.  Developing in a black box is useful for a company who has to maintain some type of revenue based on their intellectual property.  Unfortunately, this lack of knowledge transfer prevents the whole of the community to build a proven framework for developing Red5 applications. 
