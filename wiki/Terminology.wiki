@@ -1,0 +1,6 @@
+#Page explaining common terms used throughout the framework.
+
+= Terminology =
+
+JNF - Jedai Networking Framework
+RTMP - Real Time Networking Protocol
