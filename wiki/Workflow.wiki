@@ -7,3 +7,17 @@ Workflow ( wrapped )
  # attach everything together ( automated by app-context.xml via AMF )
  # put everything on stage ( by Red5ConfigurationComplete Event or by Red5FlexApplication )
  # Verify device connection, if connection cannot be verified ( to camera ) then we display a camera not found. If the Cookie is empty, display a device selector. Attributed to VideoOutputDevice ( ext. DisplayAdapter )
+
+-----
+
+Session Steps
+
+1. get an httpservice for the external config file
+
+2. load up initial service
+
+3. call the rtmp connection to get the spring config file
+
+4. load up all remaining dependencies
+
+5. kick off the app
