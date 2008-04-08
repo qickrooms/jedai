@@ -1,0 +1,8 @@
+summary of library dependencies
+
+IoC w/ Prana
+
+http://www.herrodius.com/blog/?p=64
+
+http://thillerson.blogspot.com/2007/10/delegate-factories-with-prana.html
+(ref http://labs.effectiveui.com/examples/prana/delegates/srcview/index.html )
