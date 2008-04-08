@@ -21,3 +21,18 @@ Session Steps
 4. load up all remaining dependencies
 
 5. kick off the app
+
+
+------
+
+Key Concepts
+
+- Code against Interfaces and not Classes
+
+- Framework-wide support for Deconstructors and dependency-unlinking
+
+- Flex Components are built into the framework but are used in a way where we could implement the same functionality regardless of UI Framework.
+
+- IOC Bean Configuration for preset config objs for StreamFactory by Prana
+
+- For now we will use Cairngorm as our event-command paradigm.
