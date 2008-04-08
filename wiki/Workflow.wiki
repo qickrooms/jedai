@@ -22,6 +22,16 @@ Session Steps
 
 5. kick off the app
 
+-------
+
+
+How to get the security prompt with a Camera or a Microphone
+
+Contrary to logic, you don’t receive the prompt when you just ask for an instance of Camera or Microphone. For instance:
+
+var cam:Camera = Camera.getCamera(); //doesn’t prompt
+var video:Video = new Video();
+video.attachCamera(cam); // gets a prompt
 
 ------
 
