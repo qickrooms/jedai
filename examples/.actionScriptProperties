@@ -12,6 +12,11 @@
 <applications>
 <application path="Test.mxml"/>
 <application path="JedaiExamples.mxml"/>
+<application path="Test2.mxml"/>
+<application path="Test3.mxml"/>
+<application path="Test4.mxml"/>
+<application path="Test55.mxml"/>
+<application path="Test67.mxml"/>
 </applications>
 <modules/>
 <buildCSSFiles/>
