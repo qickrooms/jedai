@@ -12,15 +12,16 @@ package com.infrared5.asmf.controls.flex.video
 	import com.infrared5.asmf.Red5BootStrapper;
 	import com.infrared5.asmf.business.Red5ServiceLocator;
 	import com.infrared5.asmf.events.Red5Event;
+	import com.infrared5.asmf.media.rtp.Red5NetStreamConnector;
 	import com.infrared5.asmf.net.rpc.Red5Connection;
-	import com.infrared5.asmf.net.rpc.RemoteSharedObject;
+	import com.infrared5.io.devices.VideoOutputDevice;
 	
 	import flash.events.Event;
-	import flash.events.MouseEvent;
-	import flash.media.Camera;
+	import flash.events.SyncEvent;
+	import flash.net.SharedObject;
 	
-	import mx.controls.Button;
-	import mx.controls.VideoDisplay;
+	import mx.controls.listClasses.BaseListData;
+	import mx.controls.listClasses.IListItemRenderer;
 	import mx.core.UIComponent;
 	import mx.events.FlexEvent;
 	
@@ -67,7 +68,7 @@ package com.infrared5.asmf.controls.flex.video
 	 * 
 	 *  @author Dominick Accattato (dominick@infrared5.com)
 	 */
-	public class VideoSubscriber extends UIComponent
+	public class VideoSubscriber extends UIComponent implements IListItemRenderer
 	{
 		include "../../../../../../core/Version.as";
 		
@@ -82,19 +83,20 @@ package com.infrared5.asmf.controls.flex.video
 		/**
 		 *  @private components
 		 */
-		/* private var _username:String;
-	    private var usernameChanged:Boolean = false;
-		private var _password:String;
-	    private var passwordChanged:Boolean = false; */
+		public var streamName:String = null;
 		
 		/**
 	     *  The internal UITextField object that renders the label of this Button.
 	     * 
 	     *  @default null 
 	     */
-	    protected var camera:Camera;
-	    protected var loopbackVideo:VideoDisplay;
-	    protected var publish:Button;
+	   // Network
+		private var _connection:Red5Connection = null;		
+		private var _streamOut:Red5NetStreamConnector =  null;
+		private var _outputDevice	: VideoOutputDevice;
+	    private var _outputDeviceWrapper : UIComponent;
+	    private var _so:SharedObject = null;
+	    private var _data:*;
 		
 		//--------------------------------------------------------------------------
 		//
@@ -111,6 +113,70 @@ package com.infrared5.asmf.controls.flex.video
 			this.addEventListener(FlexEvent.CREATION_COMPLETE, onCreationComplete);
 		} 
 		
+				
+		/**
+		 *  The data to render or edit.
+		 */
+		public function get data():Object {
+			return this._data;
+		}
+		
+		/**
+		 *  @private
+		 */
+		public function set data(value:Object):void {
+			
+			if(this._data == null) {
+				this._data = value;
+				if (!_outputDevice)
+		        {
+		            _outputDevice = new VideoOutputDevice();
+		            _outputDeviceWrapper = new UIComponent();
+		            _outputDeviceWrapper.addChild(_outputDevice);	
+		            this.addChild(_outputDeviceWrapper);
+		        } 
+				startStream(String(value));
+			}
+		}
+		
+		/**
+     *  @private
+     *  Storage for the listData property.
+     */
+    private var _listData:BaseListData;
+/* 
+    [Bindable("dataChange")]
+    [Inspectable(environment="none")] */
+
+    /**
+     *  When a component is used as a drop-in item renderer or drop-in
+     *  item editor, Flex initializes the <code>listData</code> property
+     *  of the component with the appropriate data from the List control.
+     *  The component can then use the <code>listData</code> property
+     *  to initialize the <code>data</code> property of the drop-in
+     *  item renderer or drop-in item editor.
+     *
+     *  <p>You do not set this property in MXML or ActionScript;
+     *  Flex sets it when the component is used as a drop-in item renderer
+     *  or drop-in item editor.</p>
+     *
+     *  @default null
+     *  @see mx.controls.listClasses.IDropInListItemRenderer
+     */
+    public function get listData():BaseListData
+    {
+        return _listData;
+    }
+
+    /**
+     *  @private
+     */
+    public function set listData(value:BaseListData):void
+    {
+        _listData = value;
+    }
+
+		
 		/**
 		 * 
 		 * @param event
@@ -122,14 +188,102 @@ package com.infrared5.asmf.controls.flex.video
 			bootStrapper.addEventListener("bootStrapComplete", onBootStrapComplete); 
 			bootStrapper.addEventListener(Red5Event.CONNECTED, onConnected);
 			
-			this.publish.addEventListener(MouseEvent.CLICK, onPublish);
+			//this.publish.addEventListener(MouseEvent.CLICK, onPublish);
+		
+			// is this an itemrenderer
+			
+			if(this._data != null) {			
+				this.streamName = String(this._data);
+				//playStream(this.streamName);	
+			}
+			
 			
 			
 		} 
 		
-		private function onPublish(event:MouseEvent) : void {
-			camera = Camera.getCamera();
-			loopbackVideo.attachCamera(camera);
+		public function onSync(event:SyncEvent) : void {
+			trace("event: " + event);
+			
+			var list:Array = event.changeList;
+			trace("event.changeList.length: " + event.changeList.length);
+			
+			for(var i:Number=0; i<list.length; i++){
+				switch(list[i].code) {
+					case "clear":
+						trace("list[" + i + "].code: " + list[i].code);
+						break;
+					case "success":
+						trace("list[" + i + "].code: " + list[i].code);
+						//output.text += so.data[(list[i].name)];
+						break;
+					case "reject":
+						trace("list[" + i + "].code: " + list[i].code);
+						break;
+					case "change":
+						trace("list[" + i + "].code: " + list[i].code);
+						startStream(event.target.data[list[i].name]);
+						/* users.removeAll(); */
+						/* for (var key:String in event.target.data)
+						{
+						    trace(key + ": " + event.target.data[key]);
+						    users.addItem(event.target.data[key]);
+						} */
+									
+						//output.text += so.data[(list[i].name)]
+						break;
+					case "delete":
+						stopStream()
+						/* for (var key:String in event.target.data)
+						{
+						    trace(key + ": " + event.target.data[key]);
+						    users.removeAll();
+						    var removeIndex:int = users.getItemIndex(event.target.data[key]);
+						    users.removeItemAt(removeIndex);
+//						    users.addItem(event.target.data[key]);
+						} */
+						
+						/* for (var key1:String in event.target.data)
+						{
+						    trace(key1 + ": " + event.target.data[key1]);
+						    users.addItem(event.target.data[key1]);
+						} */
+						
+						trace("list[" + i + "].code: " + list[i].code);
+						break;
+				}			
+			} 	
+		}
+		
+		private function stopStream() : void {
+			/* video.attachNetStream(null);
+			video.clear();
+			playingFlag = false; */
+		}
+		
+		private function startStream(val:String) : void {
+				/* 
+				if(!playingFlag) {
+					playingFlag = true;
+					ns = new NetStream(conn);
+					video = new Video();
+					comp = new UIComponent();
+					comp.addChild(video);
+					this.addChild(comp);
+					video.attachNetStream(ns);
+					ns.play(val);
+					video.width = this.vBox2.width;
+					video.height = this.vBox2.height;
+				} */
+				
+			//_connection = Red5ServiceLocator.getInstance().getRed5Connection("default");	
+			//var rso:RemoteSharedObject = Red5ServiceLocator.getInstance().getRemoteSharedObject("clientlist");
+			
+			
+			_streamOut = new Red5NetStreamConnector( Red5ServiceLocator.getInstance().getRed5Connection("default") );
+			_streamOut.play(val);	
+			_outputDevice.attachInputFrom(_streamOut.getStream());
+			_outputDevice.width = 200;
+			_outputDevice.height = 200;
 		}
 		
 		/**
@@ -149,10 +303,17 @@ package com.infrared5.asmf.controls.flex.video
 		private function onConnected(event:Red5Event) : void {
 			/* trace("event: " + event);
 			this.enabled = true; */
+			_connection = Red5ServiceLocator.getInstance().getRed5Connection("default");	
 			
-			var conn:Red5Connection = Red5ServiceLocator.getInstance().getRed5Connection("default");	
-			var rso:RemoteSharedObject = Red5ServiceLocator.getInstance().getRemoteSharedObject("clientlist");
-			//rso.addEventListener(SyncEvent.SYNC, onSync);	
+			if(streamName == null) {
+				// Set up remoteSharedObject stuff			
+				_so = SharedObject.getRemote("streamlist", this._connection.uri);
+				_so.connect(this._connection);									
+				_so.addEventListener(SyncEvent.SYNC, onSync);
+			} else {				
+				startStream(this.streamName);
+			}
+				
 		}
 		
 		//--------------------------------------------------------------------------
@@ -168,16 +329,12 @@ package com.infrared5.asmf.controls.flex.video
 		override protected function createChildren():void {
 			super.createChildren();
 			
-			if (!loopbackVideo)
+			if (!_outputDevice)
 	        {
-	            loopbackVideo = new VideoDisplay();
-	            this.addChild(loopbackVideo);
-	        } 
-	        
-	        if (!publish)
-	        {
-	            publish = new Button();
-	            this.addChild(publish);
+	            _outputDevice = new VideoOutputDevice();
+	            _outputDeviceWrapper = new UIComponent();
+	            _outputDeviceWrapper.addChild(_outputDevice);	
+	            this.addChild(_outputDeviceWrapper);
 	        } 
 	        
 		} 
@@ -197,8 +354,8 @@ package com.infrared5.asmf.controls.flex.video
 		override protected function measure():void {
 			super.measure();
 			
-			measuredHeight = measuredMinHeight = this.loopbackVideo.getExplicitOrMeasuredHeight();
-			measuredWidth = measuredMinWidth = this.loopbackVideo.getExplicitOrMeasuredWidth();
+			measuredHeight = measuredMinHeight = 60;
+			measuredWidth = measuredMinWidth = 120; 
 		}
 		
 		/**
@@ -221,39 +378,9 @@ package com.infrared5.asmf.controls.flex.video
 			var size = (padding + 50);
 			var formDist:int = 25;
 			
-			loopbackVideo.setActualSize(unscaledWidth, unscaledHeight);
+			_outputDevice.width = this.unscaledWidth - 10;
+			_outputDevice.height = this.unscaledHeight - 20; 
 			
-			publish.move(loopbackVideo.getExplicitOrMeasuredWidth() + 10, loopbackVideo.getExplicitOrMeasuredHeight() - publish.getExplicitOrMeasuredWidth());
-			
-		/* 
-			// usernameField size and position
-			usernameField.setActualSize((unscaledWidth - size), usernameField.getExplicitOrMeasuredHeight());
-			usernameField.move(leftPos, topPos); 
-			
-			// usernameLabel size and position
-			leftPos = padding;
-			usernameLabel.setActualSize(usernameLabel.getExplicitOrMeasuredWidth(), usernameLabel.getExplicitOrMeasuredHeight());
-			usernameLabel.move(leftPos, topPos);
-			
-			// passwordField size and position
-			topPos += formDist;
-			leftPos = 50;
-			passwordField.setActualSize((unscaledWidth - size), passwordField.getExplicitOrMeasuredHeight());
-			passwordField.move(leftPos, topPos);  
-			
-			// passwordLabel size and position
-			leftPos = padding;
-			passwordLabel.setActualSize(passwordLabel.getExplicitOrMeasuredWidth(), passwordLabel.getExplicitOrMeasuredHeight());
-			passwordLabel.move(leftPos, topPos);
-			
-			// loginButton size and position
-			topPos += formDist;
-			leftPos = unscaledWidth - loginButton.getExplicitOrMeasuredWidth() - padding;
-			loginButton.setActualSize(loginButton.getExplicitOrMeasuredWidth(), loginButton.getExplicitOrMeasuredHeight());
-			loginButton.move(leftPos, topPos); */
-			/* 
-			box.setActualSize(unscaledWidth, unscaledHeight);
-			box.buttonMode = true; */
 			
 		}
 		
