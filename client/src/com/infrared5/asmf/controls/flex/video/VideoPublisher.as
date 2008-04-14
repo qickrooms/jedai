@@ -12,15 +12,20 @@ package com.infrared5.asmf.controls.flex.video
 	import com.infrared5.asmf.Red5BootStrapper;
 	import com.infrared5.asmf.business.Red5ServiceLocator;
 	import com.infrared5.asmf.events.Red5Event;
+	import com.infrared5.asmf.media.rtp.Red5NetStreamConnector;
 	import com.infrared5.asmf.net.rpc.Red5Connection;
 	import com.infrared5.asmf.net.rpc.RemoteSharedObject;
+	import com.infrared5.io.devices.AudioInputDevice;
+	import com.infrared5.io.devices.VideoInputDevice;
+	import com.infrared5.io.devices.VideoOutputDevice;
 	
 	import flash.events.Event;
+	import flash.events.IOErrorEvent;
 	import flash.events.MouseEvent;
-	import flash.media.Camera;
+	import flash.events.NetStatusEvent;
+	import flash.media.Microphone;
 	
 	import mx.controls.Button;
-	import mx.controls.VideoDisplay;
 	import mx.core.UIComponent;
 	import mx.events.FlexEvent;
 	
@@ -82,19 +87,38 @@ package com.infrared5.asmf.controls.flex.video
 		/**
 		 *  @private components
 		 */
-		/* private var _username:String;
-	    private var usernameChanged:Boolean = false;
-		private var _password:String;
-	    private var passwordChanged:Boolean = false; */
-		
+		 
+		 // Exposed Properties
+		private var _streamName:String = null;
+		private var _live:Boolean = false;
+
 		/**
 	     *  The internal UITextField object that renders the label of this Button.
 	     * 
 	     *  @default null 
 	     */
-	    protected var camera:Camera;
-	    protected var loopbackVideo:VideoDisplay;
-	    protected var publish:Button;
+	    //protected var _camera:VideoInputDevice;
+	    //protected var _loopbackVideo:VideoDisplay;
+	    protected var _publish:Button;
+	    //protected var _microphone:Microphone;
+	    //protected var _netStream:Red5NetStream;
+	   // public var streamConn	: Red5NetStreamConnector;
+	    private var _outputDevice	: VideoOutputDevice;
+	    private var _outputDeviceWrapper : UIComponent;
+	    
+	    // Camera Specific
+		private var _cameraWidth:int = 160;
+		private var _cameraHeight:int = 120;
+		private var _fps:Number = 15;
+		private var _favorArea:Boolean = true;
+	    
+	    // Network
+		private var _connection:Red5Connection = null;		
+		private var _streamIn:Red5NetStreamConnector =  null;
+		private var _streamOut:Red5NetStreamConnector =  null;
+		private var _inputDevice:VideoInputDevice = null;
+		private var _microphone:Microphone = null;
+		private var audioIn		: AudioInputDevice;
 		
 		//--------------------------------------------------------------------------
 		//
@@ -117,19 +141,78 @@ package com.infrared5.asmf.controls.flex.video
 		 * 
 		 */		
 		private function onCreationComplete(event:FlexEvent) : void {
-			//this.enabled = false;
+			this.enabled = false;
+			this.mouseChildren = false;
 			bootStrapper = Red5BootStrapper.getInstance();
 			bootStrapper.addEventListener("bootStrapComplete", onBootStrapComplete); 
 			bootStrapper.addEventListener(Red5Event.CONNECTED, onConnected);
 			
-			this.publish.addEventListener(MouseEvent.CLICK, onPublish);
+			this._publish.addEventListener(MouseEvent.CLICK, onPublish);
 			
 			
 		} 
 		
 		private function onPublish(event:MouseEvent) : void {
-			camera = Camera.getCamera();
-			loopbackVideo.attachCamera(camera);
+			//camera = Camera.getCamera();
+			
+			
+			// guard agains null
+			//if(_connection == null) return;				
+				
+				switch(_publish.label) {
+					case "Start Broadcast":
+						startStream();
+						break;
+						
+					case "Stop broadcasting":
+						stopStream();
+						break;
+						
+					default:
+						break;
+						
+				}
+				
+				_publish.label = (_publish.label == "Start Broadcast") ? "Stop broadcasting" : "Start Broadcast";
+		}
+		
+		private function stopStream() : void {
+			_streamIn.getStream().close();
+		}
+		
+		/**
+		 * Helper method to start a NetStream
+		 * 
+		 * @return void
+		 **/
+		private function startStream() : void {
+			// create the netStream object and pass 
+			// the netConnection object in the constructor
+			_streamIn = new Red5NetStreamConnector( _connection );
+			//_streamOut = new Red5NetStreamConnector( _connection );
+			
+			_inputDevice = new VideoInputDevice( true );
+			_inputDevice.attachOutputTo( _streamIn.getStream() );
+			_streamIn.publish("test", "live");
+			
+			//_outputDevice = new VideoOutputDevice();
+			_outputDevice.attachInputFrom( _inputDevice );
+			_outputDevice.width = 200;
+			_outputDevice.height = 200;
+		
+			_microphone = Microphone.getMicrophone();
+			_microphone.setUseEchoSuppression(true);
+			
+			audioIn = new AudioInputDevice();
+			audioIn.attachOutputTo( _streamIn.getStream() );
+		}
+		
+		private function onNetStatus(event:NetStatusEvent) : void {
+			trace("event: " + event);
+		}
+		
+		private function onIOError(event:IOErrorEvent) : void {
+			trace("event: " + event);
 		}
 		
 		/**
@@ -147,11 +230,10 @@ package com.infrared5.asmf.controls.flex.video
 		 * 
 		 */		
 		private function onConnected(event:Red5Event) : void {
-			/* trace("event: " + event);
-			this.enabled = true; */
+			this.enabled = true; 
+			this.mouseChildren = true;
+			_connection = Red5ServiceLocator.getInstance().getRed5Connection("default");	
 			
-			var conn:Red5Connection = Red5ServiceLocator.getInstance().getRed5Connection("default");	
-			var rso:RemoteSharedObject = Red5ServiceLocator.getInstance().getRemoteSharedObject("clientlist");
 			//rso.addEventListener(SyncEvent.SYNC, onSync);	
 		}
 		
@@ -168,16 +250,20 @@ package com.infrared5.asmf.controls.flex.video
 		override protected function createChildren():void {
 			super.createChildren();
 			
-			if (!loopbackVideo)
+			if (!_outputDevice)
 	        {
-	            loopbackVideo = new VideoDisplay();
-	            this.addChild(loopbackVideo);
+	            _outputDevice = new VideoOutputDevice();
+	            _outputDeviceWrapper = new UIComponent();
+	            _outputDeviceWrapper.addChild(_outputDevice);	
+				//_outputDeviceWrapper.addChild( _outputDevice );
+	            this.addChild(_outputDeviceWrapper);
 	        } 
 	        
-	        if (!publish)
+	        if (!_publish)
 	        {
-	            publish = new Button();
-	            this.addChild(publish);
+	            _publish = new Button();
+	            _publish.label = "Start Broadcast";
+	            this.addChild(_publish);
 	        } 
 	        
 		} 
@@ -197,8 +283,8 @@ package com.infrared5.asmf.controls.flex.video
 		override protected function measure():void {
 			super.measure();
 			
-			measuredHeight = measuredMinHeight = this.loopbackVideo.getExplicitOrMeasuredHeight();
-			measuredWidth = measuredMinWidth = this.loopbackVideo.getExplicitOrMeasuredWidth();
+			measuredHeight = measuredMinHeight = 60;
+			measuredWidth = measuredMinWidth = 120;
 		}
 		
 		/**
@@ -211,7 +297,7 @@ package com.infrared5.asmf.controls.flex.video
 			super.updateDisplayList(unscaledWidth, unscaledHeight);
 			 
 			// padding
-			var padding:int = 10;
+			 var padding:int = 10;
 			
 			// position
 			var leftPos:int = 50;
@@ -221,9 +307,13 @@ package com.infrared5.asmf.controls.flex.video
 			var size = (padding + 50);
 			var formDist:int = 25;
 			
-			loopbackVideo.setActualSize(unscaledWidth, unscaledHeight);
-			
-			publish.move(loopbackVideo.getExplicitOrMeasuredWidth() + 10, loopbackVideo.getExplicitOrMeasuredHeight() - publish.getExplicitOrMeasuredWidth());
+			_outputDevice.width = this.unscaledWidth - 10;
+			_outputDevice.height = this.unscaledHeight - this._publish.getExplicitOrMeasuredHeight() - 20;
+			/* _outputDeviceWrapper.width = this.unscaledWidth - 10;
+			_outputDeviceWrapper.height = this.unscaledHeight - this._publish.getExplicitOrMeasuredHeight() - 20;
+			 */_publish.setActualSize(_publish.getExplicitOrMeasuredWidth(), _publish.getExplicitOrMeasuredHeight());
+			_publish.move(this.unscaledWidth - _publish.getExplicitOrMeasuredWidth() - 10, this.unscaledHeight - _publish.getExplicitOrMeasuredHeight() - 10);
+			 
 			
 		/* 
 			// usernameField size and position
@@ -263,6 +353,100 @@ package com.infrared5.asmf.controls.flex.video
 		//  Getter / Setter 
 		//
 		//--------------------------------------------------------------------------
+				
+		/**
+		 * get the Camera object
+		 * 
+		 * @return streamName String
+		 **/
+		public function get streamName() : String {
+			return this._streamName;
+		}
+		
+		/**
+		 * get the Camera object
+		 * 
+		 * @return streamName String
+		 **/
+		public function set streamName(val:String) : void {
+			this._streamName = val;
+		}
+		
+		/**
+		 * get the cameraWidth 
+		 * 
+		 * @return cameraWidth int
+		 **/
+		public function get cameraWidth() : int {
+			return this._cameraWidth;
+		}
+		
+		/**
+		 * set the cameraWidth 
+		 * 
+		 * @param val int
+		 * @return void
+		 **/
+		public function set cameraWidth(val:int) : void {
+			this._cameraWidth = val;
+		}
+		
+		/**
+		 * get the cameraHeight 
+		 * 
+		 * @return cameraHeight int
+		 **/
+		public function get cameraHeight() : int {
+			return this._cameraHeight;
+		}
+		
+		/**
+		 * set the cameraHeight 
+		 * 
+		 * @param val int
+		 * @return void
+		 **/
+		public function set cameraHeight(val:int) : void {
+			this._cameraHeight = val;
+		}
+		
+		/**
+		 * get the fps 
+		 * 
+		 * @return fps Number
+		 **/
+		public function get fps() : Number {
+			return this._fps;
+		}
+		
+		/**
+		 * set the fps 
+		 * 
+		 * @param val Number
+		 * @return void
+		 **/
+		public function set fps(val:Number) : void {
+			this._fps = val;
+		}
+		
+		/**
+		 * get the favorArea 
+		 * 
+		 * @return favorArea String
+		 **/
+		public function get favorArea() : Boolean {
+			return this._favorArea;
+		}
+		
+		/**
+		 * set the favorArea 
+		 * 
+		 * @param val Boolean
+		 * @return void
+		 **/
+		public function set favorArea(val:Boolean) : void {
+			this._favorArea = val;
+		}
 
 		
 	}
