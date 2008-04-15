@@ -1,9 +1,9 @@
-package com.infrared5.asmf.business
+package jedai.business
 {
 	import com.adobe.cairngorm.CairngormError;
 	import com.adobe.cairngorm.business.ServiceLocator;
-	import com.infrared5.asmf.net.rpc.Red5Connection;
-	import com.infrared5.asmf.net.rpc.RemoteSharedObject;
+	import jedai.net.rpc.Red5Connection;
+	import jedai.net.rpc.RemoteSharedObject;
 
 	/**
 	 * Service locator for Red5Connections and RemoteSharedObjects

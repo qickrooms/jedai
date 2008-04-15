@@ -1,8 +1,8 @@
-package com.infrared5.io.extensions.utils
+package jedai.io.extensions.utils
 {
-	import com.infrared5.io.extensions.ObserverStreamExtension;
-	import com.infrared5.io.extensions.StreamExtension;
-	import com.infrared5.io.extensions.enum.ExtensionEnum;
+	import jedai.io.extensions.ObserverStreamExtension;
+	import jedai.io.extensions.StreamExtension;
+	import jedai.io.extensions.enum.ExtensionEnum;
 	
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;

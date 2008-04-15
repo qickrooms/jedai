@@ -1,4 +1,4 @@
-package com.infrared5.io
+package jedai.io
 {
 	/**
 	 * InputStream is a Inteface defining a entry point for Stream data.

@@ -1,4 +1,4 @@
-package com.infrared5.asmf.media.extensions.events
+package jedai.media.extensions.events
 {
 	import flash.events.Event;
 

@@ -1,9 +1,9 @@
-package com.infrared5.asmf.media.extensions
+package jedai.media.extensions
 {
-	import com.infrared5.io.extensions.AbstractStreamExtension;
-	import com.infrared5.io.extensions.ExtendableStreamControl;
-	import com.infrared5.io.extensions.StreamExtension;
-	import com.infrared5.io.extensions.enum.ResourceEnum;
+	import jedai.io.extensions.AbstractStreamExtension;
+	import jedai.io.extensions.ExtendableStreamControl;
+	import jedai.io.extensions.StreamExtension;
+	import jedai.io.extensions.enum.ResourceEnum;
 	
 	import flash.media.Microphone;
 

@@ -7,14 +7,14 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.infrared5.asmf.controls.flex.data
+package jedai.controls.flex.data
 {
-	import com.infrared5.asmf.Red5BootStrapper;
-	import com.infrared5.asmf.business.Red5ServiceLocator;
-	import com.infrared5.asmf.events.Red5Event;
-	import com.infrared5.asmf.net.ClientManager;
-	import com.infrared5.asmf.net.rpc.Red5Connection;
-	import com.infrared5.asmf.net.rpc.RemoteSharedObject;
+	import jedai.Red5BootStrapper;
+	import jedai.business.Red5ServiceLocator;
+	import jedai.events.Red5Event;
+	import jedai.net.ClientManager;
+	import jedai.net.rpc.Red5Connection;
+	import jedai.net.rpc.RemoteSharedObject;
 	
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
@@ -38,15 +38,15 @@ package com.infrared5.asmf.controls.flex.data
 	/**
 	 *  Dispatched when the user changes the chat.
 	 *
-	 *  @eventType com.infrared5.asmf.events.ChatChangedEvent.CHAT_CHANGED
+	 *  @eventType jedai.events.ChatChangedEvent.CHAT_CHANGED
 	 */
-	[Event(name="login", type="com.infrared5.asmf.events.ChatChangedEvent")]
+	[Event(name="login", type="jedai.events.ChatChangedEvent")]
 
 	//--------------------------------------
 	//  Other metadata
 	//--------------------------------------
 	
-	[IconFile("../../../../../../../resources/icons/build/chatpng.png")]
+	[IconFile("../../../../../resources/icons/build/chatpng.png")]
 	
 	/**
 	 *  A Chat component allows the user to chat with others in room.  

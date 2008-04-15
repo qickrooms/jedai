@@ -1,16 +1,16 @@
-package com.infrared5.io.devices
+package jedai.io.devices
 {
-	import com.infrared5.asmf.media.rtp.Red5NetStream;
-	import com.infrared5.io.InputDevice;
-	import com.infrared5.io.MuxerDevice;
-	import com.infrared5.io.OutputDevice;
-	import com.infrared5.io.errors.MuxerError;
+	import jedai.media.rtp.Red5NetStream;
+	import jedai.io.InputDevice;
+	import jedai.io.MuxerDevice;
+	import jedai.io.OutputDevice;
+	import jedai.io.errors.MuxerError;
 	
 	import flash.display.DisplayObjectContainer;
 	import flash.media.Camera;
 	import flash.media.Video;
 	
-	[Event(name="configurationComplete", type="com.infrared5.io.events.MuxerEvent")]
+	[Event(name="configurationComplete", type="jedai.io.events.MuxerEvent")]
 	
 	[Deprecated("You should use VideoInputDevice / VideoOutputDevice")]
 	/**

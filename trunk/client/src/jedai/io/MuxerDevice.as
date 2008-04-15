@@ -1,4 +1,4 @@
-package com.infrared5.io
+package jedai.io
 {
 	/**
 	 * Muxer Devices can use both Input and Output

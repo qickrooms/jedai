@@ -1,6 +1,6 @@
-package com.infrared5.asmf.media.devices.detection
+package jedai.media.devices.detection
 {
-	import com.infrared5.asmf.events.DetectionEvent;
+	import jedai.events.DetectionEvent;
 	
 	import flash.events.EventDispatcher;
 	import flash.events.StatusEvent;
@@ -9,12 +9,12 @@ package com.infrared5.asmf.media.devices.detection
 	import flash.media.Video;
 	
 	/** Device Events **/
-	[Event(name="promptAcceptedEvent", type="com.infrared5.asmf.events.DetectionEvent")]
-	[Event(name="promptDeniedEvent", type="com.infrared5.asmf.events.DetectionEvent")]
-	[Event(name="audioFoundEvent", type="com.infrared5.asmf.events.DetectionEvent")]
-	[Event(name="audioNotFoundEvent", type="com.infrared5.asmf.events.DetectionEvent")]
-	[Event(name="videoFoundEvent", type="com.infrared5.asmf.events.DetectionEvent")]
-	[Event(name="videoNotFoundEvent", type="com.infrared5.asmf.events.DetectionEvent")]
+	[Event(name="promptAcceptedEvent", type="jedai.events.DetectionEvent")]
+	[Event(name="promptDeniedEvent", type="jedai.events.DetectionEvent")]
+	[Event(name="audioFoundEvent", type="jedai.events.DetectionEvent")]
+	[Event(name="audioNotFoundEvent", type="jedai.events.DetectionEvent")]
+	[Event(name="videoFoundEvent", type="jedai.events.DetectionEvent")]
+	[Event(name="videoNotFoundEvent", type="jedai.events.DetectionEvent")]
 	
 	/**
 	 * Class that detects audio/video devices and dispatches status to 

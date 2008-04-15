@@ -1,15 +1,15 @@
-package com.infrared5.asmf.net.rpc
+package jedai.net.rpc
 {
-	import com.infrared5.asmf.business.Red5ServiceLocator;
-	import com.infrared5.asmf.events.Red5Event;
-	import com.infrared5.asmf.net.ClientManager;
-	import com.infrared5.asmf.net.IService;
+	import jedai.business.Red5ServiceLocator;
+	import jedai.events.Red5Event;
+	import jedai.net.ClientManager;
+	import jedai.net.IService;
 	
 	import flash.events.NetStatusEvent;
 	import flash.net.NetConnection;
 	
-	[Event(name="connected", type="com.infrared5.asmf.events.Red5Event")]
-	[Event(name="disconnected", type="com.infrared5.asmf.events.Red5Event")]
+	[Event(name="connected", type="jedai.events.Red5Event")]
+	[Event(name="disconnected", type="jedai.events.Red5Event")]
 	[Event(name="netStatus", type="flash.events.NetStatusEvent")]
 	
 	public class Red5Connection extends NetConnection implements IService
@@ -117,7 +117,7 @@ package com.infrared5.asmf.net.rpc
 		 * XXX Thijs: I'm testing with the Red5 oflaDemo and not sure yet how to catch undefined properties
 		 * and handle their ReferenceErrors like:
 		 * <code>ReferenceError: Error #1069: Property onBWDone not found on 
-		 * com.infrared5.asmf.net.rpc.Red5Connection and there is no default value.</code>
+		 * jedai.net.rpc.Red5Connection and there is no default value.</code>
 		 */		
 		public function onBWDone():void
 		{

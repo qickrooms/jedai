@@ -1,4 +1,4 @@
-package com.infrared5.io.extensions.events
+package jedai.io.extensions.events
 {
 	import flash.events.Event;
 

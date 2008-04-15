@@ -1,4 +1,4 @@
-package com.infrared5.asmf.controls.common
+package jedai.controls.common
 {
 	import flash.net.SharedObject;
 	import flash.events.SyncEvent;

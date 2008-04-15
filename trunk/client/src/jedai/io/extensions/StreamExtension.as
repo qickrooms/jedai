@@ -1,6 +1,6 @@
-package com.infrared5.io.extensions
+package jedai.io.extensions
 {
-	import com.infrared5.io.extensions.enum.ExtensionEnum;
+	import jedai.io.extensions.enum.ExtensionEnum;
 	
 	/**
 	 * Base Interface for all StreamExtensions

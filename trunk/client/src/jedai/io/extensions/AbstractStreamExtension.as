@@ -1,13 +1,13 @@
-package com.infrared5.io.extensions
+package jedai.io.extensions
 {
-	import com.infrared5.io.extensions.enum.ExtensionEnum;
+	import jedai.io.extensions.enum.ExtensionEnum;
 	
 	import flash.events.EventDispatcher;
 	import flash.utils.getQualifiedClassName;
 	
-	[Event(name="completed", "com.infrared5.io.extensions.events.ExtensionEvent")]
+	[Event(name="completed", "jedai.io.extensions.events.ExtensionEvent")]
 	
-	[Event(name="ready", "com.infrared5.io.extensions.events.ExtensionEvent")]
+	[Event(name="ready", "jedai.io.extensions.events.ExtensionEvent")]
 	
 	/**
 	 * @author Jon Valliere ( jvalliere@emoten.com )

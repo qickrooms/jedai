@@ -19,7 +19,7 @@ OF THE Modulous SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, T
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.infrared5.commons.utils
+package jedai.commons.utils
 {
 	public class Enum
 	{

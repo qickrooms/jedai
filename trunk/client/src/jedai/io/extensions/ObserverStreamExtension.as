@@ -1,4 +1,4 @@
-package com.infrared5.io.extensions
+package jedai.io.extensions
 {
 	/**
 	 * Base class for all Third-Party Observer Extensions

@@ -1,6 +1,6 @@
-package com.infrared5.asmf.business
+package jedai.business
 {
-	import com.infrared5.asmf.net.rpc.Red5Connection;
+	import jedai.net.rpc.Red5Connection;
 	
 	internal class Red5Connections extends Red5AbstractServices
 	{

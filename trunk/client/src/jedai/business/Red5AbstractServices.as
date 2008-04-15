@@ -1,11 +1,11 @@
-package com.infrared5.asmf.business
+package jedai.business
 {
 	import com.adobe.cairngorm.CairngormError;
 	import com.adobe.cairngorm.CairngormMessageCodes;
 	import com.adobe.cairngorm.business.AbstractServices;
 	import com.adobe.cairngorm.business.IServiceLocator;
 	
-	import com.infrared5.asmf.net.IService;
+	import jedai.net.IService;
 	
 	import flash.utils.Dictionary;
 

@@ -1,4 +1,4 @@
-package com.infrared5.commons.utils
+package jedai.commons.utils
 {
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;

@@ -1,13 +1,13 @@
-package com.infrared5.asmf.media.extensions
+package jedai.media.extensions
 {
-	import com.infrared5.asmf.media.extensions.events.DeviceConnectionNotifierEvent;
-	import com.infrared5.asmf.media.extensions.events.ShutterBugEvent;
-	import com.infrared5.commons.utils.CameraBitmap;
-	import com.infrared5.io.extensions.AbstractObserverExtension;
-	import com.infrared5.io.extensions.ExtendableStreamControl;
-	import com.infrared5.io.extensions.ObserverStreamExtension;
-	import com.infrared5.io.extensions.enum.ExtensionEnum;
-	import com.infrared5.io.extensions.enum.ResourceEnum;
+	import jedai.media.extensions.events.DeviceConnectionNotifierEvent;
+	import jedai.media.extensions.events.ShutterBugEvent;
+	import jedai.commons.utils.CameraBitmap;
+	import jedai.io.extensions.AbstractObserverExtension;
+	import jedai.io.extensions.ExtendableStreamControl;
+	import jedai.io.extensions.ObserverStreamExtension;
+	import jedai.io.extensions.enum.ExtensionEnum;
+	import jedai.io.extensions.enum.ResourceEnum;
 	
 	import flash.display.BitmapData;
 	import flash.media.Camera;
@@ -15,7 +15,7 @@ package com.infrared5.asmf.media.extensions
 	import flash.utils.clearInterval;
 	import flash.utils.setInterval;
 	
-	[Event(name="tookPhoto", type="com.infrared5.asmf.media.extensions.events.ShutterBugEvent")]
+	[Event(name="tookPhoto", type="jedai.media.extensions.events.ShutterBugEvent")]
 	
 	/**
 	 * Takes Snapshots of the Video Stream.
@@ -146,7 +146,7 @@ package com.infrared5.asmf.media.extensions
 			if( this.status == ExtensionEnum.EXT_VIRGIN )
 			{
 				// Check to see if a DeviceConnectionNotifier Extension is registered with the master control.
-				var d:* = this._control.getExtensions()["com.infrared5.asmf.media.extensions::DeviceConnectionNotifier"];
+				var d:* = this._control.getExtensions()["jedai.media.extensions::DeviceConnectionNotifier"];
 				
 				if( d == undefined )
 				{

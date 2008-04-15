@@ -8,11 +8,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-package com.infrared5.asmf
+package jedai
 {
-	import com.infrared5.asmf.events.Red5Event;
-	import com.infrared5.asmf.net.ClientManager;
-	import com.infrared5.asmf.net.rpc.Red5Connection;
+	import jedai.events.Red5Event;
+	import jedai.net.ClientManager;
+	import jedai.net.rpc.Red5Connection;
 	
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
@@ -26,7 +26,7 @@ package com.infrared5.asmf
 	import org.pranaframework.ioc.loader.ObjectDefinitionsLoaderEvent;
 	import org.pranaframework.ioc.loader.XmlObjectDefinitionsLoader;
 	
-	[Event(name="bootComplete", type="com.infrared5.asmf.events.Red5Event")]
+	[Event(name="bootComplete", type="jedai.events.Red5Event")]
 	
 	/**
 	 * Red5BootStrapper takes care of steps 1-3 in "Workflow(wrapped)" in Basecamp:

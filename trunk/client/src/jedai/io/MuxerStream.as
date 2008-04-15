@@ -1,4 +1,4 @@
-package com.infrared5.io
+package jedai.io
 {
 	public interface MuxerStream extends InputStream, OutputStream
 	{

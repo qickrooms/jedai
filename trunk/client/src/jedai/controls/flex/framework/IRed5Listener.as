@@ -7,9 +7,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.infrared5.asmf.controls.flex.framework
+package jedai.controls.flex.framework
 {
-	import com.infrared5.asmf.net.rpc.Red5Connection;
+	import jedai.net.rpc.Red5Connection;
 	
 	import flash.events.NetStatusEvent;
 	
@@ -21,7 +21,7 @@ package com.infrared5.asmf.controls.flex.framework
 	 */
 	public interface IRed5Listener
 	{
-		include "../../../../../../core/Version.as";
+		include "../../../../config/jedai/Version.as";
 		function onConnected(event:NetStatusEvent) : void;
 		function get connection() : Red5Connection;
 	}

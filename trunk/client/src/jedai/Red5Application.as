@@ -1,6 +1,6 @@
-package com.infrared5.asmf.net.rpc
+package jedai
 {
-	import com.infrared5.asmf.Red5BootStrapper;
+	import jedai.Red5BootStrapper;
 	
 	import mx.core.Application;
 	import mx.events.FlexEvent;

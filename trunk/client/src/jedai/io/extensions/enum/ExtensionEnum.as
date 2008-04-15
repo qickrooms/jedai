@@ -1,6 +1,6 @@
-package com.infrared5.io.extensions.enum
+package jedai.io.extensions.enum
 {
-	import com.infrared5.commons.utils.Enum;
+	import jedai.commons.utils.Enum;
 
 	public class ExtensionEnum extends Enum
 	{

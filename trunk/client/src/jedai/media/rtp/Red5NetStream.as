@@ -1,35 +1,35 @@
-package com.infrared5.asmf.media.rtp
+package jedai.media.rtp
 {
-	import com.infrared5.asmf.errors.UnknownDeviceError;
-	import com.infrared5.asmf.media.rtp.events.Red5NetStreamEvent;
-	import com.infrared5.asmf.net.rpc.Red5Connection;
-	import com.infrared5.io.DeviceAutoConfig;
-	import com.infrared5.io.InputDevice;
-	import com.infrared5.io.OneWayMuxer;
-	import com.infrared5.io.OutputDevice;
-	import com.infrared5.io.devices.AudioInputDevice;
-	import com.infrared5.io.devices.AudioOutputDevice;
-	import com.infrared5.io.devices.VideoInputDevice;
-	import com.infrared5.io.devices.VideoOutputDevice;
-	import com.infrared5.io.errors.OneWayMuxerError;
-	import com.infrared5.io.extensions.ExtendableStreamControl;
-	import com.infrared5.io.extensions.SimpleExtensionManager;
-	import com.infrared5.io.extensions.StreamExtension;
-	import com.infrared5.io.extensions.enum.ResourceEnum;
-	import com.infrared5.io.extensions.utils.ExtensionStatusPool;
+	import jedai.errors.UnknownDeviceError;
+	import jedai.media.rtp.events.Red5NetStreamEvent;
+	import jedai.net.rpc.Red5Connection;
+	import jedai.io.DeviceAutoConfig;
+	import jedai.io.InputDevice;
+	import jedai.io.OneWayMuxer;
+	import jedai.io.OutputDevice;
+	import jedai.io.devices.AudioInputDevice;
+	import jedai.io.devices.AudioOutputDevice;
+	import jedai.io.devices.VideoInputDevice;
+	import jedai.io.devices.VideoOutputDevice;
+	import jedai.io.errors.OneWayMuxerError;
+	import jedai.io.extensions.ExtendableStreamControl;
+	import jedai.io.extensions.SimpleExtensionManager;
+	import jedai.io.extensions.StreamExtension;
+	import jedai.io.extensions.enum.ResourceEnum;
+	import jedai.io.extensions.utils.ExtensionStatusPool;
 	
 	import flash.events.NetStatusEvent;
 	import flash.media.Camera;
 	import flash.media.Microphone;
 	import flash.net.NetStream;
 	
-	[Event(name="cameraAttached", type="com.infrared5.asmf.media.rtp.events.Red5NetStreamEvent")]
+	[Event(name="cameraAttached", type="jedai.media.rtp.events.Red5NetStreamEvent")]
 	
-	[Event(name="microphoneAttached", type="com.infrared5.asmf.media.rtp.events.Red5NetStreamEvent")]
+	[Event(name="microphoneAttached", type="jedai.media.rtp.events.Red5NetStreamEvent")]
 	
-	[Event(name="publishStarted", type="com.infrared5.asmf.media.rtp.events.Red5NetStreamEvent")]
+	[Event(name="publishStarted", type="jedai.media.rtp.events.Red5NetStreamEvent")]
 	
-	[Event(name="publishEnded", type="com.infrared5.asmf.media.rtp.events.Red5NetStreamEvent")]
+	[Event(name="publishEnded", type="jedai.media.rtp.events.Red5NetStreamEvent")]
 	
 	/**
 	 * RedStream is a class that encapsulates everything required for basic video/audio connections.

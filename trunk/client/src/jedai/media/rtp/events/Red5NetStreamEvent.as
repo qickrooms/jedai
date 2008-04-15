@@ -1,4 +1,4 @@
-package com.infrared5.asmf.media.rtp.events
+package jedai.media.rtp.events
 {
 	import flash.events.Event;
 

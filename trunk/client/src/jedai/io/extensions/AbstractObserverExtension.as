@@ -1,4 +1,4 @@
-package com.infrared5.io.extensions
+package jedai.io.extensions
 {
 	
 	import com.adobe.cairngorm.CairngormError;

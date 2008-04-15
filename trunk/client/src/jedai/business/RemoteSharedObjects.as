@@ -1,7 +1,7 @@
-package com.infrared5.asmf.business
+package jedai.business
 {
 	import com.adobe.cairngorm.business.IServices;
-	import com.infrared5.asmf.net.rpc.RemoteSharedObject;
+	import jedai.net.rpc.RemoteSharedObject;
 
 	internal class RemoteSharedObjects extends Red5AbstractServices implements IServices
 	{
