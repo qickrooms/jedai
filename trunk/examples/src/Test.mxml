@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" xmlns:ns1="com.infrared5.asmf.controls.flex.data.*" xmlns:ns2="com.infrared5.asmf.controls.flex.net.*" xmlns:ns3="com.infrared5.asmf.controls.flex.video.*">
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" xmlns:ns1="jedai.controls.flex.data.*" xmlns:ns2="jedai.controls.flex.net.*" xmlns:ns3="jedai.controls.flex.video.*">
 	<mx:Panel layout="absolute" title="Users" right="10" width="250" top="10" bottom="10">
 		<ns1:UserList right="0" left="0" top="0" bottom="0"/>
 	</mx:Panel>
