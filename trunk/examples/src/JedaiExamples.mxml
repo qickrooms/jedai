@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<net:Red5Application xmlns:net="jedai.*" 
-	xmlns:mx="http://www.adobe.com/2006/mxml"
-	layout="absolute" xmlns:ns1="jedai.controls.flex.data.*" xmlns:ns2="jedai.controls.flex.framework.*" xmlns:ns3="jedai.controls.flex.net.*" xmlns:ns4="jedai.controls.flex.video.*" xmlns:ns5="*">
-	<ns1:Login x="325" y="10" width="472" height="91">
-	</ns1:Login>
-	<ns3:ConnectionLight x="80" y="164"/>
-	<ns1:UserList x="437" y="98"/>
-	<ns4:VideoPublisher x="64" y="293"/>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+	layout="absolute"
+	xmlns:data="jedai.controls.flex.data.*" 
+	xmlns:net1="jedai.controls.flex.net.*" 
+	xmlns:video="jedai.controls.flex.video.*">
+	<data:Login x="325" y="10" width="472" height="91"/>
+	<net1:ConnectionLight x="80" y="164"/>
+	<data:UserList x="437" y="98"/>
+	<video:VideoPublisher x="64" y="293"/>
+	<video:VideoTile x="217" y="250"/>
 
-	<ns4:VideoTile x="217" y="250"/>
-
-
-</net:Red5Application>
+</mx:Application>
