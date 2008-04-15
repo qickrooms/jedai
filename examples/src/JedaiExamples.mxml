@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<net:Red5Application xmlns:net="com.infrared5.asmf.net.rpc.*" 
+<net:Red5Application xmlns:net="jedai.*" 
 	xmlns:mx="http://www.adobe.com/2006/mxml"
-	layout="absolute" xmlns:ns1="com.infrared5.asmf.controls.flex.data.*" xmlns:ns2="com.infrared5.asmf.controls.flex.framework.*" xmlns:ns3="com.infrared5.asmf.controls.flex.net.*" xmlns:ns4="com.infrared5.asmf.controls.flex.video.*" xmlns:ns5="*">
+	layout="absolute" xmlns:ns1="jedai.controls.flex.data.*" xmlns:ns2="jedai.controls.flex.framework.*" xmlns:ns3="jedai.controls.flex.net.*" xmlns:ns4="jedai.controls.flex.video.*" xmlns:ns5="*">
 	<ns1:Login x="325" y="10" width="472" height="91">
 	</ns1:Login>
 	<ns3:ConnectionLight x="80" y="164"/>
