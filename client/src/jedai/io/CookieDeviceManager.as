@@ -1,14 +1,14 @@
-package com.infrared5.io
+package jedai.io
 {
-	import com.infrared5.io.events.CookieDeviceEvent;
+	import jedai.io.events.CookieDeviceEvent;
 	
 	import flash.events.EventDispatcher;
 	import flash.media.Camera;
 	import flash.media.Microphone;
 	import flash.net.SharedObject;
 	
-	[Event(name="defaultAudioInputChanged", type="com.infrared5.io.events.CookieDeviceEvent")]
-	[Event(name="defaultVideoInputChanged", type="com.infrared5.io.events.CookieDeviceEvent")] 
+	[Event(name="defaultAudioInputChanged", type="jedai.io.events.CookieDeviceEvent")]
+	[Event(name="defaultVideoInputChanged", type="jedai.io.events.CookieDeviceEvent")] 
 	
 	public class CookieDeviceManager extends EventDispatcher
 	{

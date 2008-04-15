@@ -7,11 +7,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.infrared5.asmf.controls.flex.net
+package jedai.controls.flex.net
 {
-	import com.infrared5.asmf.Red5BootStrapper;
-	import com.infrared5.asmf.events.Red5Event;
-	import com.infrared5.asmf.net.rpc.Red5Connection;
+	import jedai.Red5BootStrapper;
+	import jedai.events.Red5Event;
+	import jedai.net.rpc.Red5Connection;
 	
 	import flash.display.DisplayObject;
 	import flash.events.Event;
@@ -28,15 +28,15 @@ package com.infrared5.asmf.controls.flex.net
 	/**
 	 *  Dispatched when the user changes the chat.
 	 *
-	 *  @eventType com.infrared5.asmf.events.ChatChangedEvent.CHAT_CHANGED
+	 *  @eventType jedai.events.ChatChangedEvent.CHAT_CHANGED
 	 */
-	[Event(name="login", type="com.infrared5.asmf.events.ChatChangedEvent")]
+	[Event(name="login", type="jedai.events.ChatChangedEvent")]
 
 	//--------------------------------------
 	//  Other metadata
 	//--------------------------------------
 	
-	[IconFile("../../../../../../../resources/icons/build/ConnectionLight.png")]
+	[IconFile("../../../../../resources/icons/build/ConnectionLight.png")]
 	
 	/**
 	 *  A ConnectionLight component allows the user to chat with others in room.  
@@ -68,9 +68,9 @@ package com.infrared5.asmf.controls.flex.net
 		//  Variables
 		//
 		//--------------------------------------------------------------------------
-		[Embed(source="../../../../../../../resources/connected.swf")]
+		[Embed(source="../../../../../resources/connected.swf")]
 		private var IconConnected:Class;
-		[Embed(source="../../../../../../../resources/disconnected.swf")]
+		[Embed(source="../../../../../resources/disconnected.swf")]
 		private var IconDisconnected:Class;
 		
 		private var currentIcon:DisplayObject;

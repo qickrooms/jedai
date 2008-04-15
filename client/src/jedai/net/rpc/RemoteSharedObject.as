@@ -1,8 +1,8 @@
-package com.infrared5.asmf.net.rpc
+package jedai.net.rpc
 {
-	import com.infrared5.asmf.business.Red5ServiceLocator;
-	import com.infrared5.asmf.events.Red5Event;
-	import com.infrared5.asmf.net.IService;
+	import jedai.business.Red5ServiceLocator;
+	import jedai.events.Red5Event;
+	import jedai.net.IService;
 	
 	import flash.events.AsyncErrorEvent;
 	import flash.events.EventDispatcher;

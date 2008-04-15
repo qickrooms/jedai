@@ -7,17 +7,17 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.infrared5.asmf.controls.flex.video
+package jedai.controls.flex.video
 {
-	import com.infrared5.asmf.Red5BootStrapper;
-	import com.infrared5.asmf.business.Red5ServiceLocator;
-	import com.infrared5.asmf.events.Red5Event;
-	import com.infrared5.asmf.media.rtp.Red5NetStreamConnector;
-	import com.infrared5.asmf.net.rpc.Red5Connection;
-	import com.infrared5.asmf.net.rpc.RemoteSharedObject;
-	import com.infrared5.io.devices.AudioInputDevice;
-	import com.infrared5.io.devices.VideoInputDevice;
-	import com.infrared5.io.devices.VideoOutputDevice;
+	import jedai.Red5BootStrapper;
+	import jedai.business.Red5ServiceLocator;
+	import jedai.events.Red5Event;
+	import jedai.media.rtp.Red5NetStreamConnector;
+	import jedai.net.rpc.Red5Connection;
+	import jedai.net.rpc.RemoteSharedObject;
+	import jedai.io.devices.AudioInputDevice;
+	import jedai.io.devices.VideoInputDevice;
+	import jedai.io.devices.VideoOutputDevice;
 	
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
@@ -38,15 +38,15 @@ package com.infrared5.asmf.controls.flex.video
 	/**
 	 *  Dispatched when the user presses the login control.
 	 *
-	 *  @eventType com.infrared5.asmf.events.LoginEvent.LOGIN
+	 *  @eventType jedai.events.LoginEvent.LOGIN
 	 */
-	[Event(name="login", type="com.infrared5.asmf.events.LoginEvent")]
+	[Event(name="login", type="jedai.events.LoginEvent")]
 
 	//--------------------------------------
 	//  Other metadata
 	//--------------------------------------
 	
-	[IconFile("../../../../../../../resources/icons/build/VideoRecord.png")]
+	[IconFile("../../../../../resources/icons/build/VideoRecord.png")]
 	
 	/**
 	 *  A VideoPublisher component allows the user to input a username
@@ -74,7 +74,7 @@ package com.infrared5.asmf.controls.flex.video
 	 */
 	public class VideoPublisher extends UIComponent
 	{
-		include "../../../../../../core/Version.as";
+		include "../../../../config/jedai/Version.as";
 		
 		//--------------------------------------------------------------------------
 		//

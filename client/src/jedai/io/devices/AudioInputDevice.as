@@ -1,10 +1,10 @@
-package com.infrared5.io.devices
+package jedai.io.devices
 {
-	import com.infrared5.asmf.media.rtp.Red5NetStream;
-	import com.infrared5.io.CookieDeviceManager;
-	import com.infrared5.io.DeviceAutoConfig;
-	import com.infrared5.io.InputDevice;
-	import com.infrared5.io.OutputDevice;
+	import jedai.media.rtp.Red5NetStream;
+	import jedai.io.CookieDeviceManager;
+	import jedai.io.DeviceAutoConfig;
+	import jedai.io.InputDevice;
+	import jedai.io.OutputDevice;
 	
 	import flash.media.Microphone;
 

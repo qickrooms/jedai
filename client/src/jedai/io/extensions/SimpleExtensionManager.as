@@ -1,9 +1,9 @@
-package com.infrared5.io.extensions
+package jedai.io.extensions
 {
-	import com.infrared5.io.errors.DuplicateItemError;
-	import com.infrared5.io.extensions.enum.ExtensionEnum;
-	import com.infrared5.io.extensions.enum.ResourceEnum;
-	import com.infrared5.io.extensions.utils.ExtensionStatusPool;
+	import jedai.io.errors.DuplicateItemError;
+	import jedai.io.extensions.enum.ExtensionEnum;
+	import jedai.io.extensions.enum.ResourceEnum;
+	import jedai.io.extensions.utils.ExtensionStatusPool;
 	
 	import flash.utils.Dictionary;
 	

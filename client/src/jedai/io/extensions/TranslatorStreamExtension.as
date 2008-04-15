@@ -1,7 +1,7 @@
-package com.infrared5.io.extensions
+package jedai.io.extensions
 {
-	import com.infrared5.io.InputStream;
-	import com.infrared5.io.OutputStream;
+	import jedai.io.InputStream;
+	import jedai.io.OutputStream;
 	
 	/**
 	 * 

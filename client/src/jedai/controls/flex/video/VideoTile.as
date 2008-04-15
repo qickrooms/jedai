@@ -7,14 +7,14 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.infrared5.asmf.controls.flex.video
+package jedai.controls.flex.video
 {
-	import com.infrared5.asmf.Red5BootStrapper;
-	import com.infrared5.asmf.business.Red5ServiceLocator;
-	import com.infrared5.asmf.events.Red5Event;
-	import com.infrared5.asmf.net.ClientManager;
-	import com.infrared5.asmf.net.ConnectionServices;
-	import com.infrared5.asmf.net.rpc.Red5Connection;
+	import jedai.Red5BootStrapper;
+	import jedai.business.Red5ServiceLocator;
+	import jedai.events.Red5Event;
+	import jedai.net.ClientManager;
+	import jedai.net.ConnectionServices;
+	import jedai.net.rpc.Red5Connection;
 	
 	import flash.events.MouseEvent;
 	import flash.events.SyncEvent;
@@ -42,15 +42,15 @@ package com.infrared5.asmf.controls.flex.video
 	/**
 	 *  Dispatched when the user presses the login control.
 	 *
-	 *  @eventType com.infrared5.asmf.events.LoginEvent.LOGIN
+	 *  @eventType jedai.events.LoginEvent.LOGIN
 	 */
-	[Event(name="login", type="com.infrared5.asmf.events.LoginEvent")]
+	[Event(name="login", type="jedai.events.LoginEvent")]
 
 	//--------------------------------------
 	//  Other metadata
 	//--------------------------------------
 	
-	[IconFile("../../../../../../../resources/icons/build/VideoTile.png")]
+	[IconFile("../../../../../resources/icons/build/VideoTile.png")]
 	
 	/**
 	 *  A Login component allows the user to input a username
@@ -79,7 +79,7 @@ package com.infrared5.asmf.controls.flex.video
 	 [Bindable]
 	public class VideoTile extends TileList
 	{
-		include "../../../../../../core/Version.as";
+		include "../../../../config/jedai/Version.as";
 		
 		//--------------------------------------------------------------------------
 		//

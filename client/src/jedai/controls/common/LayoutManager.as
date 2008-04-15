@@ -1,4 +1,4 @@
-package com.infrared5.asmf.controls.common
+package jedai.controls.common
 {
 	import flash.net.NetConnection;
 	import flash.net.SharedObject;
@@ -6,7 +6,7 @@ package com.infrared5.asmf.controls.common
 	
 	import mx.binding.utils.BindingUtils;
 	
-	import com.infrared5.asmf.net.ConnectionServices;
+	import jedai.net.ConnectionServices;
 	
 	[Bindable]
 	public class LayoutManager

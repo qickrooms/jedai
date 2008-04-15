@@ -1,7 +1,7 @@
-package com.infrared5.asmf.media
+package jedai.media
 {
 	import com.adobe.cairngorm.vo.IValueObject;
-	import com.infrared5.asmf.business.Red5MediaProfileLocator;
+	import jedai.business.Red5MediaProfileLocator;
 
 	public class Red5MediaProfileVO implements IValueObject
 	{

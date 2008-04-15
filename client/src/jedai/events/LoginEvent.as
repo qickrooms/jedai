@@ -1,4 +1,4 @@
-package com.infrared5.asmf.events
+package jedai.events
 {
 	import flash.events.Event;
 

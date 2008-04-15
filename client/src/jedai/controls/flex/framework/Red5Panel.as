@@ -7,11 +7,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.infrared5.asmf.controls.flex.framework
+package jedai.controls.flex.framework
 {
-	import com.infrared5.asmf.business.Red5ServiceLocator;
-	import com.infrared5.asmf.net.rpc.Red5Application;
-	import com.infrared5.asmf.net.rpc.Red5Connection;
+	import jedai.business.Red5ServiceLocator;
+	import jedai.Red5Application;
+	import jedai.net.rpc.Red5Connection;
 	
 	import flash.events.Event;
 	import flash.events.NetStatusEvent;

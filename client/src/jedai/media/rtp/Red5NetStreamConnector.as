@@ -1,11 +1,11 @@
-package com.infrared5.asmf.media.rtp
+package jedai.media.rtp
 {
-	import com.infrared5.asmf.business.Red5ServiceLocator;
-	import com.infrared5.asmf.events.Red5Event;
-	import com.infrared5.asmf.net.rpc.Red5Connection;
-	import com.infrared5.io.InputDevice;
-	import com.infrared5.io.OneWayMuxer;
-	import com.infrared5.io.OutputDevice;
+	import jedai.business.Red5ServiceLocator;
+	import jedai.events.Red5Event;
+	import jedai.net.rpc.Red5Connection;
+	import jedai.io.InputDevice;
+	import jedai.io.OneWayMuxer;
+	import jedai.io.OutputDevice;
 	
 	/**
 	 * Red5NetStreamConnector is a Wrapper for <code>Red5NetStream</code>.
@@ -21,7 +21,7 @@ package com.infrared5.asmf.media.rtp
 	 * @author Dominick Accattato (dominick@infrared5.com)
 	 * @author Thijs Triemstra (info@collab.nl)
 	 * 
-	 * @see com.infrared5.asmf.media.rtp.Red5NetStream Red5NetStream
+	 * @see jedai.media.rtp.Red5NetStream Red5NetStream
 	 */
 	public class Red5NetStreamConnector implements OneWayMuxer
 	{

@@ -1,4 +1,4 @@
-package com.infrared5.asmf.net
+package jedai.net
 {
 	[Bindable]
 	public class ClientManager

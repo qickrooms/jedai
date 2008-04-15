@@ -1,4 +1,4 @@
-package com.infrared5.io
+package jedai.io
 {
 	/**
 	 * OutputStream is a interface for defining a target for output.

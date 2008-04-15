@@ -1,6 +1,6 @@
-package com.infrared5.asmf.net
+package jedai.net
 {
-	import com.infrared5.asmf.controls.common.LayoutManager;
+	import jedai.controls.common.LayoutManager;
 	
 	import flash.events.AsyncErrorEvent;
 	import flash.events.IOErrorEvent;
@@ -41,9 +41,9 @@ package com.infrared5.asmf.net
 	/**
 	 *  Dispatched by the component when a connection has a ConnectedEvent error
 	 *
-	 *  @eventType com.infrared5.network.events.ConnectedEvent
+	 *  @eventType jedai.network.events.ConnectedEvent
 	 */
-	[Event(name="ConnectedEvent", type="com.infrared5.network.events.ConnectedEvent")]
+	[Event(name="ConnectedEvent", type="jedai.network.events.ConnectedEvent")]
 	
 	/** Excluded API's **/
 	[Exclude(name="activate", kind="event")]

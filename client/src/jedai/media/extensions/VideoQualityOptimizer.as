@@ -1,12 +1,12 @@
-package com.infrared5.asmf.media.extensions
+package jedai.media.extensions
 {
-	import com.infrared5.asmf.media.Red5MediaProfileVO;
-	import com.infrared5.asmf.media.rtp.Red5NetStream;
-	import com.infrared5.asmf.media.rtp.events.Red5NetStreamEvent;
-	import com.infrared5.io.extensions.AbstractStreamExtension;
-	import com.infrared5.io.extensions.ExtendableStreamControl;
-	import com.infrared5.io.extensions.StreamExtension;
-	import com.infrared5.io.extensions.enum.ResourceEnum;
+	import jedai.media.Red5MediaProfileVO;
+	import jedai.media.rtp.Red5NetStream;
+	import jedai.media.rtp.events.Red5NetStreamEvent;
+	import jedai.io.extensions.AbstractStreamExtension;
+	import jedai.io.extensions.ExtendableStreamControl;
+	import jedai.io.extensions.StreamExtension;
+	import jedai.io.extensions.enum.ResourceEnum;
 	
 	import flash.media.Camera;
 	import flash.utils.clearInterval;

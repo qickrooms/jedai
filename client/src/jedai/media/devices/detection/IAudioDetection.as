@@ -1,4 +1,4 @@
-package com.infrared5.asmf.media.devices.detection
+package jedai.media.devices.detection
 {
 	/**
 	 * interface that defines device detection methods specific to audio

@@ -1,7 +1,7 @@
-package com.infrared5.io.extensions
+package jedai.io.extensions
 {
-	import com.infrared5.io.extensions.enum.ResourceEnum;
-	import com.infrared5.io.extensions.utils.ExtensionStatusPool;
+	import jedai.io.extensions.enum.ResourceEnum;
+	import jedai.io.extensions.utils.ExtensionStatusPool;
 	
 	/**
 	 * Base class for all Classes that want to implement Extensions

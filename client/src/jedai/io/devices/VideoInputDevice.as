@@ -1,11 +1,11 @@
-package com.infrared5.io.devices
+package jedai.io.devices
 {
-	import com.infrared5.asmf.media.rtp.Red5NetStream;
-	import com.infrared5.io.CookieDeviceManager;
-	import com.infrared5.io.DeviceAutoConfig;
-	import com.infrared5.io.InputDevice;
-	import com.infrared5.io.OutputDevice;
-	import com.infrared5.io.devices.events.DeviceEvent;
+	import jedai.media.rtp.Red5NetStream;
+	import jedai.io.CookieDeviceManager;
+	import jedai.io.DeviceAutoConfig;
+	import jedai.io.InputDevice;
+	import jedai.io.OutputDevice;
+	import jedai.io.devices.events.DeviceEvent;
 	
 	import flash.events.StatusEvent;
 	import flash.media.Camera;
@@ -15,8 +15,8 @@ package com.infrared5.io.devices
 	
 	[Event(name="status", type="flash.events.StatusEvent")]
 	
-	[Event(name="connected", type="com.infrared5.io.devices.events.DeviceEvent")]
-	[Event(name="disconnected", type="com.infrared5.io.devices.events.DeviceEvent")]
+	[Event(name="connected", type="jedai.io.devices.events.DeviceEvent")]
+	[Event(name="disconnected", type="jedai.io.devices.events.DeviceEvent")]
 	
 	/**
 	 * Note About Events:: Events dispatched will have a 'target' of the Camera object, not VideoInputDevice.

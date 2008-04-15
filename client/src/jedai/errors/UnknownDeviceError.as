@@ -1,4 +1,4 @@
-package com.infrared5.asmf.errors
+package jedai.errors
 {
 	public class UnknownDeviceError extends Error
 	{

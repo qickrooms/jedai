@@ -1,4 +1,4 @@
-package com.infrared5.io.errors
+package jedai.io.errors
 {
 	public class DuplicateItemError extends Error
 	{

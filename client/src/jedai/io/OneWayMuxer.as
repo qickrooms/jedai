@@ -1,4 +1,4 @@
-package com.infrared5.io
+package jedai.io
 {
 	/**
 	 * OneWayDevice extend both OutputDevice and InputDevice but attempting to use both at the same time 

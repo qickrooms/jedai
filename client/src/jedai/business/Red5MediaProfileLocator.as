@@ -1,9 +1,9 @@
-package com.infrared5.asmf.business
+package jedai.business
 {
 	import com.adobe.cairngorm.CairngormError;
 	import com.adobe.cairngorm.CairngormMessageCodes;
-	import com.infrared5.io.errors.DuplicateItemError;
-	import com.infrared5.asmf.media.Red5MediaProfileVO;
+	import jedai.io.errors.DuplicateItemError;
+	import jedai.media.Red5MediaProfileVO;
 
 	public class Red5MediaProfileLocator
 	{

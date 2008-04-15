@@ -7,7 +7,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.infrared5.asmf.controls.flex.data
+package jedai.controls.flex.data
 {
 	import mx.controls.TextArea;
 	
@@ -20,9 +20,9 @@ package com.infrared5.asmf.controls.flex.data
 	/**
 	 *  Dispatched when the user changes the chat.
 	 *
-	 *  @eventType com.infrared5.asmf.events.ChatChangedEvent.CHAT_CHANGED
+	 *  @eventType jedai.events.ChatChangedEvent.CHAT_CHANGED
 	 */
-	[Event(name="layoutChanged", type="com.infrared5.asmf.events.LyoutChangedEvent")]
+	[Event(name="layoutChanged", type="jedai.events.LyoutChangedEvent")]
 
 	//--------------------------------------
 	//  Other metadata
