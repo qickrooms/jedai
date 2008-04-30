@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <objects>
-	<object id="client" class="com.infrared5.asmf.net.ClientManager">
+	<object id="client" class="jedai.net.ClientManager">
 		<property name="username" value="user"/>
 		<property name="password" value="pass"/>
 	</object>
@@ -17,14 +17,14 @@
 	</object>
 	
 	<!-- 
-	 <object id="streamer" class="com.infrared5.asmf.media.rtp.Red5NetStream">
+	 <object id="streamer" class="jedai.media.rtp.Red5NetStream">
        <constructor-arg>baseRTMPCon</constructor-arg>
        <property name="connection">
             <ref>connection"</ref>
         </property>
         <property name="extensions">
             <array>
-                <bean class="com.infrared5.amf.media.extensions.QualityOptimizer" />
+                <bean class="jedai.media.extensions.QualityOptimizer" />
             </array>
         </property>
      </object>
