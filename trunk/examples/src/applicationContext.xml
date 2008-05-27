@@ -8,7 +8,7 @@
 	<object id="connection" class="jedai.net.rpc.Red5Connection">
 		<constructor-arg value="default"/>
 		<constructor-arg value="true"/>
-		<property name="rtmpURI" value="rtmp://localhost/jedai"/>
+		<property name="rtmpURI" value="rtmp://fms1/live"/>
 		<property name="connectionArgs">
 	      <array>
 	        <ref>client</ref>
