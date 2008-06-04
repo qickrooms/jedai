@@ -108,18 +108,9 @@ package jedai
 			// Create a Red5Connection which registers the connection
 			
 			this._connection.connect(this._connection.rtmpURI, this._connection.connectionArgs[0], this._connection.connectionArgs[1]);
-			this._connection.addEventListener(Red5Event.CONNECTED, this.onConnection );
-			this._connection.addEventListener(Red5Event.DISCONNECTED, this.onDisconnect);
+			this._connection.addEventListener(Red5Event.CONNECTED, this.onConnectionHandler );
+			this._connection.addEventListener(Red5Event.DISCONNECTED, this.onDisconnectHandler );
 			this._connection.client = this;
-		}
-		
-		/**
-		 * 
-		 * @param val
-		 * 
-		 */		
-		public function setClientID(val:Number) : void {
-			trace("val: " + val);
 		}
 		
 		/**
@@ -127,7 +118,7 @@ package jedai
 		 * @param event
 		 * 
 		 */		
-		private function onConnection(event:Red5Event) : void {
+		private function onConnectionHandler(event:Red5Event) : void {
 			trace("event: " + event);
 			dispatchEvent(event.clone());
 		}
@@ -136,7 +127,7 @@ package jedai
 		 * @param event
 		 * 
 		 */		
-		private function onDisconnect(event:Red5Event) : void {
+		private function onDisconnectHandler(event:Red5Event) : void {
 			trace("event: " + event);
 			Alert.show("Error Connecting", "Error");
 			dispatchEvent(event.clone());

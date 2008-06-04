@@ -1,15 +1,15 @@
 package jedai.net.rpc
 {
-	import jedai.business.Red5ServiceLocator;
-	import jedai.events.Red5Event;
-	import jedai.net.IService;
-	
 	import flash.events.AsyncErrorEvent;
 	import flash.events.EventDispatcher;
 	import flash.events.NetStatusEvent;
 	import flash.events.SyncEvent;
 	import flash.net.SharedObject;
 	import flash.utils.Dictionary;
+	
+	import jedai.business.Red5ServiceLocator;
+	import jedai.events.Red5Event;
+	import jedai.net.IService;
 	
 	[Event(name="sync", type="flash.events.NetStatusEvent")]
 	[Event(name="netStatus", type="flash.events.SyncEvent")]
@@ -42,7 +42,7 @@ package jedai.net.rpc
 		private var _name			: String;
 		private var _persistence	: Boolean;
 		private var _secure			: Boolean;
-		private var _eventMap:Dictionary;
+		private var _eventMap		: Dictionary;
 		
 		public var _so:SharedObject;
 		

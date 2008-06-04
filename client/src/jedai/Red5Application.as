@@ -25,19 +25,23 @@ package jedai
 			this.addEventListener(FlexEvent.CREATION_COMPLETE, onCreationComplete);
 		}
 		
-		public function onCreationComplete(event:FlexEvent):void {
+		public function onCreationComplete(event:FlexEvent):void
+		{
 		  
 		}
 		
-		public function get bootStrapper():Red5BootStrapper {
+		public function get bootStrapper():Red5BootStrapper
+		{
 			return this._bootStrapper;
 		}
 		
-		public function get config():String {
+		public function get config():String
+		{
 			return this._config;
 		}
 		
-		public function set config(val:String):void {
+		public function set config(val:String):void
+		{
 			this._config = val;
 		}
 	}

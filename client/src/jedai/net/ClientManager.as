@@ -7,7 +7,7 @@ package jedai.net
 		private var _username:String = null;
 		private var _password:String = null;
 		
-		public function setClientID(val:Number) : void {
+		public function set clientID(val:Number) : void {
 			trace("Client ID: " + val);
 			this.id = val;
 		}
