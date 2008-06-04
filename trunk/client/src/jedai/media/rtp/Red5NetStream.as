@@ -113,11 +113,11 @@ package jedai.media.rtp
 				attaching the input of this device into the input of it with the EntryPoint Key.
 			*/
 			
-			if( stream is VideoInputDevice || stream is AudioInputDevice )
+			if ( stream is VideoInputDevice || stream is AudioInputDevice )
 			{
-				if( this._isMixing != 2 )
+				if ( this._isMixing != 2 )
 				{
-					if( args[0] != DeviceAutoConfig.CONFIG_DIRECTION_TOKEN )
+					if ( args[0] != DeviceAutoConfig.CONFIG_DIRECTION_TOKEN )
 					{
 						stream.attachOutputTo( this, DeviceAutoConfig.CONFIG_DIRECTION_TOKEN );
 					}
@@ -129,7 +129,7 @@ package jedai.media.rtp
 					throw new OneWayMuxerError("You are attempting to connect a Output device to a OneWayMuxer already configured for Output");
 				}
 			}
-			else if(stream == null )
+			else if (stream == null )
 			{
 				this.attachAudio(null);
 				this.attachCamera(null);
@@ -153,11 +153,11 @@ package jedai.media.rtp
 				attaching the output of this device into the input of it with the EntryPoint Key.
 			*/
 			
-			if( stream is VideoOutputDevice || stream is AudioOutputDevice )
+			if ( stream is VideoOutputDevice || stream is AudioOutputDevice )
 			{
-				if( this._isMixing != 1 )
+				if ( this._isMixing != 1 )
 				{
-					if( args[0] != DeviceAutoConfig.CONFIG_DIRECTION_TOKEN )
+					if ( args[0] != DeviceAutoConfig.CONFIG_DIRECTION_TOKEN )
 					{
 						stream.attachInputFrom( this, DeviceAutoConfig.CONFIG_DIRECTION_TOKEN );
 					}
@@ -192,9 +192,9 @@ package jedai.media.rtp
 		
 		protected function setIsPublishing( value:Boolean ):void
 		{
-			if( this._isPublishing != value  )
+			if ( this._isPublishing != value  )
 			{
-				if( !value )
+				if ( !value )
 				{
 					this._isPublishing = false;
 					
@@ -406,7 +406,7 @@ package jedai.media.rtp
 		{
 			super.attachAudio( microphone );
 			
-			if( microphone != null )
+			if ( microphone != null )
 			{
 				this.dispatchEvent( new Red5NetStreamEvent( Red5NetStreamEvent.MICROPHONE_ATTACHED ) );
 				
@@ -418,7 +418,7 @@ package jedai.media.rtp
 		{
 			super.attachCamera(theCamera, snapshotMilliseconds);
 			
-			if( theCamera != null )
+			if ( theCamera != null )
 			{
 				this.dispatchEvent( new Red5NetStreamEvent( Red5NetStreamEvent.CAMERA_ATTACHED ) );
 				
