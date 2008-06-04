@@ -9,19 +9,19 @@
 
 package jedai.controls.flex.data
 {
-	import jedai.Red5BootStrapper;
-	import jedai.business.Red5ServiceLocator;
-	import jedai.events.Red5Event;
-	import jedai.net.ClientManager;
-	import jedai.net.rpc.Red5Connection;
-	import jedai.net.rpc.RemoteSharedObject;
-	
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
 	import flash.events.SyncEvent;
 	import flash.net.SharedObject;
 	import flash.ui.Keyboard;
+	
+	import jedai.Red5BootStrapper;
+	import jedai.business.Red5ServiceLocator;
+	import jedai.events.Red5Event;
+	import jedai.net.ClientManager;
+	import jedai.net.rpc.Red5Connection;
+	import jedai.net.rpc.RemoteSharedObject;
 	
 	import mx.controls.Button;
 	import mx.controls.TextArea;
@@ -77,7 +77,7 @@ package jedai.controls.flex.data
 		private var chat:TextArea = null;
 		private var input:TextInput = null;
 		private var submit:Button = null;
-		var rso:RemoteSharedObject = null;
+		private var rso:RemoteSharedObject = null;
 		
 		public function Chat()
 		{
@@ -266,7 +266,7 @@ package jedai.controls.flex.data
 			var rightPos:int = 10;
 			var topPos:int = 10;
 			var bottomPos:int = 10;
-			var size = (padding + 50);
+			var size:int = (padding + 50);
 			var formDist:int = 25;
 		
 			// chat size and position

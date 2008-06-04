@@ -9,16 +9,16 @@
 
 package jedai.controls.flex.video
 {
-	import jedai.Red5BootStrapper;
-	import jedai.business.Red5ServiceLocator;
-	import jedai.events.Red5Event;
-	import jedai.media.rtp.Red5NetStreamConnector;
-	import jedai.net.rpc.Red5Connection;
-	import jedai.io.devices.VideoOutputDevice;
-	
 	import flash.events.Event;
 	import flash.events.SyncEvent;
 	import flash.net.SharedObject;
+	
+	import jedai.Red5BootStrapper;
+	import jedai.business.Red5ServiceLocator;
+	import jedai.events.Red5Event;
+	import jedai.io.devices.VideoOutputDevice;
+	import jedai.media.rtp.Red5NetStreamConnector;
+	import jedai.net.rpc.Red5Connection;
 	
 	import mx.controls.listClasses.BaseListData;
 	import mx.controls.listClasses.IListItemRenderer;
@@ -375,7 +375,7 @@ package jedai.controls.flex.video
 			var rightPos:int = 10;
 			var topPos:int = 10;
 			var bottomPos:int = 10;
-			var size = (padding + 50);
+			var size:int = (padding + 50);
 			var formDist:int = 25;
 			
 			_outputDevice.width = this.unscaledWidth - 10;

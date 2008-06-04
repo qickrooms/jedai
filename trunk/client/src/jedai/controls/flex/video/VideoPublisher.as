@@ -9,21 +9,20 @@
 
 package jedai.controls.flex.video
 {
-	import jedai.Red5BootStrapper;
-	import jedai.business.Red5ServiceLocator;
-	import jedai.events.Red5Event;
-	import jedai.media.rtp.Red5NetStreamConnector;
-	import jedai.net.rpc.Red5Connection;
-	import jedai.net.rpc.RemoteSharedObject;
-	import jedai.io.devices.AudioInputDevice;
-	import jedai.io.devices.VideoInputDevice;
-	import jedai.io.devices.VideoOutputDevice;
-	
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
 	import flash.events.MouseEvent;
 	import flash.events.NetStatusEvent;
 	import flash.media.Microphone;
+	
+	import jedai.Red5BootStrapper;
+	import jedai.business.Red5ServiceLocator;
+	import jedai.events.Red5Event;
+	import jedai.io.devices.AudioInputDevice;
+	import jedai.io.devices.VideoInputDevice;
+	import jedai.io.devices.VideoOutputDevice;
+	import jedai.media.rtp.Red5NetStreamConnector;
+	import jedai.net.rpc.Red5Connection;
 	
 	import mx.controls.Button;
 	import mx.core.UIComponent;
@@ -304,7 +303,7 @@ package jedai.controls.flex.video
 			var rightPos:int = 10;
 			var topPos:int = 10;
 			var bottomPos:int = 10;
-			var size = (padding + 50);
+			var size:int = (padding + 50);
 			var formDist:int = 25;
 			
 			_outputDevice.width = this.unscaledWidth - 10;

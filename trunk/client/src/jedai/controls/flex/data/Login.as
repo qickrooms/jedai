@@ -9,13 +9,13 @@
 
 package jedai.controls.flex.data
 {
+	import flash.events.Event;
+	import flash.events.MouseEvent;
+	
 	import jedai.Red5BootStrapper;
 	import jedai.business.Red5ServiceLocator;
 	import jedai.net.ClientManager;
 	import jedai.net.rpc.Red5Connection;
-	
-	import flash.events.Event;
-	import flash.events.MouseEvent;
 	
 	import mx.controls.Alert;
 	import mx.controls.Button;
@@ -250,7 +250,7 @@ package jedai.controls.flex.data
 			var rightPos:int = 10;
 			var topPos:int = 10;
 			var bottomPos:int = 10;
-			var size = (padding + 50);
+			var size:int = (padding + 50);
 			var formDist:int = 25;
 		
 			// usernameField size and position
