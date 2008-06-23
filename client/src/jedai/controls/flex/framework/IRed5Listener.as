@@ -17,7 +17,7 @@ package jedai.controls.flex.framework
 	 *  An IRed5Listener is an interface that requires Red5
 	 *  lifecycle methods.
 	 * 
-	 *  @author Dominick Accattato (dominick@infrared5.com)
+	 *  @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 */
 	public interface IRed5Listener
 	{

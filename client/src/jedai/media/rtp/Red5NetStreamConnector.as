@@ -17,8 +17,8 @@ package jedai.media.rtp
 	 * Essentially -- a lazy way to create the entire connection mechanism without having to do anything in   
 	 * any specific order.
 	 * 
-	 * @author Jon Valliere (jvalliere@emoten.com)
-	 * @author Dominick Accattato (dominick@infrared5.com)
+	 * @author Jon Valliere (sybersnake_AT_gmail_DOT_com)
+	 * @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 * @author Thijs Triemstra (info@collab.nl)
 	 * 
 	 * @see jedai.media.rtp.Red5NetStream Red5NetStream

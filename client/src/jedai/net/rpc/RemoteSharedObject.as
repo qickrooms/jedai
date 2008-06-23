@@ -20,8 +20,8 @@ package jedai.net.rpc
 	 * The benefit of this class is that RemoteSharedObjects can be retrieved based on a IoC configuration context
 	 * and retrieved anytime from the Red5ServiceLocator.
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
-	 * @author Dominick Accattato ( dominick@infrared5.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
+	 * @author Dominick Accattato ( dominick_AT_infrared5_DOT_com )
 	 */
 	public class RemoteSharedObject extends EventDispatcher implements IService
 	{

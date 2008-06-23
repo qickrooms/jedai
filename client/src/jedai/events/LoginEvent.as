@@ -5,8 +5,8 @@ package jedai.events
 	/**
 	 * Dispatched by a Red5Connection
 	 * 
-	 * @author Jon Valliere (jvalliere@emoten.com)
-	 * @author Dominick Accattato (dominick@infrared5.com)
+	 * @author Jon Valliere (sybersnake_AT_gmail_DOT_com)
+	 * @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 * @author Thijs Triemstra (info@collab.nl)
 	 * 
 	 **/

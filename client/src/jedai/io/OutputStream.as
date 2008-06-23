@@ -2,7 +2,7 @@ package jedai.io
 {
 	/**
 	 * OutputStream is a interface for defining a target for output.
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public interface OutputStream
 	{

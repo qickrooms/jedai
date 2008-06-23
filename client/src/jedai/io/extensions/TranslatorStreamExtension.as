@@ -6,7 +6,7 @@ package jedai.io.extensions
 	/**
 	 * 
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public interface TranslatorStreamExtension extends StreamExtension, InputStream, OutputStream
 	{

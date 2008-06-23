@@ -3,7 +3,7 @@ package jedai.media.devices.detection
 	/**
 	 * interface that defines device detection methods specific to audio
 	 * 
-	 * @author Dominick Accattato (dominick@infrared5.com)
+	 * @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 **/
 	public interface IAudioDetection extends IDeviceDetection
 	{

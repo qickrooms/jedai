@@ -2,7 +2,7 @@ package jedai.io
 {
 	/**
 	 * InputStream is a Inteface defining a entry point for Stream data.
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public interface InputStream
 	{

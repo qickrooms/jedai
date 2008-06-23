@@ -36,8 +36,8 @@ package jedai
      * ( by app-context.xml via AMF with the "context" Red5Connection )
      * 3. Attach everything together ( automated by app-context.xml via AMF )
 	 * 
-	 * @author Dominick Accattato (dominick@infrared5.com)
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public class Red5BootStrapper extends EventDispatcher
 	{

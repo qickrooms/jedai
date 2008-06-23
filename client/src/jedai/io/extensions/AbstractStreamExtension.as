@@ -10,7 +10,7 @@ package jedai.io.extensions
 	[Event(name="ready", "jedai.io.extensions.events.ExtensionEvent")]
 	
 	/**
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public class AbstractStreamExtension extends EventDispatcher implements StreamExtension
 	{

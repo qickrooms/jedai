@@ -11,7 +11,7 @@ package jedai.io
 	 * If you wish simply provide a interface to have data "pushed" into this class
 	 * then use InputStream.
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public interface InputDevice
 	{
