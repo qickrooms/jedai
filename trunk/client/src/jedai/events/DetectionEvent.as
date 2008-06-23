@@ -5,7 +5,7 @@ package jedai.events
 	/**
 	 * Dispatched by a Red5Connection
 	 * 
-	 * @author Dominick Accattato (dominick@infrared5.com)
+	 * @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 **/
 	public class DetectionEvent extends Event
 	{

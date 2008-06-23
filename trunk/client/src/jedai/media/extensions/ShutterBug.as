@@ -21,7 +21,7 @@ package jedai.media.extensions
 	 * Takes Snapshots of the Video Stream.
 	 * Can be done based on a interval, one-time or manually.
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public class ShutterBug extends AbstractObserverExtension implements ObserverStreamExtension
 	{

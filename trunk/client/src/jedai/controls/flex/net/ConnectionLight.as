@@ -58,7 +58,7 @@ package jedai.controls.flex.net
 	 *  
 	 *  @includeExample examples/SimpleCanvasExample.mxml
 	 * 
-	 *  @author Dominick Accattato (dominick@infrared5.com)
+	 *  @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 */
 	public class ConnectionLight extends UIComponent
 	{

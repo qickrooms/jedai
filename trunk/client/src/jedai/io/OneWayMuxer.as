@@ -6,7 +6,7 @@ package jedai.io
 	 * 
 	 * This interface is only here for API documentation purpoase and correct behavioral typing.
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public interface OneWayMuxer extends InputDevice, OutputDevice
 	{

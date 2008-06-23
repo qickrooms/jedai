@@ -11,7 +11,7 @@ package jedai.io.extensions
 	 * Most StreamControls will use this class as a delegator for most of the logic that maintains
 	 * the set of extensions.
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public class SimpleExtensionManager implements ExtendableStreamControl
 	{

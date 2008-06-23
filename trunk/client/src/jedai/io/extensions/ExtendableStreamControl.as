@@ -6,7 +6,7 @@ package jedai.io.extensions
 	/**
 	 * Base class for all Classes that want to implement Extensions
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public interface ExtendableStreamControl
 	{

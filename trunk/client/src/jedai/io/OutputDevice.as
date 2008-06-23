@@ -11,7 +11,7 @@ package jedai.io
 	 * If you wish to simply provide a interface to define a target where data will
 	 * be "pushed" then use OutputStream.
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public interface OutputDevice
 	{

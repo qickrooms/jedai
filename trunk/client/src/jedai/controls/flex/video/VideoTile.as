@@ -74,7 +74,7 @@ package jedai.controls.flex.video
 	 *  
 	 *  @includeExample examples/SimpleCanvasExample.mxml
 	 * 
-	 *  @author Dominick Accattato (dominick@infrared5.com)
+	 *  @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 */
 	 [Bindable]
 	public class VideoTile extends TileList

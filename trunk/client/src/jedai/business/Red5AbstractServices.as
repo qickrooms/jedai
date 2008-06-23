@@ -12,8 +12,8 @@ package jedai.business
 	/**
 	 * Implements Abstract API used by ASMF Services.  Most of the code came from Cairngorm's RemoteObject class.
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
-	 * @author Dominick Accattato ( dominick@infrared5.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
+	 * @author Dominick Accattato ( dominick_AT_infrared5_DOT_com )
 	 */
 	public class Red5AbstractServices extends AbstractServices
 	{

@@ -9,8 +9,8 @@ package jedai.business
 	 * Service locator for Red5Connections and RemoteSharedObjects
 	 * registers services during runtime
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
-	 * @author Dominick Accattato ( dominick@infrared5.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
+	 * @author Dominick Accattato ( dominick_AT_infrared5_DOT_com )
 	 **/
 	public dynamic class Red5ServiceLocator extends com.adobe.cairngorm.business.ServiceLocator
 	{

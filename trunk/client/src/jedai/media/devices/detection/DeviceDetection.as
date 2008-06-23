@@ -20,7 +20,7 @@ package jedai.media.devices.detection
 	 * Class that detects audio/video devices and dispatches status to 
 	 * components listening for the events.
 	 * 
-	 * @author Dominick Accattato (dominick@infrared5.com)
+	 * @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 **/
 	public class DeviceDetection extends EventDispatcher implements IAudioDetection, IVideoDetection
 	{

@@ -32,7 +32,7 @@ package jedai.events
 	 *  
 	 *  @includeExample examples/SimpleCanvasExample.mxml
 	 * 
-	 *  @author Dominick Accattato (dominick@infrared5.com)
+	 *  @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 */
 	public class Red5Event extends Event
 	{

@@ -39,7 +39,7 @@ package jedai.controls.flex.framework
 	 *  
 	 *  @includeExample examples/SimpleCanvasExample.mxml
 	 * 
-	 *  @author Dominick Accattato (dominick@infrared5.com)
+	 *  @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 */
 	[ExcludeClass]
 	public class Red5Panel extends Panel

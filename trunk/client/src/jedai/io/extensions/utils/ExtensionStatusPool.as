@@ -16,7 +16,7 @@ package jedai.io.extensions.utils
 	 * is responsible for keeping track of when all of the available extensions sucessfully complete
 	 * the requested command.
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public class ExtensionStatusPool
 	{

@@ -3,7 +3,7 @@ package jedai.io.extensions
 	/**
 	 * Base class for all Third-Party Observer Extensions
 	 * 
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public interface ObserverStreamExtension extends StreamExtension
 	{

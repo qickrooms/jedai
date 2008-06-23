@@ -15,7 +15,7 @@ package jedai.io.devices
 	[Deprecated("You should use VideoInputDevice / VideoOutputDevice")]
 	/**
 	 * VideoMuxer is a MuxerDevice that can operate as both a Video Display and a Camera that attaches to another MuxerDevice.
-	 * @author Jon Valliere ( jvalliere@emoten.com )
+	 * @author Jon Valliere ( sybersnake_AT_gmail_DOT_com )
 	 */
 	public class VideoMuxer extends DisplayObjectContainer implements MuxerDevice
 	{

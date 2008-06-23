@@ -3,7 +3,7 @@ package jedai.media.devices.detection
 	/**
 	 * interface that defines methods related to device detection
 	 * 
-	 * @author Dominick Accattato (dominick@infrared5.com)
+	 * @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 **/
 	public interface IDeviceDetection
 	{
