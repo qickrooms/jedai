@@ -128,7 +128,6 @@ package jedai
 		 */		
 		private function onDisconnectHandler(event:Red5Event) : void {
 			trace("event: " + event);
-			Alert.show("Error Connecting", "Error");
 			dispatchEvent(event.clone());
 		}
 		
