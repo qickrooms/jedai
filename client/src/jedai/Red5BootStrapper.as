@@ -18,9 +18,7 @@ package jedai
 	import jedai.events.Red5Event;
 	import jedai.net.ClientManager;
 	import jedai.net.rpc.Red5Connection;
-	
-	import mx.controls.Alert;
-	
+		
 	import org.pranaframework.ioc.ObjectContainer;
 	import org.pranaframework.ioc.loader.ObjectDefinitionsLoaderEvent;
 	import org.pranaframework.ioc.loader.XmlObjectDefinitionsLoader;
