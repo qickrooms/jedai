@@ -37,7 +37,7 @@ package jedai.events
 	public class Red5Event extends Event
 	{
 		/** dispatched after bootstrapping is complete. **/
-		public static const BOOT_COMPLETE		: String 	= "bootComplete";
+		public static const BOOTSTRAP_COMPLETE		: String 	= "bootStrapComplete";
 		
 		/** dispatched after a NetConnection is successfully connected. **/
 		public static const CONNECTED			: String	= "connected";
