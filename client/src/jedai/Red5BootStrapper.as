@@ -10,15 +10,14 @@
 
 package jedai
 {
-	import jedai.events.Red5Event;
-	import jedai.net.ClientManager;
-	import jedai.net.rpc.Red5Connection;
-	
-	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.net.NetConnection;
 	import flash.net.ObjectEncoding;
 	import flash.net.SharedObject;
+	
+	import jedai.events.Red5Event;
+	import jedai.net.ClientManager;
+	import jedai.net.rpc.Red5Connection;
 	
 	import mx.controls.Alert;
 	
@@ -96,7 +95,7 @@ package jedai
 			_client = container.getObject("client");
 			_connection = container.getObject("connection");	
 		
-			dispatchEvent(new Event("bootStrapComplete"));
+			dispatchEvent(new Red5Event(Red5Event.BOOTSTRAP_COMPLETE));
 			dispatchEvent(new ObjectDefinitionsLoaderEvent(ObjectDefinitionsLoaderEvent.COMPLETE));
 		}
 		
