@@ -8,33 +8,23 @@
 	<display-name>Red5 Server Framework</display-name>
 
 	<context-param>
-	    <param-name>globalScope</param-name>
-	    <param-value>default</param-value>
-	</context-param>
-
-	<context-param>
-	    <param-name>contextConfigLocation</param-name>
-	    <param-value>/WEB-INF/red5-*.xml</param-value>
-	</context-param>
-
-	<context-param>
-		<param-name>locatorFactorySelector</param-name>
-		<param-value>red5.xml</param-value>
-	</context-param>
-
-	<context-param>
-		<param-name>parentContextKey</param-name>
-		<param-value>default.context</param-value>
-	</context-param>
-
-	<context-param>
 		<param-name>webAppRootKey</param-name>
 		<param-value>/jedai</param-value>
 	</context-param>
 	
-	<listener>
-	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+    <listener>
+        <listener-class>org.red5.logging.ContextLoggingListener</listener-class>
+    </listener>
+    
+    <filter>
+        <filter-name>LoggerContextFilter</filter-name>
+        <filter-class>org.red5.logging.LoggerContextFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>LoggerContextFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 	<servlet>
 		<servlet-name>gateway</servlet-name>
