@@ -16,7 +16,7 @@
     	</property>
 	</object>
 	
-	<!-- trunk - branch 1
+	<!-- trunk - branch 1, 2
 	 <object id="streamer" class="jedai.media.rtp.Red5NetStream">
        <constructor-arg>baseRTMPCon</constructor-arg>
        <property name="connection">
