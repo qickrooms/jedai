@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+	layout="absolute"
+	xmlns:data="jedai.controls.flex.data.*" 
+	xmlns:net1="jedai.controls.flex.net.*" 
+	xmlns:video="jedai.controls.flex.video.*">
+	<data:Login x="325" y="10" width="472" height="91"/>
+	<net1:ConnectionLight x="80" y="164"/>
+	<data:UserList x="437" y="98"/>
+	<video:VideoPublisher x="64" y="293"/>
+	<video:VideoTile x="217" y="250"/>
+
+</mx:Application>
