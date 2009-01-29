@@ -85,8 +85,8 @@ public class Application extends ApplicationAdapter implements IStreamAwareScope
 		clientMgr.addClient(scope, client);
 		log.debug("after");
 		// Notify client about unique id.
-		ServiceUtils.invokeOnConnection(conn, "setClientID",
-				new Object[] { uid });
+//		ServiceUtils.invokeOnConnection(conn, "setClientID",
+//				new Object[] { uid });
 		return true;
 	}
 
