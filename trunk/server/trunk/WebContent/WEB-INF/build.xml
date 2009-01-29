@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<project name="Red5Framework" basedir="." default="jar">
+    <!-- user overides for project properties -->
+    <property file="${user.home}/build.properties"/>
+    <!-- base project properties -->
+    <property file="build.properties"/>
+    
+    <!-- project properties -->
+    <property environment="env"/>
+    <property name="java.home" value="${env.JDK_HOME}"/>
+    <property name="src.dir" value="src"/>
+    <property name="lib.dir" value="lib"/>
+    <property name="classes.dir" value="classes"/>
+    <path id="project.classpath">
+        <fileset dir="${red5.root}/lib"/>
+    	<fileset dir="${red5.root}/webapps/depression/WEB-INF/lib"/>
+        <pathelement location="${red5.root}/bin"/> 
+    	<!--<pathelement location="${red5.root}/lib/red5.jar"/>-->
+    </path>
+    
+    <target name="prepare">
+        <mkdir dir="${classes.dir}"/>
+        <mkdir dir="${lib.dir}"/>
+    </target>
+    
+    <target name="clean">
+        <delete dir="${classes.dir}"/>
+    	<delete file="${lib.dir}/depression.jar" />
+        <!--<delete dir="${lib.dir}"/> removed because this wipes out the .svn admin area and causes svn issues-->
+    </target>
+    
+    <target name="compile" depends="prepare">
+        <condition property="java.target_version" value="1.5">
+            <not>
+                <isset property="java.target_version"/>
+            </not>
+        </condition>
+        <echo>java.home is ${java.home} and the target version is ${java.target_version}</echo>
+        <echo>red5.root is ${red5.root}</echo>
+        <echo>javac version: ${java.target_version}</echo>
+        <property name="dest.dir" value="${classes.dir}"/>
+        <javac sourcepath="" srcdir="${src.dir}" destdir="${dest.dir}" classpathref="project.classpath"
+             optimize="${build.optimize}" verbose="${build.verbose}" fork="${build.fork}" nowarn="${build.nowarn}"
+             deprecation="${build.deprecation}" debug="${debug.state}" compiler="modern"
+             source="${java.target_version}" target="${java.target_version}" listfiles="false"/>
+
+    	<copy todir="${dest.dir}">
+	    	<fileset dir="${src.dir}">
+	      		<exclude name="**/*.java"/>
+		    </fileset>
+		</copy>
+    </target>
+    
+    <target name="jar" depends="compile">
+        <tstamp prefix="build">
+            <format property="TODAY" pattern="d-MMMM-yyyy" locale="en"/>
+        </tstamp>
+        <jar destfile="${lib.dir}/${project.name}.jar">
+            <fileset dir="${classes.dir}">
+                <include name="**"/>
+            </fileset>
+            <manifest>
+                <attribute name="Built-On" value="${build.TODAY}"/>
+            </manifest>
+        </jar>
+    </target>
+    
+    <target name="all" depends="clean, prepare, compile, jar"/>
+    
+    <target name="usage">
+        <echo>Type ant -p for available targets"</echo>
+    </target>
+</project>
