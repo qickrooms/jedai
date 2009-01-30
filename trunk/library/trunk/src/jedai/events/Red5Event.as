@@ -45,6 +45,8 @@ package jedai.events
 		/** dispatched after a NetConnection is closed. **/
 		public static const DISCONNECTED		: String	= "disconnected";
 		
+		public static const REJECTED : String = "rejected";
+		
 		/**
 		 * Constructor
 		 * @param type 
