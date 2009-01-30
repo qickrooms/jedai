@@ -18,7 +18,7 @@ package jedai
 	import jedai.events.Red5Event;
 	import jedai.net.ClientManager;
 	import jedai.net.rpc.Red5Connection;
-		
+	
 	import org.pranaframework.ioc.ObjectContainer;
 	import org.pranaframework.ioc.loader.ObjectDefinitionsLoaderEvent;
 	import org.pranaframework.ioc.loader.XmlObjectDefinitionsLoader;
@@ -107,6 +107,7 @@ package jedai
 			this._connection.connect(this._connection.rtmpURI, this._connection.connectionArgs[0], this._connection.connectionArgs[1]);
 			this._connection.addEventListener(Red5Event.CONNECTED, this.onConnectionHandler );
 			this._connection.addEventListener(Red5Event.DISCONNECTED, this.onDisconnectHandler );
+			this._connection.addEventListener(Red5Event.REJECTED, this.onConnectionRejected );
 			this._connection.client = this;
 		}
 		
@@ -125,6 +126,16 @@ package jedai
 		 * 
 		 */		
 		private function onDisconnectHandler(event:Red5Event) : void {
+			trace("event: " + event);
+			dispatchEvent(event.clone());
+		}
+		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
+		private function onConnectionRejected(event:Red5Event) : void {
 			trace("event: " + event);
 			dispatchEvent(event.clone());
 		}

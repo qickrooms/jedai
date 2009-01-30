@@ -69,7 +69,6 @@ package jedai.net.rpc
 		private function onNetStatus( event:NetStatusEvent ): void
 		{
 			var infoCode:String = event.info.code;
-			trace("onNetStatus: " + infoCode);
 			
 			if ( this.connected && !_connected && infoCode == Red5Connection.CODE_CONNECT_SUCCESS )
 			{
@@ -78,6 +77,13 @@ package jedai.net.rpc
 				this.dispatchEvent( new Red5Event( Red5Event.CONNECTED ) );
 			} 
 			else if ( _connected && infoCode == Red5Connection.CODE_CONNECT_CLOSED )
+			{
+				_connected = false;
+				
+				this.dispatchEvent( new Red5Event( Red5Event.DISCONNECTED ) );
+			} 
+			else if ( infoCode == Red5Connection.CODE_CONNECT_REJECTED ||
+						infoCode == CODE_CONNECT_APPSHUTDOWN )
 			{
 				_connected = false;
 				
