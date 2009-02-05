@@ -124,6 +124,7 @@ public class JedaiAuthorizationService extends ApplicationLifecycle implements A
 	public boolean authenticate(AuthVO authvo) {
 
 		Authentication token=new UsernamePasswordAuthenticationToken(authvo.getUserName(),authvo.getPassword());
+		
 		try{
 			token = authenticationManager.authenticate(token);
 			SecurityContextHolder.getContext().setAuthentication(token);
@@ -132,9 +133,9 @@ public class JedaiAuthorizationService extends ApplicationLifecycle implements A
 			// report error
 		}
 		if(!token.isAuthenticated()){
-			// report error
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 
