@@ -22,7 +22,7 @@ public class AuthoritiesId implements java.io.Serializable {
 		this.authority = authority;
 	}
 
-	@Column(name = "USERNAME", nullable = false, length = 50)
+	@Column(name = "username", nullable = false, length = 50)
 	public String getUsername() {
 		return this.username;
 	}
@@ -31,7 +31,7 @@ public class AuthoritiesId implements java.io.Serializable {
 		this.username = username;
 	}
 
-	@Column(name = "AUTHORITY", nullable = false, length = 50)
+	@Column(name = "authority", nullable = false, length = 50)
 	public String getAuthority() {
 		return this.authority;
 	}
