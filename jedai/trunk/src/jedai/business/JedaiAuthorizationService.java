@@ -131,6 +131,7 @@ public class JedaiAuthorizationService extends ApplicationLifecycle implements A
 
 		}catch(AuthenticationException ex){
 			// report error
+			System.out.println("ERROR: " + ex);
 		}
 		if(!token.isAuthenticated()){
 			return false;
