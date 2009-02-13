@@ -50,8 +50,8 @@ package jedai
 		 */		
 		public function Red5BootStrapper(config:String)
 		{
-			NetConnection.defaultObjectEncoding = ObjectEncoding.AMF0;
-			SharedObject.defaultObjectEncoding = ObjectEncoding.AMF0;
+			/* NetConnection.defaultObjectEncoding = ObjectEncoding.AMF0;
+			SharedObject.defaultObjectEncoding = ObjectEncoding.AMF0; */
 			this._config = config;
 		}
 		
