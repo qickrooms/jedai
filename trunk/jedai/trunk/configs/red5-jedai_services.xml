@@ -14,5 +14,13 @@
 	<bean id="authorization.service" class="jedai.business.JedaiAuthorizationService" init-method="init">
 		<property name="authenticationManager" ref="authenticationManager"/>
 	</bean>
+	
+	<bean id="usersDao" class="jedai.domain.security.UsersHome" depends-on="sessionFactory">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>	 
+	
+	<bean id="authDao" class="jedai.domain.security.AuthoritiesHome" depends-on="sessionFactory">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>	 
   
 </beans>
