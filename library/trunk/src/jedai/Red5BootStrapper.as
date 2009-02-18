@@ -108,7 +108,7 @@ package jedai
 			this._connection.addEventListener(Red5Event.CONNECTED, this.onConnectionHandler );
 			this._connection.addEventListener(Red5Event.DISCONNECTED, this.onDisconnectHandler );
 			this._connection.addEventListener(Red5Event.REJECTED, this.onConnectionRejected );
-			this._connection.client = this;
+			//this._connection.client = this;
 		}
 		
 		/**
