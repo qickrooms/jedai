@@ -107,7 +107,7 @@ package jedai.net
 				clientManager = new ClientManager();
 				clientManager.username = user;
 				clientManager.password = pass;
-				connection.client = clientManager;
+				//connection.client = clientManager;
 				connection.connect(url, user, pass);
 				connection.addEventListener(NetStatusEvent.NET_STATUS, onConnNetStatus);
 				connection.addEventListener(IOErrorEvent.IO_ERROR, onIOError);
