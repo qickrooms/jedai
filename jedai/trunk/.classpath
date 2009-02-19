@@ -34,11 +34,10 @@
 	<classpathentry kind="lib" path="lib/hibernate-validator-3.1.0.jar"/>
 	<classpathentry kind="var" path="RED5/lib/activation-1.1.jar"/>
 	<classpathentry kind="var" path="RED5/lib/annotations-api-.jar"/>
-	<classpathentry kind="var" path="RED5/lib/antlr-2.7.6-sources.jar"/>
-	<classpathentry kind="var" path="RED5/lib/antlr-2.7.6.jar"/>
+	<classpathentry kind="var" path="RED5/lib/antlr-3.1.1.jar"/>
 	<classpathentry kind="var" path="RED5/lib/aopalliance-.jar"/>
-	<classpathentry kind="var" path="RED5/lib/asm-2.2.3.jar"/>
-	<classpathentry kind="var" path="RED5/lib/asm-commons-2.2.3.jar"/>
+	<classpathentry kind="var" path="RED5/lib/asm-3.1.jar"/>
+	<classpathentry kind="var" path="RED5/lib/asm-commons-3.1.jar"/>
 	<classpathentry kind="var" path="RED5/lib/asm-tree-2.2.3.jar"/>
 	<classpathentry kind="var" path="RED5/lib/aspectjrt-1.5.4.jar"/>
 	<classpathentry kind="var" path="RED5/lib/bcprov-jdk16-139.jar"/>
