@@ -7,16 +7,19 @@ Jedai consists of both clientside and serverside code.  To accomplish this we ha
 
 Jedai Clientside Library
 https://jedai.googlecode.com/svn/trunk/library/trunk
+
 Description: A Flex Library project that includes the Jedai Network Framework (JNF) and the Jedai Collaborative Framework (JCF) which consists of clientside flex ui components that will help in building real-time collaborative applications.
 
 Jedai Serverside Library 
 https://jedai.googlecode.com/svn/trunk/jedai/trunk
+
 Desciption: A serverside JEE library module which should be added to an existing Red5 webapp.  You can accomplish this by:
 right click project -> select properties -> select "Java EE Module Dependencies" -> click Apply -> click OK
 
 Jedai Examples
 https://jedai.googlecode.com/svn/trunk/examples/trunk
-Example code that demonstrates how Jedai's code should be structured.
+
+Description: Example code that demonstrates how Jedai's code should be structured.
 
 Jedai Tests
 https://jedai.googlecode.com/svn/trunk/test/trunk
@@ -26,4 +29,5 @@ https://jedai.googlecode.com/svn/trunk/test/trunk
 
 OLD Jedai Server ***** DO NOT USE *****
 https://jedai.googlecode.com/svn/trunk/server/trunk
+
 Desciption: A deprecated Red5 webapp.  This will be deleted soon!
