@@ -5,7 +5,14 @@ package jedai.business;
 
 import java.util.HashMap;
 
+import jedai.business.exceptions.ExistingUserException;
+import jedai.domain.security.Authorities;
+import jedai.domain.security.AuthoritiesHome;
+import jedai.domain.security.AuthoritiesId;
+import jedai.domain.security.Users;
+import jedai.domain.security.UsersHome;
 import jedai.vo.AuthVO;
+import jedai.vo.RegistrationVO;
 
 import org.red5.server.adapter.ApplicationLifecycle;
 import org.red5.server.adapter.MultiThreadedApplicationAdapter;
@@ -20,6 +27,7 @@ import org.springframework.security.AuthenticationException;
 import org.springframework.security.AuthenticationManager;
 import org.springframework.security.context.SecurityContextHolder;
 import org.springframework.security.providers.UsernamePasswordAuthenticationToken;
+
 
 
 /**
@@ -41,78 +49,6 @@ public class JedaiAuthorizationService extends ApplicationLifecycle implements A
 
 	public void setAuthenticationManager(AuthenticationManager authenticationManager) {
 		this.authenticationManager = authenticationManager;
-	}
-	
-	@Override
-	public boolean appConnect(IConnection arg0, Object[] arg1) {
-		//return false;
-		return true;
-	}
-	
-	@Override
-	public void appDisconnect(IConnection conn) {
-		// TODO Auto-generated method stub
-		super.appDisconnect(conn);
-	}
-
-	@Override
-	public boolean appJoin(IClient client, IScope app) {
-		// TODO Auto-generated method stub
-		return super.appJoin(client, app);
-	}
-
-	@Override
-	public void appLeave(IClient client, IScope app) {
-		// TODO Auto-generated method stub
-		super.appLeave(client, app);
-	}
-
-	@Override
-	public boolean appStart(IScope app) {
-		// TODO Auto-generated method stub
-		return super.appStart(app);
-	}
-
-	@Override
-	public void appStop(IScope app) {
-		// TODO Auto-generated method stub
-		super.appStop(app);
-	}
-
-	@Override
-	public boolean roomConnect(IConnection conn, Object[] params) {
-		// TODO Auto-generated method stub
-		return super.roomConnect(conn, params);
-	}
-
-	@Override
-	public void roomDisconnect(IConnection conn) {
-		// TODO Auto-generated method stub
-		super.roomDisconnect(conn);
-	}
-
-	@Override
-	public boolean roomJoin(IClient client, IScope room) {
-		// TODO Auto-generated method stub
-		return super.roomJoin(client, room);
-	}
-
-	@Override
-	public void roomLeave(IClient client, IScope room) {
-		// TODO Auto-generated method stub
-		super.roomLeave(client, room);
-	}
-
-	@Override
-	public boolean roomStart(IScope room) {
-		// TODO Auto-generated method stub
-		return super.roomStart(room);
-	}
-
-	@Override
-	public void roomStop(IScope room) {
-		// TODO Auto-generated method stub
-		super.roomStop(room);
 	}
 
 	@Override
@@ -137,6 +73,50 @@ public class JedaiAuthorizationService extends ApplicationLifecycle implements A
 			return false;
 		}
 		return true;
+	}
+	
+	public boolean register(RegistrationVO vo) throws ExistingUserException {	
+		Users user = new Users();
+		user.setUsername(vo.userName);
+		user.setPassword(vo.password);
+		user.setEnabled(true);
+		UsersHome usersHome = new UsersHome();
+		
+		// Check for existing user or password
+		isValidRegistration(user, usersHome);
+		
+		// if no exception was thrown, finish
+		// persisting the user and their authorities			
+		AuthoritiesId authID = new AuthoritiesId();
+		authID.setAuthority("ROLE_USER");
+		authID.setUsername(vo.userName);
+				
+		Authorities authorities = new Authorities();
+		authorities.setId(authID);
+		
+		AuthoritiesHome authHome = new AuthoritiesHome();
+		usersHome.persist(user);
+		authHome.persist(authorities);
+		
+		return true;
+	}
+	
+	/**
+	 * Determines if registration is valid
+	 * 
+	 * @param user
+	 * @param uh
+	 * @throws ExistingUserException
+	 */
+	private void isValidRegistration(Users user, UsersHome uh)
+			throws ExistingUserException {
+		Users existingUser = uh.findById(user.getUsername());
+		if(existingUser != null) {
+			// 500 = EXISTING USER
+			throw new ExistingUserException("500");
+		}
+		
+		// TODO check for valid email
 	}
 
 
