@@ -6,23 +6,28 @@
 <classEntry path="jedai.io.OutputStream"/>
 <classEntry path="jedai.Red5Application"/>
 <classEntry path="jedai.io.extensions.ExtendableStreamControl"/>
+<classEntry path="jedai.vo.StreamVO"/>
 <classEntry path="jedai.io.errors.OneWayMuxerError"/>
 <classEntry path="jedai.io.devices.VideoOutputDevice"/>
 <classEntry path="jedai.media.devices.detection.DeviceDetection"/>
 <classEntry path="jedai.controls.flex.framework.Red5Panel"/>
+<classEntry path="jedai.vo.ChatVO"/>
 <classEntry path="jedai.business.RemoteSharedObjects"/>
 <classEntry path="jedai.io.devices.AudioOutputDevice"/>
+<classEntry path="jedai.vo.AuthVO"/>
 <classEntry path="jedai.io.extensions.ObserverStreamExtension"/>
 <classEntry path="jedai.media.extensions.DeviceConnectionNotifier"/>
 <classEntry path="jedai.controls.common.Layout"/>
 <classEntry path="jedai.io.errors.IOStreamError"/>
 <classEntry path="jedai.io.events.MuxerEvent"/>
 <classEntry path="jedai.io.InputDevice"/>
+<classEntry path="jedai.vo.LobbyVO"/>
 <classEntry path="jedai.media.devices.detection.IDeviceDetection"/>
 <classEntry path="jedai.business.Red5Connections"/>
 <classEntry path="jedai.io.devices.VideoInputDevice"/>
 <classEntry path="jedai.io.devices.events.DeviceEvent"/>
 <classEntry path="jedai.media.extensions.VideoQualityOptimizer"/>
+<classEntry path="jedai.vo.WhiteBoardVO"/>
 <classEntry path="jedai.io.devices.VideoMuxer"/>
 <classEntry path="jedai.controls.flex.data.Login"/>
 <classEntry path="jedai.net.IService"/>
@@ -35,8 +40,10 @@
 <classEntry path="jedai.events.LoginEvent"/>
 <classEntry path="jedai.controls.flex.video.VideoTile"/>
 <classEntry path="jedai.io.extensions.events.ExtensionEvent"/>
+<classEntry path="jedai.vo.RegistrationVO"/>
 <classEntry path="jedai.business.Red5ServiceLocator"/>
 <classEntry path="jedai.media.devices.detection.IVideoDetection"/>
+<classEntry path="jedai.vo.ProfileVO"/>
 <classEntry path="jedai.io.StreamDevice"/>
 <classEntry path="jedai.media.extensions.MicrophoneLevelEqualizer"/>
 <classEntry path="jedai.Red5BootStrapper"/>
@@ -82,6 +89,7 @@
 <classEntry path="jedai.net.rpc.Red5Connection"/>
 <classEntry path="jedai.net.rpc.RemotingResponse"/>
 <classEntry path="jedai.business.Red5AbstractServices"/>
+<classEntry path="jedai.vo.RoomVO"/>
 </includeClasses>
 <includeResources/>
 <namespaceManifests/>
