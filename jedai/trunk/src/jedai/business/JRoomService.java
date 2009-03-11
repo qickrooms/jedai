@@ -23,6 +23,6 @@ package jedai.business;
  * @author dominickaccattato
  *
  */
-public class RoomService {
+public class JRoomService {
 
 }

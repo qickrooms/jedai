@@ -23,6 +23,6 @@ package jedai.business;
  * @author dominickaccattato
  *
  */
-public class WhiteBoardService {
+public class JWhiteBoardService {
 
 }

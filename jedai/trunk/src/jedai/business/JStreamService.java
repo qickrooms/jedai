@@ -35,7 +35,7 @@ import org.red5.server.api.stream.ISubscriberStream;
  * @author dominickaccattato
  *
  */
-public class JedaiStreamService implements IStreamAwareScopeHandler {
+public class JStreamService implements IStreamAwareScopeHandler {
 
 	@Override
 	public void streamBroadcastClose(IBroadcastStream stream) {
