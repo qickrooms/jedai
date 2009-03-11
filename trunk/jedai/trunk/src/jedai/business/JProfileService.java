@@ -25,7 +25,7 @@ import jedai.vo.ProfileVO;
  * @author dominickaccattato
  *
  */
-public class LobbyService {
+public class JProfileService {
 
 	/**
 	 * @return

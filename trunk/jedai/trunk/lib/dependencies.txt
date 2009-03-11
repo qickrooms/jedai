@@ -1,0 +1,5 @@
+
+
+Mail functionality
+-activation.jar
+-mail.jar

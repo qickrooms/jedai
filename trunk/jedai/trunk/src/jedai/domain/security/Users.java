@@ -34,6 +34,7 @@ public class Users implements java.io.Serializable {
 	private String username;
 	private String password;
 	private boolean enabled;
+	private String email;
 
 	public Users() {
 	}
@@ -70,6 +71,15 @@ public class Users implements java.io.Serializable {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Column(name = "email", unique = true, nullable = false, length = 100)
+	public String getEmail() {
+		return email;
 	}
 
 }

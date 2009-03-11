@@ -19,10 +19,26 @@ package jedai.business;
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA 
  */
 
+import jedai.vo.ProfileVO;
+
 /**
  * @author dominickaccattato
  *
  */
-public class StreamService {
+public class JLobbyService {
 
+	/**
+	 * @return
+	 */
+	public ProfileVO getProfile() {
+		return null;
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public void updateProfile() {
+		
+	}
 }

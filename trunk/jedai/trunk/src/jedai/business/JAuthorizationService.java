@@ -51,7 +51,7 @@ import org.springframework.security.providers.UsernamePasswordAuthenticationToke
  * @author dominickaccattato
  *
  */
-public class JedaiAuthorizationService extends ApplicationLifecycle implements ApplicationContextAware {
+public class JAuthorizationService extends ApplicationLifecycle implements ApplicationContextAware {
 
 	private MultiThreadedApplicationAdapter application;
 	private AuthenticationManager authenticationManager;
@@ -118,64 +118,9 @@ public class JedaiAuthorizationService extends ApplicationLifecycle implements A
 		return true;
 	}
 	
-	/**
-	 * registers a user with SpringSecurity
-	 * 
-	 * @param vo
-	 * 			RegistrationVO the registration value object being registered
-	 * 
-	 * @return val
-	 * 			Boolean the returned boolean value
-	 * 
-	 * @throws ExistingUserException
-	 */
-	public boolean register(RegistrationVO vo) throws ExistingUserException {	
-		Users user = new Users();
-		user.setUsername(vo.userName);
-		user.setPassword(vo.password);
-		user.setEnabled(true);
-		UsersHome usersHome = new UsersHome();
-		
-		// Check for existing user or password
-		isValidRegistration(user, usersHome);
-		
-		// if no exception was thrown, finish
-		// persisting the user and their authorities			
-		AuthoritiesId authID = new AuthoritiesId();
-		authID.setAuthority("ROLE_USER");
-		authID.setUsername(vo.userName);
-				
-		Authorities authorities = new Authorities();
-		authorities.setId(authID);
-		
-		AuthoritiesHome authHome = new AuthoritiesHome();
-		usersHome.persist(user);
-		authHome.persist(authorities);
-		
+	public boolean test() {
 		return true;
 	}
 	
-	/**
-	 * determines if registration is valid
-	 * 
-	 * @param user
-	 * 			Users the user being registered
-	 * 
-	 * @param uh
-	 * 			UsersHome the dao used to register the user
-	 * 
-	 * @throws ExistingUserException
-	 */
-	private void isValidRegistration(Users user, UsersHome uh)
-			throws ExistingUserException {
-		Users existingUser = uh.findById(user.getUsername());
-		if(existingUser != null) {
-			// 500 = EXISTING USER
-			throw new ExistingUserException("500");
-		}
-		
-		// TODO check for valid email
-	}
-
 
 }
