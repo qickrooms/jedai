@@ -23,7 +23,9 @@ import java.util.List;
 import javax.naming.InitialContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Hibernate;
 import org.hibernate.LockMode;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.classic.Session;
 import org.hibernate.criterion.Example;
@@ -173,6 +175,49 @@ public class UsersHome {
 			session.flush();
 			session.getTransaction().commit();
 			return instance;
+		} catch (RuntimeException re) {
+			log.error("get failed", re);
+			throw re;
+		} finally {
+			if (session.isOpen()) {
+				session.close();
+			}
+		}
+	}
+	
+	/**
+	 * @param email
+	 * @return
+	 */
+	public Users findByEmail(java.lang.String email) {
+		log.debug("getting Users instance with email: " + email);
+		Session session = sessionFactory.getCurrentSession();
+		
+		Users instance = null;
+		
+		try {	
+			session.beginTransaction();
+
+			Query query = session.createQuery("FROM jedai.domain.security.Users WHERE email = :email");
+			query.setString("email", email);
+			query.setReadOnly(true);
+			
+			Object o = query.uniqueResult();
+			if (o != null) {
+				if (o instanceof Users) {
+					instance = (Users) o;
+				} else {
+					//log.warn("User type was not returned. '{}' was returned", instance
+					//		.getClass().getName());
+				}
+			} else {
+				log.info("User was null");
+			}
+			
+			session.flush();
+			session.getTransaction().commit();
+			return instance;
+			
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
 			throw re;
