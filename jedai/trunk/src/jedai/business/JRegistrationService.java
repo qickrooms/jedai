@@ -26,8 +26,8 @@ import jedai.vo.RegistrationVO;
  */
 public class JRegistrationService {
 
-	private JavaMailSender mailSender;
-	private VelocityEngine velocityEngine;
+	protected JavaMailSender mailSender;
+	protected VelocityEngine velocityEngine;
 	
 	/**
 	 * @param mailSender
@@ -55,16 +55,16 @@ public class JRegistrationService {
 	/**
 	 * @param user
 	 */
-	private void sendRequestPasswordEmail(final Users user) {
+	protected void sendRequestPasswordEmail(final Users user) {
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 				MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
 				message.setTo("dominick@infrared5.com");
 				message.setFrom("daccattato@infrared5.com"); // could be parameterized...
-				Map model = new HashMap();
+				Map<String, Users> model = new HashMap<String, Users>();
 				model.put("user", user);
 				String text = VelocityEngineUtils.mergeTemplateIntoString(
-				velocityEngine, "templates/registration-confirmation.vm", model);
+				velocityEngine, "templates/request-password.vm", model);
 				message.setText(text, true);
 			}
 		};
@@ -74,13 +74,13 @@ public class JRegistrationService {
 	/**
 	 * @param user
 	 */
-	private void sendConfirmationEmail(final Users user) {
+	protected void sendConfirmationEmail(final Users user) {
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 				MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
 				message.setTo("dominick@infrared5.com");
 				message.setFrom("daccattato@infrared5.com"); // could be parameterized...
-				Map model = new HashMap();
+				Map<String, Users> model = new HashMap<String, Users>();
 				model.put("user", user);
 				String text = VelocityEngineUtils.mergeTemplateIntoString(
 				velocityEngine, "templates/registration-confirmation.vm", model);
@@ -142,7 +142,7 @@ public class JRegistrationService {
 	 * 
 	 * @throws ExistingUserException
 	 */
-	private void isValidRegistration(Users user, UsersHome uh)
+	protected void isValidRegistration(Users user, UsersHome uh)
 			throws ExistingUserException {
 		Users existingUser = uh.findById(user.getUsername());
 		if(existingUser != null) {
