@@ -125,7 +125,7 @@ public class JRegistrationService {
 		usersHome.persist(user);
 		authHome.persist(authorities);
 		
-		sendConfirmationEmail(user);
+		//sendConfirmationEmail(user);
 		
 		return true;
 	}
