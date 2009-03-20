@@ -134,9 +134,9 @@ public class JRegistrationService {
 	 */
 	public boolean register(RegistrationVO vo) throws ExistingUserException {	
 		Users user = new Users();
-		user.setUsername(vo.userName);
-		user.setPassword(vo.password);
-		user.setEmail(vo.email);
+		user.setUsername(vo.getUserName());
+		user.setPassword(vo.getPassword());
+		user.setEmail(vo.getEmail());
 		user.setEnabled(true);
 		UsersHome usersHome = new UsersHome();
 		
@@ -147,7 +147,7 @@ public class JRegistrationService {
 		// persisting the user and their authorities			
 		AuthoritiesId authID = new AuthoritiesId();
 		authID.setAuthority("ROLE_USER");
-		authID.setUsername(vo.userName);
+		authID.setUsername(vo.getUserName());
 				
 		Authorities authorities = new Authorities();
 		authorities.setId(authID);
