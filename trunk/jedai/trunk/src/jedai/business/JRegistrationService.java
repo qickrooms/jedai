@@ -36,6 +36,7 @@ import jedai.domain.security.AuthoritiesHome;
 import jedai.domain.security.AuthoritiesId;
 import jedai.domain.security.Users;
 import jedai.domain.security.UsersHome;
+import jedai.vo.AuthVO;
 import jedai.vo.PasswordRequestVO;
 import jedai.vo.RegistrationVO;
 
@@ -161,6 +162,29 @@ public class JRegistrationService {
 		return true;
 	}
 	
+	/**
+	 * Resets a password to a new password.
+	 * 
+	 * @param auth1
+	 * @param auth2
+	 * @return
+	 */
+	public boolean resetPassword(AuthVO auth1, AuthVO auth2) {
+		
+		//find user based on their email
+		UsersHome uh = new UsersHome();
+		final Users user = uh.findById(auth1.getUserName());
+		
+		if(user != null) {
+			if(user.getPassword().equals(auth1.getPassword())) {
+				user.setPassword(auth2.getPassword());
+				
+				uh.merge(user);
+			}
+		}
+		
+		return true;
+	}
 
 	/**
 	 * determines if registration is valid
