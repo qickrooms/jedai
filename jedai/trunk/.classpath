@@ -53,7 +53,7 @@
 	<classpathentry kind="var" path="RED5/lib/mysql-connector-java-5.0.8-bin.jar"/>
 	<classpathentry kind="var" path="RED5/lib/naming-factory-.jar"/>
 	<classpathentry kind="var" path="RED5/lib/naming-resources-.jar"/>
-	<classpathentry kind="var" path="RED5/lib/quartz-1.6.1.jar"/>
+	<classpathentry kind="var" path="RED5/lib/quartz-1.6.5.jar"/>
 	<classpathentry kind="var" path="RED5/lib/servlet-api-2.5.jar"/>
 	<classpathentry kind="var" path="RED5/lib/simple-jndi-0.11.4.1.jar"/>
 	<classpathentry kind="var" path="RED5/lib/slf4j-api-1.5.6.jar"/>
