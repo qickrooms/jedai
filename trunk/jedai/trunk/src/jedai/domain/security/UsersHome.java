@@ -20,10 +20,9 @@ package jedai.domain.security;
  */
 
 import java.util.List;
-import javax.naming.InitialContext;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.Hibernate;
 import org.hibernate.LockMode;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
