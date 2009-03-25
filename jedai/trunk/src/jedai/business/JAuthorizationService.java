@@ -19,22 +19,10 @@ package jedai.business;
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA 
  */
 
-import java.util.HashMap;
-
-import jedai.business.exceptions.ExistingUserException;
-import jedai.domain.security.Authorities;
-import jedai.domain.security.AuthoritiesHome;
-import jedai.domain.security.AuthoritiesId;
-import jedai.domain.security.Users;
-import jedai.domain.security.UsersHome;
 import jedai.vo.AuthVO;
-import jedai.vo.RegistrationVO;
 
 import org.red5.server.adapter.ApplicationLifecycle;
 import org.red5.server.adapter.MultiThreadedApplicationAdapter;
-import org.red5.server.api.IClient;
-import org.red5.server.api.IConnection;
-import org.red5.server.api.IScope;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
