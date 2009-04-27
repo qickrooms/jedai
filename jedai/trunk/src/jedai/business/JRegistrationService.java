@@ -96,7 +96,7 @@ public class JRegistrationService {
 				Map<String, Users> model = new HashMap<String, Users>();
 				model.put("user", user);
 				String text = VelocityEngineUtils.mergeTemplateIntoString(
-				velocityEngine, "templates/request-password.vm", model);
+				velocityEngine, "request-password.vm", model);
 				message.setText(text, true);
 			}
 		};
@@ -115,7 +115,7 @@ public class JRegistrationService {
 				Map<String, Users> model = new HashMap<String, Users>();
 				model.put("user", user);
 				String text = VelocityEngineUtils.mergeTemplateIntoString(
-				velocityEngine, "templates/registration-confirmation.vm", model);
+				velocityEngine, "registration-confirmation.vm", model);
 				message.setText(text, true);
 			}
 		};
