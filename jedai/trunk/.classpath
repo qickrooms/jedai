@@ -6,7 +6,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="var" path="RED5/lib/activation-1.1.jar"/>
 	<classpathentry kind="var" path="RED5/lib/annotations-api-.jar"/>
-	<classpathentry kind="var" path="RED5/lib/antlr-3.1.2.jar"/>
+	<classpathentry kind="var" path="RED5/lib/antlr-3.1.3.jar"/>
 	<classpathentry kind="var" path="RED5/lib/aopalliance-.jar"/>
 	<classpathentry kind="var" path="RED5/lib/asm-3.1.jar"/>
 	<classpathentry kind="var" path="RED5/lib/asm-commons-3.1.jar"/>
