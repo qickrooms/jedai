@@ -11,9 +11,6 @@
 package jedai
 {
 	import flash.events.EventDispatcher;
-	import flash.net.NetConnection;
-	import flash.net.ObjectEncoding;
-	import flash.net.SharedObject;
 	
 	import jedai.events.Red5Event;
 	import jedai.net.ClientManager;
@@ -43,6 +40,7 @@ package jedai
 		private var _connection:Red5Connection;
 		private var _config:String;
 		private static var _instance:Red5BootStrapper;
+		private var _container:ObjectContainer;
 		
 		/**
 		 * 
@@ -89,9 +87,9 @@ package jedai
 		 * 
 		 */		
 		private function onObjectDefinitionsLoaderComplete(event:ObjectDefinitionsLoaderEvent) : void {
-			var container:ObjectContainer = _objectDefinitionsLoader.container;
-			_client = container.getObject("client");
-			_connection = container.getObject("connection");	
+			_container = _objectDefinitionsLoader.container;
+			_client = _container.getObject("client");
+			_connection = _container.getObject("connection");	
 		
 			dispatchEvent(new Red5Event(Red5Event.BOOTSTRAP_COMPLETE));
 			dispatchEvent(new ObjectDefinitionsLoaderEvent(ObjectDefinitionsLoaderEvent.COMPLETE));
@@ -165,6 +163,15 @@ package jedai
 		 */		
 		public function get connection() : Red5Connection {
 			return this._connection;
+		}
+		
+		/**
+		 * 
+		 * @return 
+		 * 
+		 */		
+		public function get container() : ObjectContainer {
+			return this._container;
 		}
 	}
 }
