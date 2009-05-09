@@ -1,12 +1,13 @@
 package jedai.net.rpc
 {
+	import flash.events.NetStatusEvent;
+	import flash.net.NetConnection;
+	import flash.utils.Dictionary;
+	
 	import jedai.business.Red5ServiceLocator;
 	import jedai.events.Red5Event;
 	import jedai.net.ClientManager;
 	import jedai.net.IService;
-	
-	import flash.events.NetStatusEvent;
-	import flash.net.NetConnection;
 	
 	[Event(name="connected", type="jedai.events.Red5Event")]
 	[Event(name="disconnected", type="jedai.events.Red5Event")]
@@ -44,6 +45,7 @@ package jedai.net.rpc
 		private var _rtmpURI:String;
 		private var _connectionArgs:Array;
 		private var _client:ClientManager;
+		private var _sessionAttributes:Dictionary = new Dictionary();
 		
 		/**
 		 * 
@@ -79,7 +81,6 @@ package jedai.net.rpc
 			else if ( _connected && infoCode == Red5Connection.CODE_CONNECT_CLOSED )
 			{
 				_connected = false;
-				
 				this.dispatchEvent( new Red5Event( Red5Event.DISCONNECTED ) );
 			} 
 			else if ( infoCode == Red5Connection.CODE_CONNECT_REJECTED ||
@@ -87,7 +88,7 @@ package jedai.net.rpc
 			{
 				_connected = false;
 				
-				this.dispatchEvent( new Red5Event( Red5Event.DISCONNECTED ) );
+				this.dispatchEvent( new Red5Event( Red5Event.REJECTED ) );
 			} 
 			else if ( infoCode == Red5Connection.CODE_CONNECT_FAILED || 
 					  infoCode == Red5Connection.CODE_CONNECT_INVALIDAPP )
@@ -136,6 +137,28 @@ package jedai.net.rpc
 		
 		public function set clientManager(val:ClientManager) : void {
 			this._client = val;
+		}
+		
+		/**
+		 * Sets attributes from the session.
+		 *  
+		 * @param key
+		 * @param val
+		 * 
+		 */
+		public function setAttribute(key:String, val:*) : void {
+			_sessionAttributes[key] = val;
+		}
+		
+		/**
+		 * Gets attributes from the session.
+		 *  
+		 * @param key
+		 * @return 
+		 * 
+		 */
+		public function getAttribute(key:String) : * {
+			return _sessionAttributes[key];
 		}
 		
 	}
