@@ -40,6 +40,19 @@ description: manifest file
 
 = build/ =
 description:
+----
+
+= configs/ =
+description:
+----
+
+= lib/ =
+description:
+----
+
+= sql/ =
+description:
+----
 
 = Details =
 
