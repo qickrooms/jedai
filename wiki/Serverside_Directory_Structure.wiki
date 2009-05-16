@@ -43,7 +43,16 @@ description:
 ----
 
 = configs/ =
-description:
+description: There are 6 configuration files located in the configs.
+jdbc.properties
+red5-jedai_hibernate.xml
+red5-jedai_mail.xml
+red5-jedai_security.xml
+red5-jedai_services.xml
+users.properties
+
+These need to be dropped in the WEB-INF directory during a deploy
+
 ----
 
 = lib/ =
