@@ -18,6 +18,11 @@ server/
       enums/
       util/
       vo/
+  META-INF/
+  build/
+  configs/
+  lib/
+  sql/
 }}}   
          
 
