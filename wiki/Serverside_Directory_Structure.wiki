@@ -26,6 +26,21 @@ server/
 }}}   
          
 
+server/
+description: the top level project directory 
+----
+
+src/
+description: source files
+----
+
+META-INF/
+description: manifest file
+----
+
+build/
+description:
+
 = Details =
 
 Add your content here.  Format your content with:
