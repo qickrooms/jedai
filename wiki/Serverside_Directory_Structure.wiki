@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This page serves to explain the structure of the server including the additional items needed to build the server.
+This page serves to explain the structure of the server including the additional items needed to build the server.  It should be noted that the serverside implementation is now a jar file that can be dropped into an existing web application.  Additionally, there are config files that must be placed in the web applications WEB-INF directory for jedai to be wired up at startup.  The following is a summary of the serverside directory structure along with descriptions of each element.
 
 = Structure =
 
