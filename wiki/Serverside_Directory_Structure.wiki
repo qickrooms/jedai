@@ -1,0 +1,29 @@
+#Explains the serverside directory structure.
+
+= Introduction =
+
+This page serves to explain the structure of the server including the additional items needed to build the server.
+
+= Structure =
+
+{{{
+server/
+  src/
+    jedai/
+      business/
+        exceptions/
+        templates/
+      domain/
+        security/
+      enums/
+      util/
+      vo/
+}}}   
+         
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
