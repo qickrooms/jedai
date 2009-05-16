@@ -26,19 +26,19 @@ server/
 }}}   
          
 
-server/
+= server/ =
 description: the top level project directory 
 ----
 
-src/
+= src/ =
 description: source files
 ----
 
-META-INF/
+= META-INF/ =
 description: manifest file
 ----
 
-build/
+= build/ =
 description:
 
 = Details =
