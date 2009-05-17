@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.5.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+                           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd">
+	
+
+	<!-- Authorization Service  -->
+	<bean id="authorization.service" class="jedai.business.JAuthorizationService" init-method="init">
+		<property name="authenticationManager" ref="authenticationManager"/>
+	</bean>
+	
+	<bean id="registration.service" class="jedai.business.JRegistrationService">
+		<property name="mailSender" ref="mailSender"/>
+		<property name="velocityEngine" ref="velocityEngine"/>
+	</bean>
+	
+	<bean id="usersDao" class="jedai.domain.security.UsersHome" depends-on="sessionFactory">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>	 
+	
+	<bean id="authDao" class="jedai.domain.security.AuthoritiesHome" depends-on="sessionFactory">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>	 
+  
+</beans>
