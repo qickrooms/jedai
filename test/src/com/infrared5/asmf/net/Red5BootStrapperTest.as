@@ -1,14 +1,13 @@
 package com.infrared5.asmf.net
 {
-	import com.infrared5.asmf.Red5BootStrapper;
-	import com.infrared5.asmf.net.rpc.Red5Connection;
-	
 	import flash.events.NetStatusEvent;
 	
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import mx.events.FlexEvent;
+	import jedai.Red5BootStrapper;
+	import jedai.net.ClientManager;
+	import jedai.net.rpc.Red5Connection;
 	
 	import org.pranaframework.ioc.loader.ObjectDefinitionsLoaderEvent;
 	

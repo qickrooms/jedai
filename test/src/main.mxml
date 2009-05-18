@@ -7,8 +7,6 @@
 	<mx:Script>
 		<![CDATA[
 			import com.infrared5.asmf.net.Red5BootStrapperTest;
-			import com.infrared5.asmf.Red5BootStrapper;
-			import com.infrared5.asmf.net.Red5ApplicationTest;
 			import mx.events.FlexEvent;
 			import org.pranaframework.ioc.loader.ObjectDefinitionsLoaderEvent;
 			import org.pranaframework.ioc.loader.XmlObjectDefinitionsLoader;
