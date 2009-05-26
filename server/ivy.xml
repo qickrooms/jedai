@@ -25,6 +25,7 @@
     	<dependency org="org.springframework.security" name="spring-security-core-tiger" rev="2.0.4" />
     	<dependency org="org.springframework" name="spring-tx" rev="2.5.6" />
     	<dependency org="org.apache" name="velocity" rev="1.5" />
+    	<dependency org="org.red5" name="red5" rev="0.8rc2"/>
     
         <!-- J2EE --> 
         <dependency org="tomcat" name="jasper" rev="6.0.18" />
