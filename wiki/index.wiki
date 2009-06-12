@@ -41,7 +41,8 @@ A document that encompasses detailed technical requirements, often including uml
  * [http://code.google.com/p/jedai/wiki/Room Room]
 
 
-=Functional Specifications=
+=Functional Specification=
 TODO
 
-=Feature Specifications List=
+=Technical Specification=
+TODO
