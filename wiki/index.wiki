@@ -32,11 +32,10 @@ A document that encompasses detailed technical requirements, often including uml
  * AccountManagement
    * [http://code.google.com/p/jedai/wiki/Login Login]
  * [http://code.google.com/p/jedai/wiki/ConnectionLight ConnectionLight]
- * UserList
- * Private Messaging
- * VideoPublisher
- * VideoSubscriber
- * VideoTile
- * Whiteboard
- * Lobby
- * Room
+ * [http://code.google.com/p/jedai/wiki/UserList UserList]
+ * [http://code.google.com/p/jedai/wiki/VideoPublisher VideoPublisher]
+ * [http://code.google.com/p/jedai/wiki/VideoSubscriber VideoSubscriber]
+ * [http://code.google.com/p/jedai/wiki/VideoTile VideoTile]
+ * [http://code.google.com/p/jedai/wiki/Whiteboard Whiteboard]
+ * [http://code.google.com/p/jedai/wiki/Lobby Lobby]
+ * [http://code.google.com/p/jedai/wiki/Room Room]
