@@ -39,3 +39,9 @@ A document that encompasses detailed technical requirements, often including uml
  * [http://code.google.com/p/jedai/wiki/Whiteboard Whiteboard]
  * [http://code.google.com/p/jedai/wiki/Lobby Lobby]
  * [http://code.google.com/p/jedai/wiki/Room Room]
+
+
+=Functional Specifications=
+TODO
+
+=Feature Specifications List=
