@@ -29,17 +29,28 @@ A document that encompasses detailed technical requirements, often including uml
 
 =Feature Specifications List=
 
- * AccountManagement
-   * [http://code.google.com/p/jedai/wiki/Login Login]
- * [http://code.google.com/p/jedai/wiki/ConnectionLight ConnectionLight]
- * [http://code.google.com/p/jedai/wiki/UserList UserList]
- * [http://code.google.com/p/jedai/wiki/VideoPublisher VideoPublisher]
- * [http://code.google.com/p/jedai/wiki/VideoSubscriber VideoSubscriber]
- * [http://code.google.com/p/jedai/wiki/VideoTile VideoTile]
- * [http://code.google.com/p/jedai/wiki/Whiteboard Whiteboard]
- * [http://code.google.com/p/jedai/wiki/Lobby Lobby]
- * [http://code.google.com/p/jedai/wiki/Room Room]
+ * Component Specifications
+   * AccountManagement
+     * [http://code.google.com/p/jedai/wiki/Login Login]
+   * [http://code.google.com/p/jedai/wiki/ConnectionLight ConnectionLight]
+   * [http://code.google.com/p/jedai/wiki/UserList UserList]
+   * [http://code.google.com/p/jedai/wiki/VideoPublisher VideoPublisher]
+   * [http://code.google.com/p/jedai/wiki/VideoSubscriber VideoSubscriber]
+   * [http://code.google.com/p/jedai/wiki/VideoTile VideoTile]
+   * [http://code.google.com/p/jedai/wiki/Whiteboard Whiteboard]
+   * [http://code.google.com/p/jedai/wiki/Lobby Lobby]
+   * [http://code.google.com/p/jedai/wiki/Room Room]
 
+ *Open Source Collaboration Server (OSCS)
+   * Account Management
+   * Screen Sharing
+   * File Sharing
+   * Presentation Module
+   * Viewer Module
+   * Layout Management
+   * Lobby System
+   * Room System
+    
 
 =Functional Specification=
 TODO
