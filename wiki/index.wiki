@@ -31,7 +31,9 @@ A document that encompasses detailed technical requirements, often including uml
 
  * Jedai Collaboration Suite
    * AccountManagement
+     * [http://code.google.com/p/jedai/wiki/Registration Registration]
      * [http://code.google.com/p/jedai/wiki/Login Login]
+     * [http://code.google.com/p/jedai/wiki/ForgotPassword ForgotPassword]
    * [http://code.google.com/p/jedai/wiki/ConnectionLight ConnectionLight]
    * [http://code.google.com/p/jedai/wiki/UserList UserList]
    * [http://code.google.com/p/jedai/wiki/VideoPublisher VideoPublisher]
