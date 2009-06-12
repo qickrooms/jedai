@@ -24,3 +24,19 @@ A document that encompasses all of the feature specifications into one.
 
 ===Technical Specification===
 A document that encompasses detailed technical requirements, often including uml diagrams, deployment topography, technology integration, etc...
+
+
+
+=Feature Specifications List=
+
+ * AccountManagement
+ * Login
+ * ConnectionLight
+ * UserList
+ * Private Messaging
+ * VideoPublisher
+ * VideoSubscriber
+ * VideoTile
+ * Whiteboard
+ * Lobby
+ * Room
