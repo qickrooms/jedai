@@ -42,14 +42,14 @@ A document that encompasses detailed technical requirements, often including uml
    * [http://code.google.com/p/jedai/wiki/Room Room]
 
  * Open Source Collaboration Server (OSCS)
-   * Account Management
-   * Screen Sharing
-   * File Sharing
-   * Presentation Module
-   * Viewer Module
-   * Layout Management
-   * Lobby System
-   * Room System
+   * [http://code.google.com/p/jedai/wiki/Account_Management AccountManagement]
+   * [http://code.google.com/p/jedai/wiki/ScreenSharing Screen Sharing]
+   * [http://code.google.com/p/jedai/wiki/FileSharing File Sharing]
+   * [http://code.google.com/p/jedai/wiki/PresentationModule Presentation Module]
+   * [http://code.google.com/p/jedai/wiki/Viewer_Module Viewer Module]
+   * [http://code.google.com/p/jedai/wiki/LayoutManagement Layout Management]
+   * [http://code.google.com/p/jedai/wiki/LobbySystem Lobby System]
+   * [http://code.google.com/p/jedai/wiki/RoomSystem RoomSystem]
     
 
 =Functional Specification=
