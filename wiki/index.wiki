@@ -41,7 +41,7 @@ A document that encompasses detailed technical requirements, often including uml
    * [http://code.google.com/p/jedai/wiki/Lobby Lobby]
    * [http://code.google.com/p/jedai/wiki/Room Room]
 
- *Open Source Collaboration Server (OSCS)
+ * Open Source Collaboration Server (OSCS)
    * Account Management
    * Screen Sharing
    * File Sharing
