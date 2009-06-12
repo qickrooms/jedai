@@ -2,8 +2,21 @@
 
 = Introduction =
 
-Add your content here.
+This page serves as the homepage for the wiki.  From here you will find links to the following:
 
+* Feature Specifications <br/>
+* Functional Specifications<br/>
+* Technical Specifications<br/>
+
+Terminology used:
+
+Feature Specification: A document that encompasses a specific feature of the system.  This document includes the following elements:
+
+* Description and Priority
+* Stimulus/Response Sequences
+* Functional Requirements
+* Wireframes
+* Finished Screenshots
 
 = Details =
 
