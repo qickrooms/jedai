@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This page serves as the homepage for the wiki.  From here you will find links to the following:
+This page serves as the homepage for the wiki.  From here you will find links to the following documents:
 
  * Feature Specifications
  * Functional Specifications
@@ -10,7 +10,8 @@ This page serves as the homepage for the wiki.  From here you will find links to
 
 ==Terminology used==
 
-Feature Specification: A document that encompasses a specific feature of the system.  This document includes the following elements:
+===Feature Specification=== 
+A document that encompasses a specific feature of the system.  This document includes the following elements:
 
  * Description and Priority
  * Stimulus/Response Sequences
@@ -18,9 +19,8 @@ Feature Specification: A document that encompasses a specific feature of the sys
  * Wireframes
  * Finished Screenshots
 
-= Details =
+===Functional Specification===
+A document that encompasses all of the feature specifications into one.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+===Technical Specification===
+A document that encompasses detailed technical requirements, often including uml diagrams, deployment topography, technology integration, etc...
