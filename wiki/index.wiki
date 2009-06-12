@@ -29,7 +29,7 @@ A document that encompasses detailed technical requirements, often including uml
 
 =Feature Specifications List=
 
- * Component Specifications
+ * Jedai Collaboration Suite
    * AccountManagement
      * [http://code.google.com/p/jedai/wiki/Login Login]
    * [http://code.google.com/p/jedai/wiki/ConnectionLight ConnectionLight]
