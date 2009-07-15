@@ -3,7 +3,7 @@
     <!--
     <triggers>
 		<log file="ivy.log" append="true" message='resolving,,,"${module}"' event="pre-resolve" />
-		<log file="ivy.log" append="true" message='dependency,${duration},,"${module}","${revision}","${req-revision}"' event="post-resolve-dependency" filter="resolved=true"/>
+		<log file="i vy.log" append="true" message='dependency,${duration},,"${module}","${revision}","${req-revision}"' event="post-resolve-dependency" filter="resolved=true"/>
  		<log file="ivy.log" append="true" message='resolved,${resolve-duration},,"${module}"' event="post-resolve" />
         <log file="ivy.log" append="true" message='downloaded,${download-duration},${download-size},"${module}"' event="post-resolve" />
         <log file="ivy.log" append="true" message='artifact,${duration},${size},"${module}","${revision}","${origin}","${file}"' event="post-download-artifact" filter="status=successful"/>
@@ -24,6 +24,7 @@
 			</url>          
      	 	<url name="googlecode_red5">
                 <artifact pattern="http://red5.googlecode.com/svn/repository/[artifact](-[revision]).[ext]" />
+                <artifact pattern="http://red5.googlecode.com/svn/repository/[organisation]/[artifact](-[revision]).[ext]" />
                 <artifact pattern="http://red5.googlecode.com/svn/repository/[organisation]/[artifact](-[revision]).[ext]" />
             </url>
 <!--            <url name="googlecode_jedai">-->
