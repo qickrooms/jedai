@@ -1,0 +1,203 @@
+<project name="jedai" default="init-ivy" xmlns:ivy="antlib:org.apache.ivy.ant">
+	
+	<property file="build.properties"/>
+	
+	<property name="src.dir" value="src"/>
+	<property name="build.dir" value="build"/>
+	<property name="classes.dir" value="${build.dir}/classes"/>
+	<property name="dist.dir" value="dist"/>
+	<property name="doc.dir" value="doc"/>
+	<property name="docs.dir" value="docs"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="report.dir" value="report"/>
+	
+	<property name="javadoc.dir" value="${doc.dir}/api"/>
+	<!-- Documentation properties -->
+	<property name="doc.ref.dir" value="docs/reference"/>
+	<property name="doc.ref.lib" value="${doc.ref.dir}/lib"/>
+	<property name="javadoc.style" value="${doc.ref.dir}/styles/javadoc.css"/>
+	
+	<property name="config.dir" value="configs"/> 
+	<property name="version" value="0.0.2" />
+	<property name="version.dir" value="0_0_2" />
+
+    <property name="ivy.jar.dir" value="${basedir}/${lib.dir}/default" />
+    <property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar" />
+	
+	<path id="full.classpath">
+		<fileset dir="${lib.dir}"/>
+		<fileset dir="./">
+			<filename name="${red5.filename}.jar"/>
+			<filename name="boot.jar"/>
+		</fileset>
+	</path>
+	
+	<property name="ivy.install.version" value="2.0.0-beta1" />
+	<condition property="ivy.home" value="${env.IVY_HOME}">
+      <isset property="env.IVY_HOME" />
+    </condition>
+	<property name="ivy.home" value="${user.home}/.ant" />
+	<property name="ivy.settings.dir" value="${basedir}" />
+	
+	<!-- can be used if we add ivy to the ant/lib directory
+	<ivy:settings file="${ivy.settings.dir}/ivysettings.xml" />
+	-->
+	
+	<!-- Downloads Ivy-->
+    <target name="download-ivy">
+
+        <mkdir dir="${ivy.jar.dir}"/>
+    	<get src="http://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar"
+    	    		 dest="${ivy.jar.file}" usetimestamp="true"/>
+    </target>
+
+	<!-- Initializes Ivy as a task definition -->
+    <target name="init-ivy" depends="download-ivy">
+        <path id="ivy.lib.path">
+            <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
+        </path>
+    	
+        <taskdef resource="org/apache/ivy/ant/antlib.xml"
+                 uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+    	
+    	<ivy:settings file="${ivy.settings.dir}/ivysettings.xml" />
+    </target>
+  
+	<!-- Compiles the source code-->
+    <target name="run" depends="init-ivy, resolve">        
+        <mkdir dir="${build.dir}" />
+    	<mkdir dir="${classes.dir}" />
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="ivy.lib.path" />
+    </target>
+	
+	<target name="-red5.home.check">
+		<!-- This build file requires red5 home -->
+		<fail message="The RED5_HOME environment variable is required">
+			<condition>
+				<not>
+					<or>
+						<isset property="env.RED5_HOME"/>					
+						<isset property="red5.root"/>
+					</or>
+				</not>
+			</condition>
+		</fail>
+		<echo message="Using Red5 at ${env.RED5_HOME} or ${red5.root}"/>
+	</target>	
+	
+	<!-- depends=-red5.home.check -->
+	<target name="prepare">
+        <mkdir dir="${classes.dir}"/>
+        <mkdir dir="${lib.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+    </target>
+	
+	<target name="compile" depends="prepare, resolve">
+	        <condition property="java.target_version" value="1.5">
+	            <not>
+	                <isset property="java.target_version"/>
+	            </not>
+	        </condition>
+	        <echo>java.home is ${java.home} and the target version is ${java.target_version}</echo>
+	        <echo>red5.root is ${red5.root}</echo>
+	        <echo>javac version: ${java.version}</echo>
+	        <property name="dest.dir" value="${classes.dir}"/>
+	        <javac sourcepath="" srcdir="${src.dir}" destdir="${dest.dir}" classpathref="project.classpath"
+	             optimize="${build.optimize}" verbose="${build.verbose}" fork="${build.fork}" nowarn="${build.nowarn}"
+	             deprecation="${build.deprecation}" debug="${debug.state}" compiler="modern"
+	             source="${java.target_version}" target="${java.target_version}" listfiles="false"/>             
+			<!--<copy file="${src.dir}/logback-${ant.project.name}.xml" todir="${dest.dir}" />-->
+			<copy file="${src.dir}/*.properties" todir="${dest.dir}" failonerror="false" />                
+	    </target>
+	
+	<target name="jar" depends="run">
+			<mkdir dir="${dist.dir}/${version.dir}"/>
+	        <tstamp prefix="build">
+	            <format property="TODAY" pattern="d-MMMM-yyyy" locale="en"/>
+	        </tstamp>
+	        <jar destfile="${dist.dir}/${version.dir}/${ant.project.name}-${version}.jar">
+	            <fileset dir="${classes.dir}">
+	                <include name="**"/>
+	            </fileset>
+				<manifest>
+					<attribute name="Built" value="${build.TODAY} by ${user.name}"/>
+					<attribute name="Build-OS" value="${os.name} ${os.version}"/>
+					<attribute name="Build-Java" value="Java ${java.version}"/>
+				</manifest>
+	        </jar>
+	    </target>
+	
+	<!-- Javadocs -->
+	<target name="javadoc" description="Generate JavaDoc" depends="clean, prepare, compile">
+		<javadoc useexternalfile="true" failonerror="false" verbose="false" classpathref="full.classpath"
+			 destdir="${javadoc.dir}" author="true" version="true" use="true" splitindex="true"
+			 windowtitle="${documentation.title}" stylesheetfile="${javadoc.style}">
+			<fileset dir="${src.dir}" defaultexcludes="yes">
+				<include name="jedai/**"/>
+				<exclude name="**/*.xml"/>
+				<exclude name="**/*.xsd"/>
+				<exclude name="**/*.vm"/>
+			</fileset>
+			<doctitle><![CDATA[<h1>${documentation.title}</h1>]]></doctitle>
+			<bottom><![CDATA[<i>Copyright &#169; ${jedai.age} <a href="${jedai.url}" target="_blank">${jedai.name}</a></i>]]></bottom>
+		</javadoc>
+	</target>
+
+	<!--  depends="clean, prepare, jar" -->
+	<target name="dist" depends="clean, prepare, jar, javadoc, report">
+		<!--<copy file="${dist.dir}/${ant.project.name}-${version}.jar" todir="${dist.dir}"></copy>-->
+		<mkdir dir="${dist.dir}/${version.dir}/${lib.dir}"/>
+		<mkdir dir="${dist.dir}/${version.dir}/${config.dir}"/>
+		<mkdir dir="${dist.dir}/${version.dir}/${report.dir}"/>
+		<copy todir="${dist.dir}/${version.dir}/${config.dir}">
+			<fileset dir="${config.dir}">
+                <include name="**"/>
+            </fileset>
+		</copy>
+		<copy todir="${dist.dir}/${version.dir}/${doc.dir}">
+			<fileset dir="${doc.dir}">
+                <include name="**"/>
+            </fileset>
+		</copy>
+		<copy todir="${dist.dir}/${version.dir}/${report.dir}">
+			<fileset dir="${build.dir}/${report.dir}">
+                <include name="**"/>
+            </fileset>
+		</copy>
+		<copy todir="${dist.dir}/${version.dir}/${lib.dir}">
+			<fileset dir="${lib.dir}/default">
+                <include name="**"/>
+            </fileset>
+		</copy>
+		
+	</target>
+	
+	<!-- -->
+	<target name="resolve" depends="init-ivy">
+	    <ivy:retrieve />
+	</target>
+	
+	<!-- -->
+    <target name="report" depends="resolve" description="--> generates a report of dependencies">
+        <ivy:report todir="${build.dir}/${report.dir}"/>
+    </target>
+	
+	<!-- -->
+    <target name="clean">
+        <delete includeemptydirs="true" quiet="true">
+            <fileset dir="${build.dir}" />
+        	<fileset dir="${dist.dir}" />
+        	<fileset dir="${doc.dir}" />
+    	</delete>
+    </target>
+	
+	<!-- -->
+	<target name="clean-ivy">
+		<delete dir="${ivy.jar.dir}"/>
+	</target>
+	
+	<!-- -->
+	<target name="clean-cache" depends="init-ivy">
+		<ivy:cleancache />
+	</target>
+</project>

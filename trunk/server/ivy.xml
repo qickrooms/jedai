@@ -6,10 +6,12 @@
     <info organisation="jedai" module="framework"/>
     <configurations>
 	    <conf name="default"/>
+		<!--
 		<conf name="java5" extends="default" description="Java 5 dependencies"/>
 		<conf name="java6" extends="default" description="Java 6 dependencies"/>
 		<conf name="utest" extends="eclipse" description="Unit testing dependencies"/>
 		<conf name="eclipse" description="Special dependencies in Eclipse"/>
+		-->
 	</configurations>
     <dependencies>
     	<!-- Jedai -->
@@ -40,6 +42,7 @@
         <!-- General -->
         <dependency org="org.apache" name="commons-logging" rev="1.1.1" /> 
         <dependency org="org.apache" name="velocity" rev="1.6.2"/>
+        <dependency org="red5" name="red5" rev="0.8.0-RC3" />
         
     </dependencies>
 </ivy-module>
