@@ -1,0 +1,5 @@
+EmotenCore is licensed under LGPL
+
+http://www.gnu.org/licenses/lgpl.html
+
+With one restriction.  If you are only provided with the SWC, you may not decompile it.
