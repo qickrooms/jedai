@@ -1,6 +1,6 @@
 package jedai.net
 {
-	import jedai.controls.common.LayoutManager;
+	import jedai.utils.LayoutManager;
 	
 	import flash.events.AsyncErrorEvent;
 	import flash.events.IOErrorEvent;

@@ -1,4 +1,4 @@
-package jedai.controls.common
+package jedai.utils
 {
 	import flash.net.NetConnection;
 	import flash.net.SharedObject;
