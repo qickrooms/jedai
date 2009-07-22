@@ -1,0 +1,16 @@
+<project name="SampleLibrary" default="build">
+    <!-- Project specific overrides -->
+    <property name="root.dir" location="../../"/>
+
+    <!-- Shared properties -->
+    <property file="${root.dir}/build-user.properties" />
+
+    <!-- Common properties and targets -->
+    <import file="${root.dir}/tools/build-common-imports.xml" />
+
+    <!-- Build path -->
+    <path id="flex.lib.path"/>
+
+    <!-- Project specific targets -->
+    <target name="build" depends="init,flex-library" description="Build the library" />
+</project>

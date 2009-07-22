@@ -1,0 +1,13 @@
+<!-- Assets imported by this project -->
+<project name="SampleProject.imports">
+    <dirname property="SampleProject.imports.dir" file="${ant.file.SampleProject.imports}"/>
+
+    <!-- Shared properties -->
+    <property file="${SampleProject.imports.dir}/../../build-user.properties" />
+
+    <!-- Common properties and targets -->
+    <import file="../../tools/build-common-imports.xml" />
+    
+    <!-- Assets -->
+    <import file="build-assets.xml"/>
+</project>

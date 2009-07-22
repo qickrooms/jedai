@@ -1,0 +1,47 @@
+<!-- Step 4: Introduce multiple targets -->
+<project name="app2" default="build">
+    <!-- project-specific properties -->
+    <property name="project.name" value="Main" />
+
+    <!-- derived project properties -->
+    <property name="project.swf" value="${project.name}.swf" />
+    <property name="project.swc" value="${project.name}.swc" />
+    <property name="project.flex.application" value="${project.name}.mxml" />
+
+    <!-- system properties -->
+    <property name="flex.dir" value="C:/Apps/Flex/3.0/" />
+    <property name="flex.frameworks.dir" value="${flex.dir}/frameworks" />
+    <property name="flex.dist.lib" value="${flex.dir}/lib" />
+    <property name="flex.compc.jar" value="${flex.dist.lib}/compc.jar" />
+    <property name="flex.mxmlc.jar" value="${flex.dist.lib}/mxmlc.jar" />
+
+    <!-- targets -->
+    <target name="build" depends="flex-application" description="Build the application" />
+
+    <target name="flex-application" description="Compile the application">
+        <!-- copy all non-source files -->
+        <copy todir="bin" includeEmptyDirs="false">
+            <fileset dir="src">
+                <exclude name="**/*.as" />
+                <exclude name="**/*.mxml" />
+            </fileset>
+        </copy>
+
+        <!-- invoke MXMLC -->
+        <java jar="${flex.mxmlc.jar}" dir="." fork="true" failonerror="true">
+            <jvmarg value="-Xmx512m" />
+
+            <!-- root of Flex SDK frameworks directory -->
+            <arg value="+flexlib=${flex.frameworks.dir}" />
+
+            <!-- find associated sources in the flex directory -->
+            <arg value="-source-path=src" />
+            <arg value="-file-specs=src/${project.flex.application}" />
+            <arg value="-output=bin/${project.swf}" />
+        </java>
+    </target>
+
+    <target name="clean" description="Clean the project">
+        <delete dir="bin" />
+    </target>
+</project>

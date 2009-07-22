@@ -1,0 +1,16 @@
+<!-- Step 1: Ant MXMLC invocation to build an application -->
+<project name="app2" default="build">
+    <target name="build">
+        <java jar="C:/Apps/Flex/3.0/lib/mxmlc.jar" dir="." fork="true" failonerror="true">
+            <jvmarg value="-Xmx512m" />
+
+            <!-- root of Flex SDK frameworks directory -->
+            <arg value="+flexlib=C:/Apps/Flex/3.0/frameworks" />
+
+            <!-- find associated sources in the flex2 directory -->
+            <arg value="-source-path=src" />
+            <arg value="-file-specs=src/Main.mxml" />
+            <arg value="-output=bin/Main.swf" />
+        </java>
+    </target>
+</project>
