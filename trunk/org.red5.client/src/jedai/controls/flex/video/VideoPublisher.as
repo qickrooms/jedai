@@ -73,7 +73,7 @@ package jedai.controls.flex.video
 	 */
 	public class VideoPublisher extends UIComponent
 	{
-		include "../../../../config/jedai/Version.as";
+		//include "../../../../config/jedai/Version.as";
 		
 		//--------------------------------------------------------------------------
 		//

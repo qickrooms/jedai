@@ -21,7 +21,7 @@ package jedai.controls.flex.framework
 	 */
 	public interface IRed5Listener
 	{
-		include "../../../../config/jedai/Version.as";
+		//include "../../../../config/jedai/Version.as";
 		function onConnected(event:NetStatusEvent) : void;
 		function get connection() : Red5Connection;
 	}
