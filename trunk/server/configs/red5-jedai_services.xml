@@ -20,6 +20,13 @@
 		<property name="velocityEngine" ref="velocityEngine"/>
 	</bean>
 	
+	<bean id="chat.service" class="jedai.business.JChatService" init-method="init"/>	
+	<!--	<bean id="lobby.service" class="jedai.business.JLobbyService" init-method="init"/>	-->
+	<!--	<bean id="profile.service" class="jedai.business.JProfileService" init-method="init"/>-->
+	<!--	<bean id="room.service" class="jedai.business.JRoomService" init-method="init"/>-->
+	<!--	<bean id="stream.service" class="jedai.business.JStreamService" init-method="init"/>-->
+	<!--	<bean id="whiteboard.service" class="jedai.business.JWhiteBoardService" init-method="init"/>-->
+	
 	<bean id="usersDao" class="jedai.domain.security.UsersHome" depends-on="sessionFactory">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>	 
