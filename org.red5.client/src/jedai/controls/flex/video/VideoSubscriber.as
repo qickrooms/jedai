@@ -70,7 +70,7 @@ package jedai.controls.flex.video
 	 */
 	public class VideoSubscriber extends UIComponent implements IListItemRenderer
 	{
-		include "../../../../config/jedai/Version.as";
+		//include "../../../../config/jedai/Version.as";
 		
 		//--------------------------------------------------------------------------
 		//

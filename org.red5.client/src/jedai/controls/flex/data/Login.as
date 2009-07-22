@@ -69,7 +69,7 @@ package jedai.controls.flex.data
 	 */
 	public class Login extends UIComponent
 	{
-		include "../../../../config/jedai/Version.as";
+		//include "../../../../config/jedai/Version.as";
 		
 		//--------------------------------------------------------------------------
 		//

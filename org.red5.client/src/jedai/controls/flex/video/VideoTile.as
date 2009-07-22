@@ -79,7 +79,7 @@ package jedai.controls.flex.video
 	 [Bindable]
 	public class VideoTile extends TileList
 	{
-		include "../../../../config/jedai/Version.as";
+		//include "../../../../config/jedai/Version.as";
 		
 		//--------------------------------------------------------------------------
 		//
