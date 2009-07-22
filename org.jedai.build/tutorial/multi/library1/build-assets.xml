@@ -1,0 +1,9 @@
+<!-- Build assets for library1.  Note that all paths are defined
+     relative to ${multi.dir} since we don't know what the current
+     directory is in which Ant is running. -->
+<project name="library1.assets">
+    <dirname property="library1.assets.dir" file="${ant.file.library1.assets}"/>
+
+    <!-- Define SWC exported by this library. -->
+    <property name="multi.library1.swc" location="${library1.assets.dir}/${build.compc.dir}/library1.swc"/>
+</project>

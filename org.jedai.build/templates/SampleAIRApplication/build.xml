@@ -1,0 +1,19 @@
+<project name="SampleAIRApplication" default="build">
+    <!-- Project specific overrides -->
+    <property name="root.dir" location="../../"/>
+
+    <!-- Shared properties -->
+    <property file="${root.dir}/build-user.properties" />
+
+    <!-- Common properties and targets -->
+    <import file="${root.dir}/tools/build-common-imports.xml" />
+
+    <!-- Build path -->
+    <path id="flex.lib.path"/>
+
+    <!-- Project specific targets -->
+    <target name="build" depends="init,air-application" description="Build the application" />
+    <target name="stage" depends="build,air-application-stage" description="Stage the application" />
+    <target name="run" depends="air-application-stage,air-launch" description="Run the application" />
+    <target name="dist" depends="stage,air-package" description="Run the application" />
+</project>

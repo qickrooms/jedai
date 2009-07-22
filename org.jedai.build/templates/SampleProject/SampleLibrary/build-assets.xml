@@ -1,0 +1,6 @@
+<project name="SampleLibrary.assets">
+    <dirname property="SampleLibrary.assets.dir" file="${ant.file.SampleLibrary.assets}"/>
+
+    <!-- Define SWC exported by this library. -->
+    <property name="SampleLibrary.swc" location="${SampleLibrary.assets.dir}/${build.compc.dir}/SampleLibrary.swc"/>
+</project>
