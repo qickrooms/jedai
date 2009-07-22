@@ -13,7 +13,7 @@
         encode the project build order that should be used
     -->
     <filelist id="children.filelist" dir=".">
-        <file name="../Jedai"/>
-    	<file name="../JedaiLib"/>
+        <file name="../org.jedai.client"/>
+    	<file name="../org.jedai.server"/>
     </filelist>
 </project>
