@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flexLibProperties version="1">
 <includeClasses>
-<classEntry path="jedai.controls.common.Layout"/>
-<classEntry path="jedai.controls.common.LayoutManager"/>
 <classEntry path="jedai.controls.flex.data.Chat"/>
 <classEntry path="jedai.controls.flex.data.Layout"/>
 <classEntry path="jedai.controls.flex.data.Login"/>
