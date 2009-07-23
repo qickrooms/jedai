@@ -19,11 +19,17 @@ Description: A Flex Library project that includes the Jedai Collaborative Framew
 https://jedai.googlecode.com/svn/trunk/org.jedai.example.client<br />
 Description: Reference implementation of the clientside framework.
 
+===Jedai Clientside Tests===
+https://jedai.googlecode.com/svn/trunk/org.jedai.client.test
+Description: Consists of clientside Flex-unit tests.
+
 == Jedai Serverside ==
 
 ===Jedai Serverside Library=== 
-https://jedai.googlecode.com/svn/trunk/jedai/trunk<br />
-Desciption: A serverside JEE library module which should be added to an existing Red5 webapp.  You can accomplish this by:
+https://jedai.googlecode.com/svn/trunk/org.jedai.server<br />
+Desciption: 
+
+Note: If you have checked the serverside code out through SVN you can use this project as a serverside JEE library module which should be added to an existing Red5 webapp.  You can accomplish this by:
 right click project -> select properties -> select "Java EE Module Dependencies" -> click Apply -> click OK
 
 
@@ -31,18 +37,9 @@ right click project -> select properties -> select "Java EE Module Dependencies"
 https://jedai.googlecode.com/svn/trunk/org.jedai.example.server<br />
 Description: Reference implementation of the serverside framework.
 
-
-===Jedai Tests===
-https://jedai.googlecode.com/svn/trunk/org.jedai.client.test
-Description: Consists of clientside Flex-unit tests.
+===Jedai Serverside Tests===
+Description: TODO.
 
 ===Jedai Build Framework===
 https://jedai.googlecode.com/svn/trunk/org.jedai.build <br />
 Description: Based on the Antennae build system, this project builds the entire system from a standard set of targets.  To build the framework you simply enter into this project and issue "ant build".  To build a distribution, simply enter "ant dist".
-
-
-------
-
-===OLD Jedai Server ***** DO NOT USE *****===
-https://jedai.googlecode.com/svn/trunk/server/trunk
-Desciption: A deprecated Red5 webapp.  This will be deleted soon!
