@@ -5,9 +5,8 @@
 
 Jedai consists of both clientside and serverside code.  To accomplish this we have both a clientside Library project and a Serverside Library project.  In addition there is a repository for example code and unit tests.
 
-***********************
 == Jedai Clientside ==
-***********************
+
 ===Jedai Clientside Network Framework===
 https://jedai.googlecode.com/svn/trunk/org.jedai.client <br />
 Description: A Flex Library project that includes the Jedai Network Framework (JNF) and the Jedai Collaborative Framework (JCF) which consists of clientside flex ui components that will help in building real-time collaborative applications.
@@ -18,7 +17,7 @@ Description: A Flex Library project that includes the Jedai Collaborative Framew
 
 ===Jedai Clientside Example Project===
 https://jedai.googlecode.com/svn/trunk/org.jedai.example.client<br />
-Example code that demonstrates how Jedai's code should be structured.
+Description: Reference implementation of the clientside framework.
 
 == Jedai Serverside ==
 
@@ -29,8 +28,8 @@ right click project -> select properties -> select "Java EE Module Dependencies"
 
 
 ===Jedai Serverside Example Project===
-https://jedai.googlecode.com/svn/trunk/org.jedai.example.client<br />
-Example code that demonstrates how Jedai's code should be structured.
+https://jedai.googlecode.com/svn/trunk/org.jedai.example.server<br />
+Description: Reference implementation of the serverside framework.
 
 
 ===Jedai Tests===
