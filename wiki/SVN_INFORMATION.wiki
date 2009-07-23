@@ -5,6 +5,12 @@
 
 Jedai consists of both clientside and serverside code.  To accomplish this we have both a clientside Library project and a Serverside Library project.  In addition there is a repository for example code and unit tests.
 
+= Jedai Build Framework (Building Jedai from Source) =
+
+===Jedai Build Framework===
+https://jedai.googlecode.com/svn/trunk/org.jedai.build <br />
+Description: Based on the Antennae build system, this project builds the entire system from a standard set of targets.  To build the framework you simply enter into this project and issue "ant build".  To build a distribution, simply enter "ant dist".
+
 
 
 
@@ -49,7 +55,3 @@ Description: Reference implementation of the serverside framework.
 
 ===Jedai Serverside Tests===
 Description: TODO.
-
-===Jedai Build Framework===
-https://jedai.googlecode.com/svn/trunk/org.jedai.build <br />
-Description: Based on the Antennae build system, this project builds the entire system from a standard set of targets.  To build the framework you simply enter into this project and issue "ant build".  To build a distribution, simply enter "ant dist".
