@@ -23,7 +23,7 @@
 			  <artifact pattern="http://www.ibiblio.org/maven2/[organisation]/[module]/[module]-api/[revision]/[module]-api-[revision].[ext]"/>
 			</url>          
      	 	<url name="googlecode_red5">
-                <artifact pattern="http://red5.googlecode.com/svn/repository/[artifact](-[revision]).[ext]" />
+                <artifact pattern="http://red5.googlecode.com/svn/repository/red5/[artifact](-[revision]).[ext]" />
                 <artifact pattern="http://red5.googlecode.com/svn/repository/[organisation]/[artifact](-[revision]).[ext]" />
                 <artifact pattern="http://red5.googlecode.com/svn/repository/[organisation]/[artifact](-[revision]).[ext]" />
             </url>

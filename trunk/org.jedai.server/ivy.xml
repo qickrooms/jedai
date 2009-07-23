@@ -30,7 +30,7 @@
     	<dependency org="org.springframework" name="spring-orm" rev="2.5.6" />
     	
     	<!-- Spring Security -->
-    	<dependency org="org.springframework.security" name="spring-security-acl" rev="2.0.4" />
+    	<dependency org="org.springframework.security" name="spring-security-acl" rev="2.0.4"/>
     	<dependency org="org.springframework.security" name="spring-security-core" rev="2.0.4" />
     	<dependency org="org.springframework.security" name="spring-security-core-tiger" rev="2.0.4" />
         
@@ -42,7 +42,7 @@
         <!-- General -->
         <dependency org="org.apache" name="commons-logging" rev="1.1.1" /> 
         <dependency org="org.apache" name="velocity" rev="1.6.2"/>
-        <dependency org="red5" name="red5" rev="0.8.0-RC3" />
+        <dependency org="red5" name="red5" rev="0.8.0-RC3" /> 
         
     </dependencies>
 </ivy-module>
