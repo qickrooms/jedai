@@ -5,7 +5,12 @@
 
 Jedai consists of both clientside and serverside code.  To accomplish this we have both a clientside Library project and a Serverside Library project.  In addition there is a repository for example code and unit tests.
 
-== Jedai Clientside ==
+
+
+
+= Jedai Clientside =
+
+
 
 ===Jedai Clientside Network Framework===
 https://jedai.googlecode.com/svn/trunk/org.jedai.client <br />
@@ -23,7 +28,12 @@ Description: Reference implementation of the clientside framework.
 https://jedai.googlecode.com/svn/trunk/org.jedai.client.test
 Description: Consists of clientside Flex-unit tests.
 
-== Jedai Serverside ==
+
+
+
+= Jedai Serverside =
+
+
 
 ===Jedai Serverside Library=== 
 https://jedai.googlecode.com/svn/trunk/org.jedai.server<br />
