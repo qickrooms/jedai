@@ -179,6 +179,29 @@
         </jar>
     </target>
 	
+	<target name="deploy" depends="dist">
+		<copy todir="${web.project}/WEB-INF">
+			<fileset dir="${build.project.dir}/${build.dist.dir}/${build.version}/server/${config.dir}">
+                <include name="**"/>
+            </fileset>
+		</copy>
+		<copy todir="${web.project}/../">
+			<fileset dir="${build.project.dir}/${build.dist.dir}/${build.version}/server/${config.dir}">
+                <include name="ivy*.xml"/>
+            </fileset>
+		</copy>
+
+	</target>
+	
+	<target name="test">
+		<copy todir="${web.project}/../">
+			<fileset dir="${basedir}">
+                <include name="ivy*.xml"/>
+            </fileset>
+		</copy>
+
+	</target>
+	
 	<!-- Generates an Ivy report-->
     <target name="report" depends="ivy.resolve" description="--> generates a report of dependencies">
         <ivy:report todir="${build.dir}/${report.dir}"/>
