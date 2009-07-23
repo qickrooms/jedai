@@ -5,9 +5,15 @@
 
 Jedai consists of both clientside and serverside code.  To accomplish this we have both a clientside Library project and a Serverside Library project.  In addition there is a repository for example code and unit tests.
 
-===Jedai Clientside Library===
-https://jedai.googlecode.com/svn/trunk/library/trunk <br />
+===Jedai Clientside Network Framework===
+https://jedai.googlecode.com/svn/trunk/org.jedai.client <br />
 Description: A Flex Library project that includes the Jedai Network Framework (JNF) and the Jedai Collaborative Framework (JCF) which consists of clientside flex ui components that will help in building real-time collaborative applications.
+
+
+
+===Jedai Clientside Collaboration Framework===
+https://jedai.googlecode.com/svn/trunk/org.jedai.client.ui <br />
+Description: A Flex Library project that includes the Jedai Collaborative Framework (JCF) which consists of clientside flex ui components that will help in building real-time collaborative applications.
 
 ===Jedai Serverside Library=== 
 https://jedai.googlecode.com/svn/trunk/jedai/trunk<br />
@@ -19,7 +25,12 @@ https://jedai.googlecode.com/svn/trunk/examples/trunk<br />
 Example code that demonstrates how Jedai's code should be structured.
 
 ===Jedai Tests===
-https://jedai.googlecode.com/svn/trunk/test/trunk
+https://jedai.googlecode.com/svn/trunk/org.jedai.client.test
+Description: Consists of clientside Flex-unit tests.
+
+===Jedai Build Framework===
+https://jedai.googlecode.com/svn/trunk/org.jedai.build <br />
+Description: Based on the Antennae build system, this project builds the entire system from a standard set of targets.  To build the framework you simply enter into this project and issue "ant build".  To build a distribution, simply enter "ant dist".
 
 
 ------
