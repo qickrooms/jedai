@@ -1,3 +1,0 @@
-<project name="SampleApplication.imports">
-    <import file="../build-imports.xml"/>
-</project>

@@ -1,4 +1,0 @@
-<!-- Assets imported by this project -->
-<project name="multi.imports">
-    <import file="../build-imports.xml" />
-</project>

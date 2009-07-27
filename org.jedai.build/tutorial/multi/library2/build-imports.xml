@@ -1,3 +1,0 @@
-<project name="library2.imports">
-    <import file="../build-imports.xml"/>
-</project>

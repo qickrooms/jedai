@@ -1,3 +1,0 @@
-<project name="Test.imports">
-    <import file="../build-imports.xml"/>
-</project>

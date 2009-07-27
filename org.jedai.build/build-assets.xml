@@ -1,4 +1,0 @@
-<project name="Antennae.assets">
-    <import file="lib/build-assets.xml"/>
-    <import file="tutorial/build-assets.xml"/>
-</project>

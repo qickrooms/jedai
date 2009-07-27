@@ -1,4 +1,0 @@
-<project name="library2.assets">
-    <dirname property="library2.assets.dir" file="${ant.file.library2.assets}"/>
-    <property name="multi.library2.swc" location="${library2.assets.dir}/${build.compc.dir}/library2.swc"/>
-</project>
