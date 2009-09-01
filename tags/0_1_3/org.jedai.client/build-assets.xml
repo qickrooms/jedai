@@ -1,0 +1,8 @@
+<!-- Assets exported by this project to others -->
+<project name="jedai.assets">
+    <!-- There aren't any assets in this project -->
+    <dirname property="jedai.assets.dir" file="${ant.file.jedai.assets}"/>
+    <property name="JedaiLib.swc" location="${jedai.assets.dir}/${build.compc.dir}/JedaiLib.swc"/>
+    <property name="Cairngorm.swc" location="${jedai.assets.dir}/lib/Cairngorm.swc"/>
+	<property name="Prana.swc" location="${jedai.assets.dir}/lib/Prana.swc"/>
+</project>

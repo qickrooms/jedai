@@ -1,0 +1,24 @@
+<!-- Step 2: Use properties to drive settings -->
+<project name="app2" default="build">
+    <!-- system properties -->
+    <property name="flex.dir" value="C:/Apps/Flex/3.0" />
+    <property name="flex.frameworks.dir" value="${flex.dir}/frameworks" />
+    <property name="flex.dist.lib" value="${flex.dir}/lib" />
+    <property name="flex.compc.jar" value="${flex.dist.lib}/compc.jar" />
+    <property name="flex.mxmlc.jar" value="${flex.dist.lib}/mxmlc.jar" />
+
+    <!-- targets -->
+    <target name="build">
+        <java jar="${flex.mxmlc.jar}" dir="." fork="true" failonerror="true">
+            <jvmarg value="-Xmx512m" />
+
+            <!-- root of Flex SDK frameworks directory -->
+            <arg value="+flexlib=${flex.frameworks.dir}" />
+
+            <!-- find associated sources in the src directory -->
+            <arg value="-source-path=src" />
+            <arg value="-file-specs=src/Main.mxml" />
+            <arg value="-output=bin/Main.swf" />
+        </java>
+    </target>
+</project>

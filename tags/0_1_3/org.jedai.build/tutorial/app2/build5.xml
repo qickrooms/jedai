@@ -1,0 +1,15 @@
+<!-- Step 5: Break common code out into common imports -->
+<project name="app2" default="build">
+
+    <!-- project-specific properties -->
+    <property name="project.name" value="Main" />
+    <path id="flex.lib.path"/>
+
+    <property file="../../build-user.properties" />
+    <import file="../../tools/build-common-properties.xml" />
+    <import file="../../tools/build-common-tasks.xml" />
+    <import file="../../tools/build-common-targets.xml" />
+
+    <!-- targets -->
+    <target name="build" depends="init,flex-application" description="Build the application" />
+</project>

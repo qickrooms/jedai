@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>Antennae Demo App</title>
+<script type="text/javascript" src="js/swfobject.js"></script>
+
+<style type="text/css">
+	
+	#flashcontent {
+		height: 100%;
+	}
+
+</style>
+
+</he<script type="text/javascript">
+
+/* Name of ARC client SWF. */
+var swfName = "@APP_NAME@.swf";
+var swfDebugName = "@APP_NAME@-debug.swf";
+
+function initializePage()
+{    
+    var swf = 
+        (document.location.href.indexOf("?debug=true") < 0) ? swfName : swfDebugName;
+    var so = new SWFObject(swf, "app", "100%", "100%", "9", "#FF6600");
+    so.addParam("scale", "noscale");
+    so.write("flashcontent");
+}
+
+</script>
+
+<body onload="initializePage()">
+    <h1>Antennae Demo App</h1>
+
+    <div id="flashcontent">
+            <strong>You need to upgrade your Flash Player</strong>
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<!-- build-imports.xml: this file pulls in any definitions needed
+    for this directory and its descendants. -->
+<project name="tutorial.imports">
+    <import file="../build-imports.xml" />
+</project>
