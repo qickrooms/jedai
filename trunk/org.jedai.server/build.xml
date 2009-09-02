@@ -21,7 +21,7 @@
 	<property name="version" value="0.0.2" />
 	<property name="version.dir" value="0_0_2" />
 
-    <property name="ivy.jar.dir" value="${basedir}/${lib.dir}/default" />
+    <property name="ivy.jar.dir" value="${basedir}/${lib.dir}/" />
     <property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar" />
 	
 	<path id="full.classpath">
