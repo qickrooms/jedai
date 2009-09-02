@@ -1,6 +1,10 @@
 package jedai.business;
 
+import org.red5.server.api.Red5;
+import org.red5.server.api.ScopeUtils;
+
 import jedai.domain.Room;
+import jedai.vo.RoomVO;
 
 /*
  * Jedai Networking Framework - http://jedai.googlecode.com
@@ -27,26 +31,33 @@ import jedai.domain.Room;
  */
 public class JRoomService implements IRoomService {
 
+
 	@Override
-	public void createRoom(Room room) {
+	public void createRoom(RoomVO room) {
+		String roomName = room.getName();
+
+		//Red5.getConnectionLocal().getScope();
+
+//		ils.resolveScope(appScope, roomName);
+//		if (roomScope == null) {
+//			if (appScope.createChildScope
+		
+	}
+
+	@Override
+	public void deleteRoom(RoomVO room) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteRoom(Room room) {
+	public void updateRoom(RoomVO room) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void getRoom(int roomId) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void updateRoom(Room room) {
 		// TODO Auto-generated method stub
 		
 	}

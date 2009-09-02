@@ -24,5 +24,15 @@ package jedai.vo;
  *
  */
 public class RoomVO {
+	
+	private String name;
+
+	public void setRoomName(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
 
 }
