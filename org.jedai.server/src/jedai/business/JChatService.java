@@ -24,5 +24,7 @@ package jedai.business;
  *
  */
 public class JChatService {
+	
+	
 
 }

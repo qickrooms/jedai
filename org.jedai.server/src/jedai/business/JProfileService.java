@@ -25,20 +25,32 @@ import jedai.vo.ProfileVO;
  * @author dominickaccattato
  *
  */
-public class JProfileService {
+public class JProfileService implements IProfileService {
 
 	/**
 	 * @return
 	 */
+	@Override
 	public ProfileVO getProfile() {
 		return null;
 		
 	}
-	
-	/**
-	 * 
-	 */
-	public void updateProfile() {
+
+	@Override
+	public void createProfile(ProfileVO profile) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteProfile(ProfileVO profile) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateProfile(ProfileVO profile) {
+		// TODO Auto-generated method stub
 		
 	}
 }

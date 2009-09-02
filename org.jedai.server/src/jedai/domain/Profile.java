@@ -1,6 +1,4 @@
-package jedai.business;
-
-import jedai.domain.Room;
+package jedai.domain;
 
 /*
  * Jedai Networking Framework - http://jedai.googlecode.com
@@ -21,34 +19,6 @@ import jedai.domain.Room;
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA 
  */
 
-/**
- * @author dominickaccattato
- *
- */
-public class JRoomService implements IRoomService {
-
-	@Override
-	public void createRoom(Room room) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteRoom(Room room) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void getRoom(int roomId) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void updateRoom(Room room) {
-		// TODO Auto-generated method stub
-		
-	}
+public class Profile {
 
 }
