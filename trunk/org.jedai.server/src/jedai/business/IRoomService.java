@@ -19,7 +19,7 @@ package jedai.business;
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA 
  */
 
-import jedai.domain.Room;
+import jedai.vo.RoomVO;
 
 /**
  * @author dominickaccattato
@@ -30,7 +30,7 @@ public interface IRoomService {
 	/**
 	 * @param room
 	 */
-	public void createRoom(Room room);
+	public void createRoom(RoomVO room);
 	
 	/**
 	 * @param roomId
@@ -40,11 +40,11 @@ public interface IRoomService {
 	/**
 	 * @param room
 	 */
-	public void updateRoom(Room room);
+	public void updateRoom(RoomVO room);
 	
 	/**
 	 * @param room
 	 */
-	public void deleteRoom(Room room);
+	public void deleteRoom(RoomVO room);
 
 }

@@ -94,6 +94,11 @@
                 <include name="**"/>
             </fileset>
 		</copy>
+		<copy todir="${build.project.dir}/${build.dist.dir}/${build.version}/server/ivy">
+			<fileset dir="${basedir}">
+			    <include name="ivy*.xml"/>
+		    </fileset>
+		</copy>
 		<copy todir="${build.project.dir}/${build.dist.dir}/${build.version}/server/${doc.dir}">
 			<fileset dir="${build.dir}/${doc.dir}">
                 <include name="**"/>
@@ -180,17 +185,18 @@
     </target>
 	
 	<target name="deploy" depends="dist">
-		<copy todir="${web.project}/WEB-INF">
+		<copy todir="${web.project}/WebContent/WEB-INF">
 			<fileset dir="${build.project.dir}/${build.dist.dir}/${build.version}/server/${config.dir}">
                 <include name="**"/>
             </fileset>
 		</copy>
-		<copy todir="${web.project}/../">
-			<fileset dir="${build.project.dir}/${build.dist.dir}/${build.version}/server/${config.dir}">
+		<copy todir="${web.project}">
+			<fileset dir="${build.project.dir}/${build.dist.dir}/${build.version}/server/ivy">
                 <include name="ivy*.xml"/>
             </fileset>
 		</copy>
-
+		<copy file="${build.project.dir}/${build.dist.dir}/${build.version}/server/${ant.project.name}-${version}.jar" todir="${web.project}/WebContent/WEB-INF/lib/"/>
+		<echo message="test"/>
 	</target>
 	
 	<target name="test">
