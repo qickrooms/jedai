@@ -38,7 +38,7 @@
 	<!--  depends="clean, prepare, jar" -->
 	<target name="dist" depends="build">
 		<copy todir="${build.project.dir}/${build.dist.dir}/${build.version}/client" file="${build.compc.dir}/${project.name}.swc"/>		
-		<copy todir="${build.project.dir}/${build.dist.dir}/${build.version}/client" file="src/config"/>		
+		<!--<copy todir="${build.project.dir}/${build.dist.dir}/${build.version}/client" file="src/config"/>-->		
 	</target>
 	
 </project>
