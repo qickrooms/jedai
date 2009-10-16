@@ -16,6 +16,7 @@ package jedai.controls.flex.video
 	
 	import jedai.Red5BootStrapper;
 	import jedai.business.Red5ServiceLocator;
+	import jedai.controls.flex.jedaiUI;
 	import jedai.events.Red5Event;
 	import jedai.io.devices.AudioInputDevice;
 	import jedai.io.devices.VideoInputDevice;
@@ -71,9 +72,15 @@ package jedai.controls.flex.video
 	 * 
 	 *  @author Dominick Accattato (dominick_AT_infrared5_DOT_com)
 	 */
-	public class VideoPublisher extends UIComponent
+	 public class VideoPublisher extends UIComponent
 	{
 		//include "../../../../config/jedai/Version.as";
+		
+		//public namespace raf = "raf/internal";
+		
+		jedaiUI function getTestWidth() : int {
+			return this.getExplicitOrMeasuredWidth();
+		}
 		
 		//--------------------------------------------------------------------------
 		//
@@ -182,6 +189,21 @@ package jedai.controls.flex.video
 			
 			audioIn = new AudioInputDevice();
 			audioIn.attachOutputTo( _streamIn.getStream() );
+		}
+		
+		private var tmpGain:int = 50; // 50 is normal volume
+		
+		public function mute() : void {
+			/* var soundTrans:SoundTransform = new SoundTransform();
+		    soundTrans.volume = 0; */
+			//audioIn.inputDevice.soundTransform = soundTrans;
+			audioIn.inputDevice.gain = 0;
+		}
+		
+		public function unmute() : void {
+			/* var soundTrans:SoundTransform = new SoundTransform();
+		    soundTrans.volume = 10; */
+			audioIn.inputDevice.gain = tmpGain;
 		}
 		
 		private function onNetStatus(event:NetStatusEvent) : void {
