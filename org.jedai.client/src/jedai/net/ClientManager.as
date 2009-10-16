@@ -12,6 +12,10 @@ package jedai.net
 			this.id = val;
 		}
 		
+		public function get clientID() : Number {
+			return this.id;
+		}
+		
 		public function get username() : String {
 			return this._username;
 		}

@@ -15,12 +15,15 @@ package jedai
 	import jedai.events.Red5Event;
 	import jedai.net.ClientManager;
 	import jedai.net.rpc.Red5Connection;
+	import jedai.vo.AuthVO;
 	
 	import org.pranaframework.ioc.ObjectContainer;
 	import org.pranaframework.ioc.loader.ObjectDefinitionsLoaderEvent;
 	import org.pranaframework.ioc.loader.XmlObjectDefinitionsLoader;
 	
 	[Event(name="bootComplete", type="jedai.events.Red5Event")]
+	[Event(name="connected", type="jedai.events.Red5Event")]
+	[Event(name="disconnected", type="jedai.events.Red5Event")]
 	
 	/**
 	 * Red5BootStrapper takes care of steps 1-3 in "Workflow(wrapped)" in Basecamp:
@@ -46,10 +49,17 @@ package jedai
 		 * 
 		 * 
 		 */		
-		public function Red5BootStrapper(config:String)
+		public function Red5BootStrapper(clazz:Private ,config:String)
 		{
-			/* NetConnection.defaultObjectEncoding = ObjectEncoding.AMF0;
-			SharedObject.defaultObjectEncoding = ObjectEncoding.AMF0; */
+			if(clazz == null) {
+				throw("must call getInstance");
+			}
+			
+			/* 
+			NetConnection.defaultObjectEncoding = ObjectEncoding.AMF0;
+			SharedObject.defaultObjectEncoding = ObjectEncoding.AMF0; 
+			*/
+			
 			this._config = config;
 		}
 		
@@ -64,7 +74,7 @@ package jedai
 				if(config == null) {
 					config = "applicationContext.xml";
 				} 
-				_instance = new Red5BootStrapper(config);
+				_instance = new Red5BootStrapper(new Private(), config);
 				_instance.loadData();
 			}
 			
@@ -75,7 +85,7 @@ package jedai
 		 * 
 		 * 
 		 */		
-		public function loadData() : void {
+		private function loadData() : void {
 			_objectDefinitionsLoader = new XmlObjectDefinitionsLoader();
 			_objectDefinitionsLoader.addEventListener(ObjectDefinitionsLoaderEvent.COMPLETE, onObjectDefinitionsLoaderComplete);
 			_objectDefinitionsLoader.load(this._config);
@@ -99,10 +109,10 @@ package jedai
 		 * 
 		 * 
 		 */		
-		public function connect() : void {
+		public function connect(authVO:AuthVO) : void {
 			// Create a Red5Connection which registers the connection
 			
-			this._connection.connect(this._connection.rtmpURI, this._connection.connectionArgs[0], this._connection.connectionArgs[1]);
+			this._connection.connect(this._connection.rtmpURI, authVO.userName, authVO.password);
 			this._connection.addEventListener(Red5Event.CONNECTED, this.onConnectionHandler );
 			this._connection.addEventListener(Red5Event.DISCONNECTED, this.onDisconnectHandler );
 			this._connection.addEventListener(Red5Event.REJECTED, this.onConnectionRejected );
@@ -174,4 +184,9 @@ package jedai
 			return this._container;
 		}
 	}
+
+}
+
+class Private {
+	
 }

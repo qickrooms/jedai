@@ -8,13 +8,13 @@
      Constantiner (constantiner@gmail.com)                                                                
      ====================================================================== -->
 <project 
-	name="Jedailib" 
+	name="JedaiCore" 
 	default="init"
 	basedir=".">
 	
 	<!-- project specific properties -->
     <!-- This overrides the default in build-common-properties.xml -->
-    <property name="project.name" value="JedaiLib" />
+    <property name="project.name" value="JedaiCore" />
 
 	<!-- pull in shared information -->
 	    <import file="build-imports.xml" />
