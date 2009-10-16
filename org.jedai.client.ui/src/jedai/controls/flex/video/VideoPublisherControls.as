@@ -94,6 +94,7 @@ package jedai.controls.flex.video
 	     *  @default null 
 	     */
 	    protected var publishButton:Button;
+	    protected var muteButton:Button;
 		
 		//--------------------------------------------------------------------------
 		//
@@ -151,6 +152,32 @@ package jedai.controls.flex.video
 			}
 		}
 		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
+		private function onMuteButtonClick(event:MouseEvent) : void {
+			
+			if(connected) {
+				switch (muteButton.label) {
+					case "Mute":
+						muteButton.label = "Unmute";
+						_dataProvider.mute();
+						break;
+						
+					case "Unmute":
+						muteButton.label = "Mute";
+						_dataProvider.unmute();
+						break;
+						
+					default:
+						break;
+				}
+				
+			}
+		}
+		
 		//--------------------------------------------------------------------------
 		//
 		//  Flex Framework Lifecycle
@@ -170,6 +197,14 @@ package jedai.controls.flex.video
 	            publishButton.label = "Publish";
 	            publishButton.addEventListener(MouseEvent.CLICK, onPublishButtonClick);
 	            this.addChild(publishButton);
+	        } 
+	        
+	        if (!muteButton)
+	        {
+	            muteButton = new Button();
+	            muteButton.label = "Mute";
+	            muteButton.addEventListener(MouseEvent.CLICK, onMuteButtonClick);
+	            this.addChild(muteButton);
 	        } 
 				        
 		} 
@@ -236,6 +271,9 @@ package jedai.controls.flex.video
 			
 			publishButton.setActualSize(publishButton.getExplicitOrMeasuredWidth(), publishButton.getExplicitOrMeasuredHeight());
 			publishButton.move(0, 0);
+			
+			muteButton.setActualSize(muteButton.getExplicitOrMeasuredWidth(), muteButton.getExplicitOrMeasuredHeight());
+			muteButton.move(publishButton.getExplicitOrMeasuredWidth() + 20, 0);
 			
 			
 		}
