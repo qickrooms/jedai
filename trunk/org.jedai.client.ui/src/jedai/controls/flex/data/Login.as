@@ -16,6 +16,7 @@ package jedai.controls.flex.data
 	import jedai.business.Red5ServiceLocator;
 	import jedai.net.ClientManager;
 	import jedai.net.rpc.Red5Connection;
+	import jedai.vo.AuthVO;
 	
 	import mx.controls.Alert;
 	import mx.controls.Button;
@@ -156,8 +157,11 @@ package jedai.controls.flex.data
 			cm.username = this.usernameField.text;
 			cm.password = this.passwordField.text;
 			
+			// Setup AuthVO
+			var auth:AuthVO = new AuthVO("dominick", "test");
+			
 			Red5BootStrapper.getInstance().client = cm;
-			bootStrapper.connect();
+			bootStrapper.connect(auth);
 		}
 		
 		//--------------------------------------------------------------------------
