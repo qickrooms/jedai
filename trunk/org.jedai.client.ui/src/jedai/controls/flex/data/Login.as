@@ -112,13 +112,8 @@ package jedai.controls.flex.data
 		{
 			super();
 			this.addEventListener(FlexEvent.CREATION_COMPLETE, onCreationComplete);
-			this.addEventListener(MouseEvent.CLICK, onMouseClick);
 		} 
-		
-		public function onMouseClick(event:MouseEvent) : void {
-			trace(event);
-		}
-		
+				
 		/**
 		 * 
 		 * @param event
@@ -126,6 +121,7 @@ package jedai.controls.flex.data
 		 */		
 		private function onCreationComplete(event:FlexEvent) : void {
 			//this.enabled = false;
+			this.tabChildren = true;
 			bootStrapper = Red5BootStrapper.getInstance();
 		} 
 		
@@ -180,12 +176,14 @@ package jedai.controls.flex.data
 			if (!usernameField)
 	        {
 	            usernameField = new TextInput();
+	            usernameField.tabIndex = 1;
 	            this.addChild(usernameField);
 	        } 
 	        
 	        if (!passwordField)
 	        {
 	            passwordField = new TextInput();
+	            passwordField.tabIndex = 2;
 	            this.addChild(passwordField);
 	        }
 	        

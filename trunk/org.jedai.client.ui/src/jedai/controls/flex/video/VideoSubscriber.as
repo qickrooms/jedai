@@ -10,6 +10,7 @@
 package jedai.controls.flex.video
 {
 	import flash.events.Event;
+	import flash.events.NetStatusEvent;
 	import flash.events.SyncEvent;
 	import flash.net.SharedObject;
 	
@@ -17,6 +18,7 @@ package jedai.controls.flex.video
 	import jedai.business.Red5ServiceLocator;
 	import jedai.events.Red5Event;
 	import jedai.io.devices.VideoOutputDevice;
+	import jedai.media.rtp.Red5NetStream;
 	import jedai.media.rtp.Red5NetStreamConnector;
 	import jedai.net.rpc.Red5Connection;
 	
@@ -257,36 +259,29 @@ package jedai.controls.flex.video
 		}
 		
 		private function stopStream() : void {
-			/* video.attachNetStream(null);
-			video.clear();
-			playingFlag = false; */
+			_outputDevice.smoothing=false;
+			_outputDevice.clear();
 		}
 		
 		private function startStream(val:String) : void {
-				/* 
-				if(!playingFlag) {
-					playingFlag = true;
-					ns = new NetStream(conn);
-					video = new Video();
-					comp = new UIComponent();
-					comp.addChild(video);
-					this.addChild(comp);
-					video.attachNetStream(ns);
-					ns.play(val);
-					video.width = this.vBox2.width;
-					video.height = this.vBox2.height;
-				} */
-				
 			//_connection = Red5ServiceLocator.getInstance().getRed5Connection("default");	
 			//var rso:RemoteSharedObject = Red5ServiceLocator.getInstance().getRemoteSharedObject("clientlist");
 			
 			
 			_streamOut = new Red5NetStreamConnector( Red5ServiceLocator.getInstance().getRed5Connection("default") );
+			_streamOut.getStream().addEventListener(NetStatusEvent.NET_STATUS, onNetStatus);
 			_streamOut.play(val);	
+			//_outputDevice.smoothing=true;
 			_outputDevice.attachInputFrom(_streamOut.getStream());
 			//_outputDevice.width = 200;
 			//_outputDevice.height = 200;
 			_streamOut.getStream().soundTransform
+		}
+		
+		private function onNetStatus(event:NetStatusEvent) : void {
+			if(event.info.code == Red5NetStream.PLAY_UNPUBLISH) {
+				stopStream();
+			}
 		}
 		
 		/**
