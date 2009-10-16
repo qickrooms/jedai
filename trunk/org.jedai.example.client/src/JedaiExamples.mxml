@@ -4,10 +4,18 @@
 	xmlns:data="jedai.controls.flex.data.*" 
 	xmlns:net1="jedai.controls.flex.net.*" 
 	xmlns:video="jedai.controls.flex.video.*">
-	<data:Login x="325" y="10" width="472" height="91"/>
-	<net1:ConnectionLight x="80" y="164"/>
-	<data:UserList x="437" y="98"/>
-	<video:VideoPublisher x="64" y="293"/>
-	<video:VideoTile x="217" y="250"/>
-
+	<data:Login x="132" y="449" width="172" height="91"/>
+	<net1:ConnectionLight x="185" y="22" height="30" width="27.5"/>
+	<data:UserList x="20" y="119"/>
+	
+	<video:VideoSubscriber x="639" y="22" streamName="test" width="320" height="240"/>
+	<!--<video:VideoTile x="217" y="250" streamName="test"/>-->
+	
+	<mx:VBox borderStyle="sold" x="20" y="10">
+		
+	</mx:VBox>
+	<video:VideoPublisher id="publisher" x="244" y="22" streamName="test" height="240" width="320">		
+	</video:VideoPublisher>
+	<video:VideoPublisherControls x="244" y="326" dataProvider="{publisher}" width="160"/>
+	
 </mx:Application>
