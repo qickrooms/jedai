@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- ====================================================================== 
+     Dec 1, 2006 7:02:58 PM                                                        
+
+     Test App   
+     A simple test app
+                   
+     Constantiner (constantiner@gmail.com)                                                                
+     ====================================================================== -->
+<project 
+	name="JedaiUI" 
+	default="init"
+	basedir=".">
+	
+	<!-- project specific properties -->
+    <!-- This overrides the default in build-common-properties.xml -->
+    <property name="project.name" value="JedaiUI" />
+
+	<!-- pull in shared information -->
+	    <import file="build-imports.xml" />
+	
+    <!-- In order to use the flex-application target, a flex.lib.path must be defined -->
+
+	<dirname property="jedailib.dir" file="org.jedai.client"/>
+	<property name="jedailib.swc" location="${jedailib.dir}/bin/org.jedai.client.swc"/>
+	
+	
+	<path id="flex.lib.path">
+		<pathelement location="../org.jedai.client/bin/org.jedai.client.swc" />
+    </path>
+
+	<!-- init -->
+	<target name="init">
+		<echo message="****inside init"></echo>
+	</target>
+
+    <!-- targets -->
+    <target name="build" depends="init,flex-library" description="Build the library"/>
+	
+	<!--  depends="clean, prepare, jar" -->
+	<target name="dist" depends="build">
+		<copy todir="${build.project.dir}/${build.dist.dir}/${build.version}/client" file="${build.compc.dir}/${project.name}.swc"/>		
+		<!--<copy todir="${build.project.dir}/${build.dist.dir}/${build.version}/client" file="src/config"/>-->		
+	</target>
+	
+</project>

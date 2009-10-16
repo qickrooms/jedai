@@ -11,7 +11,6 @@ package jedai.controls.flex.video
 {
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
-	import flash.events.MouseEvent;
 	import flash.events.NetStatusEvent;
 	import flash.media.Microphone;
 	
@@ -24,6 +23,7 @@ package jedai.controls.flex.video
 	import jedai.media.rtp.Red5NetStreamConnector;
 	import jedai.net.rpc.Red5Connection;
 	
+	import mx.containers.Box;
 	import mx.controls.Button;
 	import mx.core.UIComponent;
 	import mx.events.FlexEvent;
@@ -98,7 +98,13 @@ package jedai.controls.flex.video
 	     */
 	    //protected var _camera:VideoInputDevice;
 	    //protected var _loopbackVideo:VideoDisplay;
+	    
+	    // refactoring publish button out to it's own component
+	    // TBD
 	    protected var _publish:Button;
+	    
+	    protected var cont1:Box;
+	    
 	    //protected var _microphone:Microphone;
 	    //protected var _netStream:Red5NetStream;
 	   // public var streamConn	: Red5NetStreamConnector;
@@ -146,36 +152,12 @@ package jedai.controls.flex.video
 			bootStrapper.addEventListener("bootStrapComplete", onBootStrapComplete); 
 			bootStrapper.addEventListener(Red5Event.CONNECTED, onConnected);
 			
-			this._publish.addEventListener(MouseEvent.CLICK, onPublish);
-			
-			
+			if(bootStrapper.connection != null && bootStrapper.connection.connected) {
+				onConnected(null);
+			}
 		} 
 		
-		private function onPublish(event:MouseEvent) : void {
-			//camera = Camera.getCamera();
-			
-			
-			// guard agains null
-			//if(_connection == null) return;				
-				
-				switch(_publish.label) {
-					case "Start Broadcast":
-						startStream();
-						break;
-						
-					case "Stop broadcasting":
-						stopStream();
-						break;
-						
-					default:
-						break;
-						
-				}
-				
-				_publish.label = (_publish.label == "Start Broadcast") ? "Stop broadcasting" : "Start Broadcast";
-		}
-		
-		private function stopStream() : void {
+		public function stopStream() : void {
 			_streamIn.getStream().close();
 		}
 		
@@ -184,20 +166,16 @@ package jedai.controls.flex.video
 		 * 
 		 * @return void
 		 **/
-		private function startStream() : void {
+		public function startStream() : void {
 			// create the netStream object and pass 
 			// the netConnection object in the constructor
 			_streamIn = new Red5NetStreamConnector( _connection );
-			//_streamOut = new Red5NetStreamConnector( _connection );
 			
 			_inputDevice = new VideoInputDevice( true );
 			_inputDevice.attachOutputTo( _streamIn.getStream() );
 			_streamIn.publish("test", "live");
 			
-			//_outputDevice = new VideoOutputDevice();
 			_outputDevice.attachInputFrom( _inputDevice );
-			_outputDevice.width = 200;
-			_outputDevice.height = 200;
 		
 			_microphone = Microphone.getMicrophone();
 			_microphone.setUseEchoSuppression(true);
@@ -254,17 +232,14 @@ package jedai.controls.flex.video
 	            _outputDevice = new VideoOutputDevice();
 	            _outputDeviceWrapper = new UIComponent();
 	            _outputDeviceWrapper.addChild(_outputDevice);	
-				//_outputDeviceWrapper.addChild( _outputDevice );
 	            this.addChild(_outputDeviceWrapper);
 	        } 
-	        
-	        if (!_publish)
-	        {
-	            _publish = new Button();
-	            _publish.label = "Start Broadcast";
-	            this.addChild(_publish);
-	        } 
-	        
+
+			if (!cont1) {
+				cont1 = new Box();
+				this.addChild(cont1);
+			}
+	      
 		} 
 		
 		/**
@@ -282,8 +257,8 @@ package jedai.controls.flex.video
 		override protected function measure():void {
 			super.measure();
 			
-			measuredHeight = measuredMinHeight = 60;
-			measuredWidth = measuredMinWidth = 120;
+			measuredHeight = measuredMinHeight;
+			measuredWidth = measuredMinWidth;
 		}
 		
 		/**
@@ -306,44 +281,17 @@ package jedai.controls.flex.video
 			var size:int = (padding + 50);
 			var formDist:int = 25;
 			
-			_outputDevice.width = this.unscaledWidth - 10;
-			_outputDevice.height = this.unscaledHeight - this._publish.getExplicitOrMeasuredHeight() - 20;
-			/* _outputDeviceWrapper.width = this.unscaledWidth - 10;
-			_outputDeviceWrapper.height = this.unscaledHeight - this._publish.getExplicitOrMeasuredHeight() - 20;
-			 */_publish.setActualSize(_publish.getExplicitOrMeasuredWidth(), _publish.getExplicitOrMeasuredHeight());
-			_publish.move(this.unscaledWidth - _publish.getExplicitOrMeasuredWidth() - 10, this.unscaledHeight - _publish.getExplicitOrMeasuredHeight() - 10);
-			 
+			_outputDevice.width = this.unscaledWidth;
+			_outputDevice.height = this.unscaledHeight
 			
-		/* 
-			// usernameField size and position
-			usernameField.setActualSize((unscaledWidth - size), usernameField.getExplicitOrMeasuredHeight());
-			usernameField.move(leftPos, topPos); 
-			
-			// usernameLabel size and position
-			leftPos = padding;
-			usernameLabel.setActualSize(usernameLabel.getExplicitOrMeasuredWidth(), usernameLabel.getExplicitOrMeasuredHeight());
-			usernameLabel.move(leftPos, topPos);
-			
-			// passwordField size and position
-			topPos += formDist;
-			leftPos = 50;
-			passwordField.setActualSize((unscaledWidth - size), passwordField.getExplicitOrMeasuredHeight());
-			passwordField.move(leftPos, topPos);  
-			
-			// passwordLabel size and position
-			leftPos = padding;
-			passwordLabel.setActualSize(passwordLabel.getExplicitOrMeasuredWidth(), passwordLabel.getExplicitOrMeasuredHeight());
-			passwordLabel.move(leftPos, topPos);
-			
-			// loginButton size and position
-			topPos += formDist;
-			leftPos = unscaledWidth - loginButton.getExplicitOrMeasuredWidth() - padding;
-			loginButton.setActualSize(loginButton.getExplicitOrMeasuredWidth(), loginButton.getExplicitOrMeasuredHeight());
-			loginButton.move(leftPos, topPos); */
-			/* 
-			box.setActualSize(unscaledWidth, unscaledHeight);
-			box.buttonMode = true; */
-			
+	        graphics.clear();
+	        graphics.lineStyle(1, 1, 1);
+	        graphics.moveTo(0,0);
+	        graphics.lineTo(this.unscaledWidth, 0);
+	        graphics.lineTo(this.unscaledWidth, this.unscaledHeight);
+	        graphics.lineTo(0, this.unscaledHeight);
+	        graphics.lineTo(0,0);	        
+	        graphics.endFill();			
 		}
 		
 		

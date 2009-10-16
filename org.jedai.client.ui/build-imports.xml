@@ -1,0 +1,6 @@
+<!-- Assets imported by this project -->
+<project name="org.jedai.client.imports">
+	<property file="build-user.properties" />
+    <import file="../org.jedai.build/build-imports.xml" />
+	<import file="build-assets.xml" />
+</project>

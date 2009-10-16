@@ -187,7 +187,9 @@ package jedai.controls.flex.video
 			bootStrapper = Red5BootStrapper.getInstance();
 			bootStrapper.addEventListener("bootStrapComplete", onBootStrapComplete); 
 			bootStrapper.addEventListener(Red5Event.CONNECTED, onConnected);
-			
+			if(bootStrapper.connection != null && bootStrapper.connection.connected) {
+				onConnected(null);
+			}
 			//this.publish.addEventListener(MouseEvent.CLICK, onPublish);
 		
 			// is this an itemrenderer
@@ -282,8 +284,9 @@ package jedai.controls.flex.video
 			_streamOut = new Red5NetStreamConnector( Red5ServiceLocator.getInstance().getRed5Connection("default") );
 			_streamOut.play(val);	
 			_outputDevice.attachInputFrom(_streamOut.getStream());
-			_outputDevice.width = 200;
-			_outputDevice.height = 200;
+			//_outputDevice.width = 200;
+			//_outputDevice.height = 200;
+			_streamOut.getStream().soundTransform
 		}
 		
 		/**
@@ -378,9 +381,18 @@ package jedai.controls.flex.video
 			var size:int = (padding + 50);
 			var formDist:int = 25;
 			
-			_outputDevice.width = this.unscaledWidth - 10;
-			_outputDevice.height = this.unscaledHeight - 20; 
+			_outputDevice.width = this.unscaledWidth;
+			_outputDevice.height = this.unscaledHeight; 
 			
+			graphics.clear();
+	        graphics.lineStyle(1, 1, 1);
+	       //graphics.beginFill(0xFF0000, 0.5);
+	        graphics.moveTo(0,0);
+	        graphics.lineTo(this.unscaledWidth, 0);
+	        graphics.lineTo(this.unscaledWidth, this.unscaledHeight);
+	        graphics.lineTo(0, this.unscaledHeight);
+	        graphics.lineTo(0,0);	        
+	        graphics.endFill();
 			
 		}
 		
