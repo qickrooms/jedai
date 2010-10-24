@@ -50,41 +50,6 @@ public class JStreamService implements IStreamAwareScopeHandler {
 	}
 
 	@Override
-	public void streamPlaylistItemPlay(IPlaylistSubscriberStream stream,
-			IPlayItem item, boolean isLive) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void streamPlaylistItemStop(IPlaylistSubscriberStream stream,
-			IPlayItem item) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void streamPlaylistVODItemPause(IPlaylistSubscriberStream stream,
-			IPlayItem item, int position) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void streamPlaylistVODItemResume(IPlaylistSubscriberStream stream,
-			IPlayItem item, int position) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void streamPlaylistVODItemSeek(IPlaylistSubscriberStream stream,
-			IPlayItem item, int position) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void streamPublishStart(IBroadcastStream stream) {
 		// TODO Auto-generated method stub
 
@@ -166,6 +131,40 @@ public class JStreamService implements IStreamAwareScopeHandler {
 	public boolean handleEvent(IEvent event) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void streamPlayItemPause(ISubscriberStream arg0, IPlayItem arg1,
+			int arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void streamPlayItemPlay(ISubscriberStream arg0, IPlayItem arg1,
+			boolean arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void streamPlayItemResume(ISubscriberStream arg0, IPlayItem arg1,
+			int arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void streamPlayItemSeek(ISubscriberStream arg0, IPlayItem arg1,
+			int arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void streamPlayItemStop(ISubscriberStream arg0, IPlayItem arg1) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
