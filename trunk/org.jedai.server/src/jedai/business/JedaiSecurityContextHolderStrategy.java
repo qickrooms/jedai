@@ -20,9 +20,9 @@ package jedai.business;
  */
 
 import org.red5.server.api.*;
-import org.springframework.security.context.SecurityContext;
-import org.springframework.security.context.SecurityContextHolderStrategy;
-import org.springframework.security.context.SecurityContextImpl;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolderStrategy;
+import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.util.*;
 
 public class JedaiSecurityContextHolderStrategy implements SecurityContextHolderStrategy {
@@ -69,6 +69,12 @@ public class JedaiSecurityContextHolderStrategy implements SecurityContextHolder
 	       Assert.notNull(context, "Only non-null SecurityContext instances are permitted");
 	       contextHolder.set(context);
 		}
+	}
+
+	@Override
+	public SecurityContext createEmptyContext() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
